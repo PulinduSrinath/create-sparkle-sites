@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
-import CTASection from "@/components/CTASection";
+import ContactHero from "@/components/ContactHero";
+import ContactMain from "@/components/ContactMain";
+import ContactNumbers from "@/components/ContactNumbers";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
@@ -7,15 +9,17 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="pt-24 min-h-[calc(100vh-100px)]">
+      <main className="pt-20">
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <CTASection />
+          <ContactHero />
+          <ContactMain />
+          <ContactNumbers />
         </motion.div>
-      </div>
+      </main>
       <Footer />
     </div>
   );
