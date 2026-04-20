@@ -17,7 +17,7 @@ const technologies = [
 
 const TechStackSection = () => {
   return (
-    <section id="tech" className="py-32 relative overflow-hidden dark bg-card">
+    <section id="tech" className="py-16 relative overflow-hidden dark bg-card">
       {/* Subtle gradient bg */}
       <div
         className="absolute inset-0 opacity-30"
@@ -30,7 +30,7 @@ const TechStackSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <span className="text-primary text-sm font-semibold tracking-widest uppercase">Technologies</span>
           <h2 className="font-display text-4xl sm:text-5xl font-bold mt-3">

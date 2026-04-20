@@ -3,9 +3,9 @@ import { Users, Target, Shield } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-32 relative overflow-hidden bg-background">
+    <section id="about" className="py-16 relative overflow-hidden bg-background">
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}

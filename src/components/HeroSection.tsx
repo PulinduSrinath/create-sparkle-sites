@@ -1,5 +1,37 @@
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { motion, useInView, useMotionValue, useSpring, useTransform, animate } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
+
+const StatCounter = ({ value, label }: { value: string; label: string }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const numValue = parseInt(value);
+  const suffix = value.replace(/[0-9]/g, "");
+
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+
+  useEffect(() => {
+    if (isInView) {
+      const animation = animate(count, numValue, {
+        duration: 2,
+        ease: "easeOut",
+      });
+      return animation.stop;
+    }
+  }, [isInView, numValue, count]);
+
+  return (
+    <div ref={ref}>
+      <div className="font-display text-3xl font-bold gradient-text flex justify-center items-center">
+        <motion.span>{rounded}</motion.span>
+        <span>{suffix}</span>
+      </div>
+      <div className="text-sm text-muted-foreground mt-1">{label}</div>
+    </div>
+  );
+};
 
 const HeroSection = () => {
   return (
@@ -92,7 +124,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto"
+          className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto"
         >
           {[
             { value: "100+", label: "Projects Delivered" },
@@ -100,10 +132,7 @@ const HeroSection = () => {
             { value: "5+", label: "Years Experience" },
             { value: "5+", label: "Served Countries" },
           ].map((stat) => (
-            <div key={stat.label}>
-              <div className="font-display text-3xl font-bold gradient-text">{stat.value}</div>
-              <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
-            </div>
+            <StatCounter key={stat.label} value={stat.value} label={stat.label} />
           ))}
         </motion.div>
       </div>
