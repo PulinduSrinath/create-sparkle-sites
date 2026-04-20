@@ -9,26 +9,26 @@ const HeroSection = () => {
         <motion.div
           animate={{ x: [0, 50, 0], y: [0, -30, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-20"
-          style={{ background: "radial-gradient(circle, hsl(172 80% 50% / 0.4), transparent)" }}
+          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10"
+          style={{ background: "radial-gradient(circle, hsl(172 80% 50% / 0.3), transparent)" }}
         />
         <motion.div
           animate={{ x: [0, -40, 0], y: [0, 40, 0] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-20"
-          style={{ background: "radial-gradient(circle, hsl(260 70% 60% / 0.4), transparent)" }}
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-10"
+          style={{ background: "radial-gradient(circle, hsl(260 70% 60% / 0.3), transparent)" }}
         />
         <motion.div
           animate={{ x: [0, 30, 0], y: [0, 50, 0] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 right-1/3 w-64 h-64 rounded-full opacity-15"
-          style={{ background: "radial-gradient(circle, hsl(150 70% 45% / 0.4), transparent)" }}
+          className="absolute top-1/2 right-1/3 w-64 h-64 rounded-full opacity-05"
+          style={{ background: "radial-gradient(circle, hsl(150 70% 45% / 0.3), transparent)" }}
         />
       </div>
 
       {/* Grid overlay */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage: "linear-gradient(hsl(172 80% 50%) 1px, transparent 1px), linear-gradient(90deg, hsl(172 80% 50%) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
@@ -95,10 +95,10 @@ const HeroSection = () => {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto"
         >
           {[
-            { value: "150+", label: "Projects Delivered" },
-            { value: "50+", label: "Happy Clients" },
+            { value: "100+", label: "Projects Delivered" },
+            { value: "100+", label: "Happy Clients" },
             { value: "5+", label: "Years Experience" },
-            { value: "99%", label: "Client Satisfaction" },
+            { value: "5+", label: "Served Countries" },
           ].map((stat) => (
             <div key={stat.label}>
               <div className="font-display text-3xl font-bold gradient-text">{stat.value}</div>

@@ -17,7 +17,7 @@ const technologies = [
 
 const TechStackSection = () => {
   return (
-    <section id="tech" className="py-32 relative overflow-hidden">
+    <section id="tech" className="py-32 relative overflow-hidden dark bg-card">
       {/* Subtle gradient bg */}
       <div
         className="absolute inset-0 opacity-30"

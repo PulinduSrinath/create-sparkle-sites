@@ -6,7 +6,7 @@ const CTASection = () => {
   const [email, setEmail] = useState("");
 
   return (
-    <section id="contact" className="py-32 relative overflow-hidden">
+    <section id="contact" className="py-32 relative overflow-hidden bg-card/30">
       {/* Glow orbs */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] opacity-20 blur-3xl"
