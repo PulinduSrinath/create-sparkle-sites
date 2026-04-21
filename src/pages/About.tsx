@@ -1,9 +1,10 @@
 import Navbar from "@/components/Navbar";
 import AboutHero from "@/components/AboutHero";
-import AboutStory from "@/components/AboutStory";
-import SubsidiariesMarquee from "@/components/SubsidiariesMarquee";
-import AboutVideoSection from "@/components/AboutVideoSection";
-import FeaturedService from "@/components/FeaturedService";
+import AboutStats from "@/components/AboutStats";
+import AboutIntro from "@/components/AboutIntro";
+import AboutCapabilities from "@/components/AboutCapabilities";
+import AboutMission from "@/components/AboutMission";
+import OwnerSection from "@/components/OwnerSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -19,10 +20,11 @@ const About = () => {
           transition={{ duration: 0.5 }}
         >
           <AboutHero />
-          <AboutStory />
-          <SubsidiariesMarquee />
-          <AboutVideoSection />
-          <FeaturedService />
+          <AboutStats />
+          <AboutIntro />
+          <AboutCapabilities />
+          <AboutMission />
+          <OwnerSection />
           <TestimonialsSection />
         </motion.div>
       </main>

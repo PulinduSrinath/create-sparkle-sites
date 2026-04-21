@@ -1,87 +1,205 @@
-import { motion } from "framer-motion";
-import { Globe, Smartphone, Palette, Zap, Server, ShieldCheck } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Globe, Smartphone, Palette, ShieldCheck, ArrowRight, Code2 } from "lucide-react";
+import React, { useRef } from "react";
 
 const services = [
   {
     icon: Globe,
-    title: "Web Development",
-    description: "Modern, blazing-fast websites built with Next.js, React, and TypeScript for exceptional user experiences.",
+    title: "Web Engineering",
+    description: "Building high-performance enterprise platforms with global scalability and zero-latency UX. We engineer for the next generation of web traffic and mission-critical reliability.",
     color: "hsl(172 80% 50%)",
+    visual: "neural-orb",
+    tag: "Scalable Systems"
   },
   {
     icon: Smartphone,
-    title: "Mobile Apps",
-    description: "Native and cross-platform mobile applications using React Native and Flutter with seamless performance.",
+    title: "Mobile Force",
+    description: "Military-grade mobile ecosystems that dominate App Stores. We create native and cross-platform solutions that unify brand identity and user engagement across every device.",
     color: "hsl(260 70% 60%)",
+    visual: "hologram-prism",
+    tag: "Native Excellence"
   },
   {
     icon: Palette,
-    title: "UI/UX Design",
-    description: "Stunning interfaces designed with user-first principles, creating experiences that engage and convert.",
+    title: "Creative Mastery",
+    description: "Designing the fluid balance between aesthetic elegance and technical function. Our UI/UX architects craft interfaces that convert users into loyal brand advocates.",
     color: "hsl(150 70% 45%)",
-  },
-  {
-    icon: Zap,
-    title: "Performance",
-    description: "Optimization and speed tuning to ensure your app loads instantly and runs smoothly at scale.",
-    color: "hsl(45 90% 55%)",
-  },
-  {
-    icon: Server,
-    title: "Backend & APIs",
-    description: "Robust server-side architecture with Node.js, serverless functions, and cloud-native infrastructure.",
-    color: "hsl(172 80% 50%)",
+    visual: "digital-canvas",
+    tag: "Design Architecture"
   },
   {
     icon: ShieldCheck,
-    title: "Maintenance & Support",
-    description: "24/7 monitoring, updates, and dedicated support to keep your digital products running at their best.",
-    color: "hsl(260 70% 60%)",
-  },
+    title: "Security & Support",
+    description: "Iron-clad technical guardianship for your digital empire. 24/7 monitoring, rigourous audits, and continuous optimization to keep you at the peak of performance.",
+    color: "hsl(30 100% 50%)",
+    visual: "encryption-grid",
+    tag: "Zero-Vulnerability"
+  }
 ];
+
+const VisualComponent = ({ type, color }: { type: string, color: string }) => {
+  if (type === "neural-orb") {
+    return (
+      <div className="relative w-full h-full flex items-center justify-center scale-125">
+        <motion.div 
+          animate={{ rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute w-80 h-80 border border-primary/20 rounded-full"
+        />
+        <motion.div 
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+          transition={{ duration: 4, repeat: Infinity }}
+          className="w-48 h-48 bg-primary/20 rounded-full blur-[60px]"
+        />
+        <div className="absolute w-32 h-32 rounded-full glass-card border border-primary/30 flex items-center justify-center shadow-[0_0_50px_rgba(34,211,238,0.2)]">
+          <Globe size={48} className="text-primary" />
+        </div>
+      </div>
+    );
+  }
+  if (type === "hologram-prism") {
+    return (
+      <div className="relative w-full h-full flex items-center justify-center scale-125">
+        <motion.div 
+          animate={{ rotateY: 360, rotateX: 360 }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="w-56 h-56 border-2 border-secondary/30 rounded-3xl"
+        />
+        <motion.div 
+          animate={{ y: [0, -20, 0] }}
+          transition={{ duration: 3, repeat: Infinity }}
+          className="absolute w-40 h-40 bg-secondary/20 blur-[80px]"
+        />
+        <div className="absolute w-28 h-28 glass-card border border-secondary/30 rounded-[2rem] flex items-center justify-center shadow-[0_0_50px_rgba(168,85,247,0.2)] rotate-12">
+          <Smartphone size={40} className="text-secondary" />
+        </div>
+      </div>
+    );
+  }
+  if (type === "digital-canvas") {
+    return (
+      <div className="relative w-full h-full flex items-center justify-center scale-125">
+        <div className="absolute grid grid-cols-4 gap-2 opacity-20">
+          {[...Array(16)].map((_, i) => (
+            <motion.div 
+              key={i}
+              animate={{ opacity: [0.1, 0.5, 0.1] }}
+              transition={{ duration: 2, delay: i * 0.1, repeat: Infinity }}
+              className="w-10 h-10 bg-accent rounded-sm"
+            />
+          ))}
+        </div>
+        <div className="relative w-40 h-40 glass-card border border-accent/30 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(34,211,238,0.2)]">
+          <Palette size={48} className="text-accent" />
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div className="relative w-full h-full flex items-center justify-center scale-125">
+      <div className="absolute inset-x-0 h-[1px] bg-primary/20 rotate-45" />
+      <div className="absolute inset-x-0 h-[1px] bg-primary/20 -rotate-45" />
+      <div className="relative w-40 h-40 glass-card border border-primary/30 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(34,211,238,0.2)]">
+        <ShieldCheck size={48} className="text-primary" />
+      </div>
+    </div>
+  );
+};
+
+const ServiceSection = ({ service, index }: { service: typeof services[0], index: number }) => {
+  const container = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"]
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.2], [0.8, 1]);
+  const textX = useTransform(scrollYProgress, [0, 0.3], [100, 0]);
+  const visualX = useTransform(scrollYProgress, [0, 0.3], [-100, 0]);
+
+  return (
+    <div ref={container} className="min-h-screen sticky top-0 flex items-center justify-center bg-[#030712] overflow-hidden border-b border-white/5">
+      {/* Background Decor */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--primary)_0,transparent_100%)] opacity-20" style={{'--primary': service.color} as any} />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px]" />
+      </div>
+
+      <motion.div 
+        style={{ opacity, scale }}
+        className="container mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center relative z-10"
+      >
+        {/* Visual Column */}
+        <motion.div 
+          style={{ x: visualX }}
+          className={`relative ${index % 2 === 1 ? 'lg:order-last' : ''} hidden lg:flex items-center justify-center h-[500px]`}
+        >
+          <VisualComponent type={service.visual} color={service.color} />
+        </motion.div>
+
+        {/* Text Column */}
+        <motion.div style={{ x: textX }} className="space-y-10">
+          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-primary text-[10px] font-bold uppercase tracking-[0.4em] shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+            <Code2 size={14} />
+            {service.tag}
+          </div>
+          
+          <h2 className="text-6xl md:text-8xl font-bold tracking-tighter text-white leading-tight">
+            {service.title.split(' ')[0]} <br />
+            <span className="gradient-text">{service.title.split(' ').slice(1).join(' ')}</span>
+          </h2>
+
+          <p className="text-2xl text-slate-300 leading-relaxed max-w-xl font-medium">
+            {service.description}
+          </p>
+
+        </motion.div>
+
+
+        {/* Mobile Visual (Visible only on small screens) */}
+        <div className="lg:hidden flex items-center justify-center h-[300px]">
+          <VisualComponent type={service.visual} color={service.color} />
+        </div>
+      </motion.div>
+    </div>
+  );
+};
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-16 relative">
-      <div className="container mx-auto px-6">
+    <section id="services" className="relative bg-[#030712]">
+      {/* Sticky Intro Section */}
+      <div className="h-screen flex flex-col items-center justify-center text-center px-6 sticky top-0 z-0">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-8"
         >
-          <span className="text-primary text-sm font-semibold tracking-widest uppercase">What We Do</span>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold mt-3">
-            Services We <span className="gradient-text">Offer</span>
-          </h2>
+          <span className="text-primary text-[10px] font-bold tracking-[0.5em] uppercase px-6 py-2 rounded-full border border-primary/20 bg-primary/5">
+            Our Engineering Arsenal
+          </span>
         </motion.div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, i) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="gradient-border p-8 group cursor-pointer"
-            >
-              <div
-                className="w-12 h-12 rounded-lg flex items-center justify-center mb-5"
-                style={{ background: `${service.color}15` }}
-              >
-                <service.icon size={24} style={{ color: service.color }} />
-              </div>
-              <h3 className="font-display text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
-            </motion.div>
-          ))}
-        </div>
+        <h2 className="text-7xl md:text-[12rem] font-bold tracking-tighter text-white leading-[0.8] mb-12">
+          What We <br />
+          <span className="gradient-text underline decoration-white/5 underline-offset-[20px]">Do.</span>
+        </h2>
+        <motion.div 
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="w-px h-24 bg-gradient-to-b from-primary to-transparent"
+        />
       </div>
+
+      {/* Vertical Stacking Services */}
+      <div className="relative z-10">
+        {services.map((service, i) => (
+          <ServiceSection key={service.title} service={service} index={i} />
+        ))}
+      </div>
+
+      {/* Outro Transition */}
+      <div className="h-[20vh] bg-background" />
     </section>
   );
 };
