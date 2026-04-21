@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, MessageSquare } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight, MessageSquare } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
-  const [email, setEmail] = useState("");
 
   return (
     <section id="contact" className="py-16 relative overflow-hidden bg-card/30">
@@ -35,30 +34,15 @@ const CTASection = () => {
             Tell us about your project and let's create a digital experience that sets you apart.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <div className="flex-1 relative">
-              <Mail size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="w-full pl-11 pr-4 py-4 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm"
-              />
-            </div>
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg font-semibold text-primary-foreground bg-primary hover:opacity-90 transition-opacity text-sm"
+          <div className="flex justify-center max-w-md mx-auto">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl font-bold text-black bg-primary hover:scale-105 active:scale-95 transition-all text-lg shadow-[0_0_30px_rgba(34,211,238,0.3)]"
             >
               Get In Touch
-              <ArrowRight size={16} />
-            </motion.button>
+              <ArrowRight size={20} />
+            </Link>
           </div>
-
-          <p className="text-xs text-muted-foreground mt-4">
-            We'll respond within 24 hours. No spam, ever.
-          </p>
         </motion.div>
       </div>
     </section>

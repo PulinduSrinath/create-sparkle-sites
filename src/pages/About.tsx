@@ -8,8 +8,21 @@ import OwnerSection from "@/components/OwnerSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const About = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.replace('#', ''));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [hash]);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />

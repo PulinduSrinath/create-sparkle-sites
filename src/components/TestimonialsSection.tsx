@@ -69,7 +69,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-32 bg-white relative overflow-hidden">
+    <section id="testimonials" className="py-32 bg-white relative overflow-hidden">
       {/* Decorative quotes bg */}
       <div className="absolute top-0 right-0 p-10 opacity-[0.03] rotate-12 pointer-events-none">
         <Quote size={300} className="text-gray-900" />

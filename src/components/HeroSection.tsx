@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import { motion, useInView, useMotionValue, useSpring, useTransform, animate } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 
+import { Link } from "react-router-dom";
+
 const StatCounter = ({ value, label }: { value: string; label: string }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -102,21 +104,15 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.45 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex justify-center"
         >
-          <a
-            href="#contact"
-            className="group inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-primary-foreground bg-primary hover:opacity-90 transition-all"
+          <Link
+            to="/contact"
+            className="group inline-flex items-center justify-center gap-3 px-12 py-5 rounded-2xl font-bold text-black bg-primary hover:scale-105 active:scale-95 transition-all text-xl shadow-[0_0_40px_rgba(34,211,238,0.4)]"
           >
             Start Your Project
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </a>
-          <a
-            href="#portfolio"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold border border-border hover:border-primary/50 text-foreground transition-all"
-          >
-            View Our Work
-          </a>
+            <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
+          </Link>
         </motion.div>
 
         {/* Stats */}
@@ -127,9 +123,9 @@ const HeroSection = () => {
           className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto"
         >
           {[
-            { value: "100+", label: "Projects Delivered" },
-            { value: "100+", label: "Happy Clients" },
-            { value: "5+", label: "Years Experience" },
+            { value: "50+", label: "Projects Delivered" },
+            { value: "50+", label: "Happy Clients" },
+            { value: "3+", label: "Years Experience" },
             { value: "5+", label: "Served Countries" },
           ].map((stat) => (
             <StatCounter key={stat.label} value={stat.value} label={stat.label} />
