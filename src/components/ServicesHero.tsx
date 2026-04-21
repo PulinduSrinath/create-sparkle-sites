@@ -28,12 +28,29 @@ const ServicesHero = () => {
               Our Elite Capabilities
             </motion.div>
             
-            <h1 className="text-6xl md:text-8xl font-bold font-display leading-[0.9] mb-8 tracking-tighter">
-              Engineering <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">
+            <h1 className="text-6xl md:text-8xl font-bold font-display leading-[0.9] mb-8 tracking-tighter overflow-hidden">
+              <motion.div
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              >
+                Engineering
+              </motion.div>
+              <motion.div
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient"
+              >
                 Digital Frontiers
-              </span> <br />
-              at Scale.
+              </motion.div>
+              <motion.div
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              >
+                at Scale.
+              </motion.div>
             </h1>
             
             <p className="text-foreground/70 text-2xl leading-relaxed max-w-2xl mb-12 font-medium">

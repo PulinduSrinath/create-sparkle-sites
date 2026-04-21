@@ -7,9 +7,12 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
+import FloatingBackground from "@/components/FloatingBackground";
+
 const Services = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <FloatingBackground />
       <Navbar />
       <main className="pt-20">
         <motion.div 

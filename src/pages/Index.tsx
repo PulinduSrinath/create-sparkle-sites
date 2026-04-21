@@ -6,9 +6,12 @@ import TechStackSection from "@/components/TechStackSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
+import FloatingBackground from "@/components/FloatingBackground";
+
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <FloatingBackground />
       <Navbar />
       <HeroSection />
       <ServicesSection />

@@ -11,6 +11,8 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+import FloatingBackground from "@/components/FloatingBackground";
+
 const About = () => {
   const { hash } = useLocation();
 
@@ -24,7 +26,8 @@ const About = () => {
   }, [hash]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <FloatingBackground />
       <Navbar />
       <main className="pt-20">
         <motion.div 

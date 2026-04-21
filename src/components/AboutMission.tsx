@@ -36,23 +36,47 @@ const AboutMission = () => {
           
           {/* Visual Block */}
           <motion.div 
-            initial={{ opacity: 0, rotate: -10 }}
-            whileInView={{ opacity: 1, rotate: 0 }}
+            initial={{ opacity: 0, rotate: -15, scale: 0.8, filter: "blur(20px)" }}
+            whileInView={{ opacity: 1, rotate: 0, scale: 1, filter: "blur(0px)" }}
             viewport={{ once: true }}
+            transition={{ duration: 1.2, type: "spring", bounce: 0.3 }}
             className="lg:w-1/2 relative order-2 lg:order-1"
           >
             <div className="relative group">
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-[100px] animate-pulse" />
-              <img 
+              {/* breathing pulse glow */}
+              <motion.div 
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.1, 0.3, 0.1]
+                }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute inset-0 bg-primary rounded-full blur-[120px]" 
+              />
+              
+              <motion.img 
                 src={missionOrb} 
                 alt="DevCraft Mission Orb" 
-                className="w-full h-auto relative z-10 drop-shadow-[0_0_80px_rgba(0,240,255,0.2)] animate-float"
+                animate={{ 
+                  y: [0, -20, 0],
+                  scale: [1, 1.05, 1],
+                  rotate: [0, 2, 0]
+                }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="w-full h-auto relative z-10 drop-shadow-[0_0_80px_rgba(34,211,238,0.3)]"
               />
             </div>
             
-            {/* Orbital Rings */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] border border-primary/10 rounded-full animate-spin-slow pointer-events-none" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-secondary/10 rounded-full animate-reverse-spin-slow pointer-events-none" />
+            {/* Precision Orbital Rings */}
+            <motion.div 
+              animate={{ rotate: 360 }}
+              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] border border-primary/10 rounded-full border-dashed opacity-40 pointer-events-none" 
+            />
+            <motion.div 
+              animate={{ rotate: -360 }}
+              transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-secondary/10 rounded-full pointer-events-none" 
+            />
           </motion.div>
 
           {/* Content Block */}
