@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const CTASection = () => {
 
   return (
-    <section id="contact" className="py-16 relative overflow-hidden bg-card/30">
+    <section id="contact" className="py-32 relative overflow-hidden bg-card/30">
       {/* Glow orbs */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] opacity-20 blur-3xl"

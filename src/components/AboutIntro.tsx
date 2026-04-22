@@ -71,7 +71,7 @@ const AboutIntro = () => {
                   <Mail size={22} />
                 </div>
                 <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Corporate Channel</div>
-                <div className="text-slate-900 font-bold text-lg">hello@ZetasBuild.sh</div>
+                <div className="text-slate-900 font-bold text-lg">info@zetasbuild.com</div>
               </motion.div>
             </div>
 

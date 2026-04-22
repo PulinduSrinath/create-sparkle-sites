@@ -52,7 +52,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-[#020617] pt-1 pb-16 overflow-hidden">
+    <footer className="relative bg-[#020617] pt-20 pb-16 overflow-hidden">
       {/* Laser-Cut Neon Boundary */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_15px_rgba(34,211,238,0.5)] z-20" />
       

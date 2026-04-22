@@ -3,6 +3,7 @@ import ServicesHero from "@/components/ServicesHero";
 import ServicesBento from "@/components/ServicesBento";
 import ServicesLifecycle from "@/components/ServicesLifecycle";
 import ServicesDomains from "@/components/ServicesDomains";
+import IndustriesSection from "@/components/IndustriesSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -24,6 +25,7 @@ const Services = () => {
           <ServicesBento />
           <ServicesLifecycle />
           <ServicesDomains />
+          <IndustriesSection />
           <CTASection />
         </motion.div>
       </main>
