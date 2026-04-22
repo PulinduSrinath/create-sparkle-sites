@@ -136,13 +136,25 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="flex items-center justify-center lg:justify-start gap-5 group">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-black transition-all">
-                  <Mail size={20} />
+              <div className="flex flex-col gap-6">
+                <div className="flex items-center justify-center lg:justify-start gap-5 group">
+                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-black transition-all">
+                    <Mail size={20} />
+                  </div>
+                  <div className="text-center lg:text-left">
+                    <div className="text-[10px] font-bold text-slate-600 uppercase tracking-widest mb-1">General Inquiry</div>
+                    <div className="text-white font-bold text-lg">info@zetasbuild.com</div>
+                  </div>
                 </div>
-                <div className="text-center lg:text-left">
-                  <div className="text-[10px] font-bold text-slate-600 uppercase tracking-widest mb-1">Direct Feed</div>
-                  <div className="text-white font-bold text-lg">hello@ZetasBuild.sh</div>
+                
+                <div className="flex items-center justify-center lg:justify-start gap-5 group">
+                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all">
+                    <Mail size={20} />
+                  </div>
+                  <div className="text-center lg:text-left">
+                    <div className="text-[10px] font-bold text-slate-600 uppercase tracking-widest mb-1">Technical Support</div>
+                    <div className="text-white font-bold text-lg">support@zetasbuild.com</div>
+                  </div>
                 </div>
               </div>
             </div>

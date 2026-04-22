@@ -31,10 +31,19 @@ const ContactNumbers = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="mb-12 flex flex-col items-center gap-4"
         >
-          <h3 className="text-xl font-bold text-[#0a192f] mb-2">Email</h3>
-          <p className="text-4xl font-bold text-primary tracking-tight">info@ZetasBuild.com</p>
+          <h3 className="text-xl font-bold text-[#0a192f]">Email Channels</h3>
+          <div className="flex flex-col md:flex-row gap-6 md:gap-12">
+            <div className="flex flex-col">
+              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">General Inquiry</span>
+              <p className="text-2xl md:text-3xl font-bold text-primary tracking-tight">info@zetasbuild.com</p>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Technical Support</span>
+              <p className="text-2xl md:text-3xl font-bold text-primary tracking-tight">support@zetasbuild.com</p>
+            </div>
+          </div>
         </motion.div>
 
         <div className="flex justify-center gap-6">
