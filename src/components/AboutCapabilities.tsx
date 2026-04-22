@@ -50,7 +50,7 @@ const AboutCapabilities = () => {
             className="lg:w-1/2 pt-4"
           >
             <p className="text-slate-600 text-xl leading-relaxed border-l-4 border-primary/20 pl-10 font-medium">
-              "At DevCraft, we reject the ordinary. We are pioneers of digital innovation, 
+              "At ZetasBuild, we reject the ordinary. We are pioneers of digital innovation, 
               turning complex technical debts into streamlined assets that propel growth."
             </p>
           </motion.div>

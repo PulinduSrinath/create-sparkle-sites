@@ -10,6 +10,8 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+import ZetasLogo from "./ZetasLogo";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -22,8 +24,8 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/50"
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        <Link to="/" className="font-display text-2xl font-bold gradient-text">
-          DevCraft
+        <Link to="/">
+          <ZetasLogo />
         </Link>
 
         {/* Desktop */}

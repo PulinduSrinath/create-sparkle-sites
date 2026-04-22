@@ -32,7 +32,7 @@ const AboutHero = () => {
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-[0.4em] mb-8"
             >
               <div className="w-2 h-2 rounded-full bg-primary animate-ping" />
-              The DevCraft Legacy
+              The ZetasBuild Legacy
             </motion.div>
 
             <h1 className="text-6xl md:text-8xl font-bold font-display leading-[0.9] mb-10 tracking-tighter text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
@@ -86,12 +86,13 @@ const AboutHero = () => {
                 <motion.div 
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 4, repeat: Infinity }}
-                  className="z-10 text-primary drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]"
+                  className="z-10"
                 >
-                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 5L35 30H5L20 5Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
-                    <rect x="15" y="15" width="10" height="10" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
-                  </svg>
+                  <img 
+                    src="/premium-logo-icon.png" 
+                    alt="ZetasBuild" 
+                    className="w-24 h-24 object-contain drop-shadow-[0_0_20px_rgba(34,211,238,0.6)] scale-150" 
+                  />
                 </motion.div>
                 
                 {/* Internal Reflections */}

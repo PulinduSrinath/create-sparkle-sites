@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Facebook, Instagram, Linkedin, Youtube, Twitter, Globe, Mail, ArrowRight, Share2 } from "lucide-react";
-import engineImage from "/devcraft_engineering.png";
+import engineImage from "/ZetasBuild_engineering.png";
 
 const socials = [
   { icon: <Facebook size={18} />, color: "hover:bg-primary hover:text-white", href: "#", name: "Facebook" },
@@ -46,7 +46,7 @@ const AboutIntro = () => {
               </h2>
               
               <p className="text-slate-600 text-xl leading-relaxed max-w-xl font-medium">
-                DevCraft is more than a technical partner; we are the architectural engine behind global digital legacies. We blend creative artistry with rigorous engineering standards to inspire innovation.
+                ZetasBuild is more than a technical partner; we are the architectural engine behind global digital legacies. We blend creative artistry with rigorous engineering standards to inspire innovation.
               </p>
             </div>
 
@@ -71,7 +71,7 @@ const AboutIntro = () => {
                   <Mail size={22} />
                 </div>
                 <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Corporate Channel</div>
-                <div className="text-slate-900 font-bold text-lg">hello@devcraft.sh</div>
+                <div className="text-slate-900 font-bold text-lg">hello@ZetasBuild.sh</div>
               </motion.div>
             </div>
 
@@ -111,7 +111,7 @@ const AboutIntro = () => {
               <div className="absolute inset-0 bg-primary/20 blur-[100px] opacity-20 animate-pulse" />
               <img 
                 src={engineImage} 
-                alt="DevCraft Engineering" 
+                alt="ZetasBuild Engineering" 
                 className="w-full h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.1)] rounded-[3rem] relative z-10 border-4 border-white shadow-2xl"
               />
               

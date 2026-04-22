@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import missionOrb from "/devcraft_mission_orb.png";
+import missionOrb from "/ZetasBuild_mission_orb.png";
 
 const content = {
   "Our Mission": {
     tagline: "Fueling the Rapid Rise",
     title: "Enabling Hyper-Scale for Modern Businesses.",
-    text: "DevCraft's core mission is to eliminate technical bottlenecks. We provide the high-performance infrastructure and creative agility needed for consultancies and enterprises to scale without friction. Our designs aren't just pretty faces; they are engines of growth.",
+    text: "ZetasBuild's core mission is to eliminate technical bottlenecks. We provide the high-performance infrastructure and creative agility needed for consultancies and enterprises to scale without friction. Our designs aren't just pretty faces; they are engines of growth.",
     accent: "bg-primary"
   },
   "Our Vision": {
@@ -55,7 +55,7 @@ const AboutMission = () => {
               
               <motion.img 
                 src={missionOrb} 
-                alt="DevCraft Mission Orb" 
+                alt="ZetasBuild Mission Orb" 
                 animate={{ 
                   y: [0, -20, 0],
                   scale: [1, 1.05, 1],

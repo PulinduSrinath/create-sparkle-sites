@@ -77,7 +77,7 @@ const ContactHero = () => {
             >
               <div className="flex items-center gap-3 text-white/40 hover:text-primary transition-colors cursor-pointer group">
                 <Mail size={18} />
-                <span className="text-sm font-bold uppercase tracking-widest">hello@devcraft.sh</span>
+                <span className="text-sm font-bold uppercase tracking-widest">hello@ZetasBuild.sh</span>
                 <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
               </div>
               <div className="w-[1px] h-4 bg-white/10" />

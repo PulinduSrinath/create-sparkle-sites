@@ -30,13 +30,13 @@ const ContactMain = () => {
           <div className="p-10 lg:p-16">
             <h2 className="text-3xl font-bold text-[#0a192f] mb-6">Send us a message</h2>
             <p className="text-gray-600 leading-relaxed mb-10">
-              At DevCraft, we value your feedback and strive to continuously improve our 
+              At ZetasBuild, we value your feedback and strive to continuously improve our 
               products and services. Your input is invaluable to us, so please don't hesitate 
               to share your thoughts and suggestions with us.
             </p>
             <p className="text-gray-600 leading-relaxed mb-10">
               We look forward to hearing from you and assisting you in any way we can. 
-              Thank you for choosing DevCraft.
+              Thank you for choosing ZetasBuild.
             </p>
 
             <div className="space-y-4">

@@ -4,19 +4,19 @@ import { useState, useEffect, useCallback } from "react";
 
 const testimonials = [
   {
-    text: "DevCraft's point-of-sale solution has been a game-changer for our business. The system is intuitive, lightning-fast, and provides the detailed insights we need to manage our multi-location stores effectively.",
+    text: "ZetasBuild's point-of-sale solution has been a game-changer for our business. The system is intuitive, lightning-fast, and provides the detailed insights we need to manage our multi-location stores effectively.",
     rating: 5,
   },
   {
-    text: "The technical support and professionalism of the DevCraft team are unmatched. They custom-built our patient management portal with seamless efficiency, helping us go completely digital.",
+    text: "The technical support and professionalism of the ZetasBuild team are unmatched. They custom-built our patient management portal with seamless efficiency, helping us go completely digital.",
     rating: 5,
   },
   {
-    text: "Scaling our SaaS platform was a nightmare until we partnered with DevCraft. Their architectural redesign allowed us to handle a 400% increase in traffic without a single second of downtime.",
+    text: "Scaling our SaaS platform was a nightmare until we partnered with ZetasBuild. Their architectural redesign allowed us to handle a 400% increase in traffic without a single second of downtime.",
     rating: 5,
   },
   {
-    text: "The FinTech security audit performed by DevCraft was the most rigorous we've seen. They identified critical vulnerabilities in our legacy code and helped us secure our global API gateway.",
+    text: "The FinTech security audit performed by ZetasBuild was the most rigorous we've seen. They identified critical vulnerabilities in our legacy code and helped us secure our global API gateway.",
     rating: 5,
   },
   {
@@ -24,7 +24,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    text: "From mobile app engineering to cloud-native database management, DevCraft is a powerhouse. They are our go-to partner for all mission-critical software engineering needs.",
+    text: "From mobile app engineering to cloud-native database management, ZetasBuild is a powerhouse. They are our go-to partner for all mission-critical software engineering needs.",
     rating: 5,
   }
 ];
@@ -84,7 +84,7 @@ const TestimonialsSection = () => {
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#0a192f] mb-4">
               What Our Clients Said <br />
-              About <span className="text-primary">DevCraft</span>
+              About <span className="text-primary">ZetasBuild</span>
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
           </motion.div>

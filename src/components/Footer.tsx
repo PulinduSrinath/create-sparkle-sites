@@ -13,6 +13,7 @@ import {
   ShieldCheck,
   ArrowRight
 } from "lucide-react";
+import ZetasLogo from "./ZetasLogo";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -87,8 +88,8 @@ const Footer = () => {
           
           {/* Brand Identity */}
           <div className="lg:col-span-4 space-y-10 text-center lg:text-left">
-            <Link to="/" className="font-display text-5xl font-extrabold gradient-text tracking-tighter">
-              DevCraft
+            <Link to="/" className="inline-block transform lg:-translate-x-3">
+              <ZetasLogo className="scale-125" />
             </Link>
             <p className="text-slate-400 text-lg leading-relaxed max-w-sm mx-auto lg:mx-0 font-medium italic">
               "We don't just build websites. We engineer mission-critical digital foundations for global leaders."
@@ -141,7 +142,7 @@ const Footer = () => {
                 </div>
                 <div className="text-center lg:text-left">
                   <div className="text-[10px] font-bold text-slate-600 uppercase tracking-widest mb-1">Direct Feed</div>
-                  <div className="text-white font-bold text-lg">hello@devcraft.sh</div>
+                  <div className="text-white font-bold text-lg">hello@ZetasBuild.sh</div>
                 </div>
               </div>
             </div>
@@ -165,7 +166,7 @@ const Footer = () => {
           </div>
 
           <p className="text-[10px] font-bold text-slate-600 uppercase tracking-[0.3em]">
-            © {currentYear} DevCraft (Pvt) Ltd. All Systems Optimal.
+            © {currentYear} ZetasBuild (Pvt) Ltd. All Systems Optimal.
           </p>
 
           <motion.button

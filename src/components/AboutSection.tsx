@@ -22,7 +22,7 @@ const AboutSection = () => {
             Who We Are
           </span>
           <h2 className="text-6xl md:text-8xl font-bold tracking-tighter text-slate-900 mt-8">
-            The DevCraft <span className="text-primary italic">Philosophy.</span>
+            The ZetasBuild <span className="text-primary italic">Philosophy.</span>
           </h2>
         </motion.div>
 
