@@ -69,6 +69,7 @@ const ContactNumbers = () => {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`Follow us on ${href.includes('facebook') ? 'Facebook' : href.includes('linkedin') ? 'LinkedIn' : href.includes('instagram') ? 'Instagram' : 'WhatsApp'}`}
               whileHover={{ scale: 1.1, y: -2 }}
               className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-primary hover:border-primary transition-all"
             >

@@ -55,7 +55,7 @@ const TechCard = ({ tech }: { tech: typeof row1[0] }) => {
           <tech.icon size={24} />
         </div>
         <div>
-          <h4 className="text-white font-bold tracking-tight text-lg">{tech.name}</h4>
+          <h3 className="text-white font-bold tracking-tight text-lg">{tech.name}</h3>
           <span className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em]">{tech.category}</span>
         </div>
       </div>

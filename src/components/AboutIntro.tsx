@@ -87,6 +87,7 @@ const AboutIntro = () => {
                   <motion.a
                     key={i}
                     href={social.href}
+                    aria-label={`Follow us on ${social.name}`}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
                     className={`w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-slate-400 transition-all duration-300 shadow-sm ${social.color} hover:shadow-lg`}

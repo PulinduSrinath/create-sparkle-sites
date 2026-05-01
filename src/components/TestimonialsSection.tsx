@@ -130,6 +130,7 @@ const TestimonialsSection = () => {
             <button 
               onClick={prevSlide}
               className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white hover:border-transparent transition-all shadow-sm"
+              aria-label="Previous testimonial"
             >
               <ChevronLeft size={20} />
             </button>
@@ -141,6 +142,7 @@ const TestimonialsSection = () => {
                     setDirection(i > index ? 1 : -1);
                     setIndex(i);
                   }}
+                  aria-label={`Go to testimonial ${i + 1}`}
                   className={`transition-all duration-500 rounded-full h-1.5 ${
                     i === index ? "w-8 bg-primary" : "w-2 bg-gray-200 hover:bg-gray-400"
                   }`}
@@ -150,6 +152,7 @@ const TestimonialsSection = () => {
             <button 
               onClick={nextSlide}
               className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white hover:border-transparent transition-all shadow-sm"
+              aria-label="Next testimonial"
             >
               <ChevronRight size={20} />
             </button>

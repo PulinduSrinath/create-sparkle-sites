@@ -115,7 +115,7 @@ const Footer = () => {
           <div className="lg:col-span-4 grid grid-cols-2 gap-8">
             {navigationMatrix.map((column) => (
               <div key={column.title} className="space-y-8">
-                <h4 className="text-white font-black uppercase tracking-[0.4em] text-[10px]">{column.title}</h4>
+                <h2 className="text-white font-black uppercase tracking-[0.4em] text-[10px]">{column.title}</h2>
                 <ul className="space-y-6">
                   {column.links.map((link) => (
                     <li key={link.label}>
@@ -135,7 +135,7 @@ const Footer = () => {
 
           {/* Nexus Contact Terminal */}
           <div className="lg:col-span-4 space-y-10">
-            <h4 className="text-white font-black uppercase tracking-[0.4em] text-[10px] text-center lg:text-left">Nexus Contact</h4>
+            <h2 className="text-white font-black uppercase tracking-[0.4em] text-[10px] text-center lg:text-left">Nexus Contact</h2>
             <div className="space-y-8">
               <div className="flex items-center justify-center lg:justify-start gap-5 group">
                 <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all">
@@ -181,6 +181,7 @@ const Footer = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Visit our ${social.href.includes('facebook') ? 'Facebook' : social.href.includes('linkedin') ? 'LinkedIn' : social.href.includes('instagram') ? 'Instagram' : 'WhatsApp'} page`}
                 whileHover={{ y: -5, scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary transition-all duration-300"
@@ -199,6 +200,7 @@ const Footer = () => {
             whileTap={{ scale: 0.9 }}
             onClick={scrollToTop}
             className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:bg-white hover:text-black transition-all"
+            aria-label="Return to top of page"
             title="Return to Peak"
           >
             <ChevronUp size={24} />

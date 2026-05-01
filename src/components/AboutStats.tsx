@@ -110,7 +110,7 @@ const MagneticCard = ({ stat, index }: { stat: typeof stats[0], index: number })
           >
             {stat.icon}
           </motion.div>
-          <h4 className="text-[10px] font-bold uppercase tracking-[4px] text-slate-400 mb-4">{stat.title}</h4>
+          <h2 className="text-[10px] font-bold uppercase tracking-[4px] text-slate-400 mb-4">{stat.title}</h2>
           <div className="text-5xl md:text-6xl font-bold font-display tracking-tighter mb-2 gradient-text min-h-[1.2em]">
             <CountUp value={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
           </div>
