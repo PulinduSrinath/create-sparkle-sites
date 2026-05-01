@@ -1,12 +1,13 @@
+import { Suspense, lazy } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import ServicesSection from "@/components/ServicesSection";
-import AboutSection from "@/components/AboutSection";
-import TechStackSection from "@/components/TechStackSection";
-import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
-
 import FloatingBackground from "@/components/FloatingBackground";
+
+const ServicesSection = lazy(() => import("@/components/ServicesSection"));
+const AboutSection = lazy(() => import("@/components/AboutSection"));
+const TechStackSection = lazy(() => import("@/components/TechStackSection"));
+const CTASection = lazy(() => import("@/components/CTASection"));
+const Footer = lazy(() => import("@/components/Footer"));
 
 const Index = () => {
   return (
@@ -14,11 +15,13 @@ const Index = () => {
       <FloatingBackground />
       <Navbar />
       <HeroSection />
-      <ServicesSection />
-      <AboutSection />
-      <TechStackSection />
-      <CTASection />
-      <Footer />
+      <Suspense fallback={<div className="h-20" />}>
+        <ServicesSection />
+        <AboutSection />
+        <TechStackSection />
+        <CTASection />
+        <Footer />
+      </Suspense>
     </div>
   );
 };

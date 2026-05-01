@@ -167,6 +167,9 @@ const HeroSection = () => {
                 src="/premium-logo-icon.png" 
                 alt="ZetasBuild Premium Logo" 
                 className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(34,211,238,0.4)]"
+                loading="eager"
+                // @ts-ignore
+                fetchpriority="high"
               />
               
               {/* Technical Overlay */}

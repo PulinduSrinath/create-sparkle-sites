@@ -19,24 +19,29 @@ const FloatingBackground = () => {
   const y2 = useTransform(scrollY, [0, 5000], [0, -1000]);
   const y3 = useTransform(scrollY, [0, 5000], [0, -200]);
 
+  const isMobile = windowSize.width < 768;
+  const orbCount = isMobile ? 3 : 6;
+  const orbitalCount = isMobile ? 2 : 4;
+  const nodeCount = isMobile ? 8 : 15;
+
   if (windowSize.width === 0) return null;
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none">
       {/* Layer 1: Soft Bokeh Orbs */}
       <motion.div style={{ y: y1 }} className="absolute inset-0">
-        {[...Array(6)].map((_, i) => (
+        {[...Array(orbCount)].map((_, i) => (
           <motion.div
             key={`orb-${i}`}
             className="absolute rounded-full blur-[120px] opacity-[0.08]"
             style={{
-              width: Math.random() * 400 + 200,
-              height: Math.random() * 400 + 200,
+              width: Math.random() * (isMobile ? 200 : 400) + (isMobile ? 100 : 200),
+              height: Math.random() * (isMobile ? 200 : 400) + (isMobile ? 100 : 200),
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               background: i % 2 === 0 ? "var(--primary)" : "var(--secondary)",
             }}
-            animate={{
+            animate={isMobile ? {} : {
               x: [0, Math.random() * 100 - 50, 0],
               y: [0, Math.random() * 100 - 50, 0],
               scale: [1, 1.1, 1],
@@ -52,13 +57,13 @@ const FloatingBackground = () => {
 
       {/* Layer 2: Technical Orbital Fragments */}
       <motion.div style={{ y: y2 }} className="absolute inset-0">
-        {[...Array(4)].map((_, i) => (
+        {[...Array(orbitalCount)].map((_, i) => (
           <motion.div
             key={`orbital-${i}`}
             className="absolute border border-dashed border-primary/10 rounded-full"
             style={{
-              width: Math.random() * 600 + 400,
-              height: Math.random() * 600 + 400,
+              width: Math.random() * (isMobile ? 300 : 600) + (isMobile ? 200 : 400),
+              height: Math.random() * (isMobile ? 300 : 600) + (isMobile ? 200 : 400),
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
@@ -76,7 +81,7 @@ const FloatingBackground = () => {
 
       {/* Layer 3: Digital Dust & Micro-Nodes */}
       <motion.div style={{ y: y3 }} className="absolute inset-0">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(nodeCount)].map((_, i) => (
           <motion.div
             key={`node-${i}`}
             className="absolute w-1 h-1 bg-primary/20 rounded-full"
@@ -84,7 +89,7 @@ const FloatingBackground = () => {
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
-            animate={{
+            animate={isMobile ? { opacity: [0.1, 0.4, 0.1] } : {
               y: [0, -100, 0],
               opacity: [0.1, 0.4, 0.1],
               scale: [1, 1.5, 1],

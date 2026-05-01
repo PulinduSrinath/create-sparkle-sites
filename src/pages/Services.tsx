@@ -1,11 +1,13 @@
+import { Suspense, lazy } from "react";
 import Navbar from "@/components/Navbar";
 import ServicesHero from "@/components/ServicesHero";
-import ServicesBento from "@/components/ServicesBento";
-import ServicesLifecycle from "@/components/ServicesLifecycle";
-import ServicesDomains from "@/components/ServicesDomains";
-import IndustriesSection from "@/components/IndustriesSection";
-import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
+
+const ServicesBento = lazy(() => import("@/components/ServicesBento"));
+const ServicesLifecycle = lazy(() => import("@/components/ServicesLifecycle"));
+const ServicesDomains = lazy(() => import("@/components/ServicesDomains"));
+const IndustriesSection = lazy(() => import("@/components/IndustriesSection"));
+const CTASection = lazy(() => import("@/components/CTASection"));
+const Footer = lazy(() => import("@/components/Footer"));
 import { motion } from "framer-motion";
 
 import FloatingBackground from "@/components/FloatingBackground";
@@ -22,14 +24,18 @@ const Services = () => {
           transition={{ duration: 0.5 }}
         >
           <ServicesHero />
-          <ServicesBento />
-          <ServicesLifecycle />
-          <ServicesDomains />
-          <IndustriesSection />
-          <CTASection />
+          <Suspense fallback={<div className="h-20" />}>
+            <ServicesBento />
+            <ServicesLifecycle />
+            <ServicesDomains />
+            <IndustriesSection />
+            <CTASection />
+          </Suspense>
         </motion.div>
       </main>
-      <Footer />
+      <Suspense fallback={<div className="h-10" />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };

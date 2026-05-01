@@ -1,12 +1,14 @@
+import { Suspense, lazy } from "react";
 import Navbar from "@/components/Navbar";
 import AboutHero from "@/components/AboutHero";
-import AboutStats from "@/components/AboutStats";
-import AboutIntro from "@/components/AboutIntro";
-import AboutCapabilities from "@/components/AboutCapabilities";
-import AboutMission from "@/components/AboutMission";
-import OwnerSection from "@/components/OwnerSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import Footer from "@/components/Footer";
+
+const AboutStats = lazy(() => import("@/components/AboutStats"));
+const AboutIntro = lazy(() => import("@/components/AboutIntro"));
+const AboutCapabilities = lazy(() => import("@/components/AboutCapabilities"));
+const AboutMission = lazy(() => import("@/components/AboutMission"));
+const OwnerSection = lazy(() => import("@/components/OwnerSection"));
+const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
+const Footer = lazy(() => import("@/components/Footer"));
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -36,15 +38,19 @@ const About = () => {
           transition={{ duration: 0.5 }}
         >
           <AboutHero />
-          <AboutStats />
-          <AboutIntro />
-          <AboutCapabilities />
-          <AboutMission />
-          <OwnerSection />
-          <TestimonialsSection />
+          <Suspense fallback={<div className="h-20" />}>
+            <AboutStats />
+            <AboutIntro />
+            <AboutCapabilities />
+            <AboutMission />
+            <OwnerSection />
+            <TestimonialsSection />
+          </Suspense>
         </motion.div>
       </main>
-      <Footer />
+      <Suspense fallback={<div className="h-10" />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };
