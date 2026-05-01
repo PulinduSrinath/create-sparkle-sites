@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Youtube, Facebook, Linkedin, Instagram } from "lucide-react";
+import { Facebook, Linkedin, Instagram, MessageSquare } from "lucide-react";
 
 const ContactNumbers = () => {
   const contacts = [
@@ -47,10 +47,17 @@ const ContactNumbers = () => {
         </motion.div>
 
         <div className="flex justify-center gap-6">
-          {[Youtube, Facebook, Linkedin, Instagram].map((Icon, i) => (
+          {[
+            { Icon: Facebook, href: "https://www.facebook.com/share/1QTWVwMz7h/?mibextid=wwXIfr" },
+            { Icon: Linkedin, href: "https://www.linkedin.com/in/zetasbuild" },
+            { Icon: MessageSquare, href: "https://wa.me/94771914260" },
+            { Icon: Instagram, href: "https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=ay8x39o" }
+          ].map(({ Icon, href }, i) => (
             <motion.a
               key={i}
-              href="#"
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.1, y: -2 }}
               className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-primary hover:border-primary transition-all"
             >

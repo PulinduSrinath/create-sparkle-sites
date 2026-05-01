@@ -11,7 +11,8 @@ import {
   ChevronUp, 
   ArrowUpRight,
   ShieldCheck,
-  ArrowRight
+  ArrowRight,
+  MessageSquare
 } from "lucide-react";
 import ZetasLogo from "./ZetasLogo";
 
@@ -44,11 +45,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <Facebook size={18} />, href: "#" },
-    { icon: <Instagram size={18} />, href: "#" },
-    { icon: <Linkedin size={18} />, href: "#" },
-    { icon: <Youtube size={18} />, href: "#" },
-    { icon: <Twitter size={18} />, href: "#" },
+    { icon: <Facebook size={18} />, href: "https://www.facebook.com/share/1QTWVwMz7h/?mibextid=wwXIfr" },
+    { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/zetasbuild" },
+    { icon: <MessageSquare size={18} />, href: "https://wa.me/94771914260" },
+    { icon: <Instagram size={18} />, href: "https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=ay8x39o" },
   ];
 
   return (
@@ -168,6 +168,8 @@ const Footer = () => {
               <motion.a
                 key={i}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ y: -5, scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary transition-all duration-300"
