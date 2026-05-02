@@ -11,6 +11,17 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom", "react-router-dom"],
+          motion: ["framer-motion"],
+          ui: ["lucide-react", "sonner", "@radix-ui/react-slot"]
+        },
+      },
+    },
+  },
   plugins: [react()].filter(Boolean),
   resolve: {
     alias: {
