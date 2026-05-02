@@ -7,11 +7,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 
 // Lazy load all pages for better mobile performance
-const Index = lazy(() => import("./pages/Index"));
-const About = lazy(() => import("./pages/About"));
-const Services = lazy(() => import("./pages/Services"));
-const Contact = lazy(() => import("./pages/Contact"));
-const NotFound = lazy(() => import("./pages/NotFound"));
+const Index = lazy(() => import("./app/page"));
+const About = lazy(() => import("./app/about/page"));
+const Services = lazy(() => import("./app/services/page"));
+const Contact = lazy(() => import("./app/contact/page"));
+const Lands = lazy(() => import("./app/lands/page"));
+const Residencies = lazy(() => import("./app/residencies/page"));
+const NotFound = lazy(() => import("./app/not-found/page"));
 
 const queryClient = new QueryClient();
 
@@ -35,6 +37,8 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/lands" element={<Lands />} />
+            <Route path="/residencies" element={<Residencies />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

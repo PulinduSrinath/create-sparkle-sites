@@ -10,7 +10,7 @@ const ZetasLogo = ({ className = "", showText = true }: { className?: string, sh
         className="relative w-12 h-12 flex-shrink-0"
       >
         <img 
-          src="/premium-logo-icon.png" 
+          src="/premium-logo-icon.webp" 
           alt="ZetasBuild Logo Icon" 
           className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(34,211,238,0.5)] scale-125"
         />
