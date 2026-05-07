@@ -15,10 +15,10 @@ const CTASection = lazy(() => import("@/components/CTASection"));
 // ==========================================
 // HERO SECTION
 // ==========================================
-const StatCounter = ({ value, label }: { value: string; label: string }) => {
+const StatCard = ({ value, label, icon: Icon }: { value: string; label: string; icon: any }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const numValue = parseInt(value);
+  const numValue = parseInt(value.replace(/[^0-9]/g, ""));
   const suffix = value.replace(/[0-9]/g, "");
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
@@ -31,12 +31,27 @@ const StatCounter = ({ value, label }: { value: string; label: string }) => {
   }, [isInView, numValue, count]);
 
   return (
-    <div ref={ref}>
-      <div className="font-display text-3xl font-bold gradient-text flex justify-center items-center">
-        <motion.span>{rounded}</motion.span><span>{suffix}</span>
+    <motion.div 
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="group relative flex items-center gap-6 p-6 md:p-8 rounded-[2.5rem] bg-slate-950 border border-white/10 hover:border-primary/50 transition-all duration-500 shadow-2xl overflow-hidden min-w-0"
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="w-16 h-16 md:w-20 md:h-20 rounded-[1.5rem] bg-primary flex items-center justify-center text-black relative z-10 shadow-[0_0_30px_rgba(34,211,238,0.4)] flex-shrink-0">
+        <Icon size={32} className="md:w-10 md:h-10" strokeWidth={2.5} />
       </div>
-      <div className="text-sm text-muted-foreground mt-1">{label}</div>
-    </div>
+      <div className="flex flex-col relative z-10 text-left min-w-0">
+        <div className="font-display text-4xl md:text-5xl font-black text-white flex items-center leading-none tracking-tighter">
+          <motion.span>{rounded}</motion.span><span>{suffix}</span>
+        </div>
+        <div className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-primary mt-2 leading-tight">
+          {label}
+        </div>
+      </div>
+      <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-[60px] rounded-full -mr-16 -mt-16 opacity-0 group-hover:opacity-40 transition-opacity" />
+    </motion.div>
   );
 };
 
@@ -66,11 +81,6 @@ const HeroSection = () => {
                 Start Your Project <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
               </Link>
             </motion.div>
-            <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }} className="mt-24 grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-3xl mx-auto lg:mx-0">
-              {[{ value: "50+", label: "Projects Delivered" }, { value: "50+", label: "Happy Clients" }, { value: "3+", label: "Years Experience" }, { value: "5+", label: "Served Countries" }].map((stat) => (
-                <StatCounter key={stat.label} value={stat.value} label={stat.label} />
-              ))}
-            </motion.div>
           </div>
           <motion.div initial={{ opacity: 0, scale: 0.8, rotate: 5 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 1.2, type: "spring", bounce: 0.4 }} className="lg:w-2/5 relative flex justify-center items-center">
             <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full animate-pulse pointer-events-none" />
@@ -87,6 +97,17 @@ const HeroSection = () => {
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Stats Grid - Moved to full width for clarity */}
+        <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }} className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
+          {[
+            { value: "100%", label: "Client Satisfaction", icon: Users }, 
+            { value: "10+", label: "Completed Projects", icon: Terminal }, 
+            { value: "150+", label: "Design Resources", icon: Layers }
+          ].map((stat) => (
+            <StatCard key={stat.label} value={stat.value} label={stat.label} icon={stat.icon} />
+          ))}
+        </motion.div>
       </div>
     </section>
   );
@@ -220,7 +241,7 @@ const AboutSection = () => {
                 </div>
               </motion.div>
               <div className="absolute inset-x-0 top-[4.5rem] flex flex-col items-center text-center">
-                <span className="text-7xl font-bold text-slate-900 tracking-tighter">3+</span><span className="text-[10px] font-bold text-primary uppercase tracking-[0.4em] mt-2">Years of Impact</span>
+                <span className="text-7xl font-bold text-slate-900 tracking-tighter">100%</span><span className="text-[10px] font-bold text-primary uppercase tracking-[0.4em] mt-2">Client Satisfaction</span>
               </div>
             </div>
             <p className="mt-10 text-slate-500 font-medium italic relative z-10 text-lg">"Exceptional code, stunning design, and a partner you can trust globally."</p>
