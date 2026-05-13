@@ -115,7 +115,7 @@ const ServicesLifecycle = () => {
   const pathLength = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   return (
-    <section ref={containerRef} className="py-40 bg-white relative overflow-hidden">
+    <section ref={containerRef} className="py-40 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-start justify-between mb-32 gap-12">
           <motion.div initial={{ opacity: 0, x: -50, filter: "blur(10px)" }} whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }} viewport={{ once: true }} transition={{ duration: 1 }} className="lg:w-1/2">
@@ -142,8 +142,8 @@ const ServicesLifecycle = () => {
                   <motion.div initial={{ scale: 0, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }} transition={{ delay: (i * 0.2) + 0.5, duration: 0.8 }} className="absolute top-10 left-10 -translate-x-1/2 -translate-y-1/2 w-28 h-28 border border-primary/20 rounded-full animate-ping hidden lg:block" />
                   <div className="absolute top-10 left-10 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-4 border-primary z-20 hidden lg:block shadow-lg" />
                 </div>
-                <h3 className="text-3xl font-bold mb-6 tracking-tight text-slate-900 group-hover:text-primary transition-colors duration-300">{stage.title}</h3>
-                <p className="text-slate-500 font-medium leading-relaxed text-lg">{stage.desc}</p>
+                <h3 className="text-3xl font-bold mb-6 tracking-tight text-foreground group-hover:text-primary transition-colors duration-300">{stage.title}</h3>
+                <p className="text-muted-foreground font-medium leading-relaxed text-lg">{stage.desc}</p>
                 <div className="mt-8 h-1 w-full bg-slate-50 rounded-full overflow-hidden lg:hidden">
                   <motion.div initial={{ width: 0 }} whileInView={{ width: "100%" }} viewport={{ once: true }} transition={{ duration: 1, delay: i * 0.2 }} className={`h-full ${stage.color}`} />
                 </div>
@@ -210,7 +210,7 @@ const industries = [
 
 const IndustriesSection = () => {
   return (
-    <section className="py-32 bg-white relative overflow-hidden">
+    <section className="py-32 bg-background relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:40px_40px]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-[120px] opacity-30" />
@@ -220,17 +220,17 @@ const IndustriesSection = () => {
           <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-slate-50 border border-slate-100 text-primary text-[10px] font-bold uppercase tracking-[0.5em] mb-8 shadow-sm">
             <Globe size={14} className="animate-pulse" />Global Reach
           </div>
-          <h2 className="text-6xl md:text-8xl font-bold tracking-tighter text-slate-900 leading-tight">Industries We <br /><span className="text-primary italic underline decoration-slate-200 underline-offset-[12px]">Transform.</span></h2>
-          <p className="text-slate-500 text-xl font-medium mt-8 max-w-2xl mx-auto leading-relaxed">Engineering precision-built digital ecosystems across the world's most mission-critical sectors.</p>
+          <h2 className="text-6xl md:text-8xl font-bold tracking-tighter text-foreground leading-tight">Industries We <br /><span className="text-primary italic underline decoration-border underline-offset-[12px]">Transform.</span></h2>
+          <p className="text-muted-foreground text-xl font-medium mt-8 max-w-2xl mx-auto leading-relaxed">Engineering precision-built digital ecosystems across the world's most mission-critical sectors.</p>
         </motion.div>
         <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
           {industries.map((industry, i) => (
             <motion.div key={industry.name} initial={{ opacity: 0, scale: 0.9, y: 20 }} whileInView={{ opacity: 1, scale: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05, duration: 0.5 }} whileHover={{ y: -10, scale: 1.05, transition: { duration: 0.2 } }} className="group relative">
               <div className={`absolute inset-0 ${industry.bg} rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-              <div className="relative bg-white border border-slate-100 px-8 py-6 rounded-3xl shadow-sm hover:shadow-xl hover:border-primary/20 transition-all flex items-center gap-6 z-10">
+              <div className="relative bg-card border border-border px-8 py-6 rounded-3xl shadow-sm hover:shadow-xl hover:border-primary/20 transition-all flex items-center gap-6 z-10">
                 <div className={`flex items-center justify-center w-12 h-12 rounded-2xl ${industry.bg} ${industry.color} group-hover:scale-110 transition-transform`}><industry.icon size={24} strokeWidth={2.5} /></div>
                 <div className="flex flex-col items-start">
-                  <div className="flex items-center gap-3"><div className={`w-2 h-2 rounded-full ${industry.dot} animate-pulse`} /><span className="text-lg font-bold text-slate-800 tracking-tight group-hover:text-primary transition-colors">{industry.name}</span></div>
+                  <div className="flex items-center gap-3"><div className={`w-2 h-2 rounded-full ${industry.dot} animate-pulse`} /><span className="text-lg font-bold text-foreground tracking-tight group-hover:text-primary transition-colors">{industry.name}</span></div>
                   <div className="h-[2px] w-0 group-hover:w-full bg-primary/20 transition-all duration-500 mt-1" />
                 </div>
                 <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity"><Zap size={14} className="text-primary" /></div>

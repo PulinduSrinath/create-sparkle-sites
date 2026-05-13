@@ -194,11 +194,11 @@ const MagneticCard = ({ stat, index }: { stat: typeof stats[0], index: number })
           >
             {stat.icon}
           </motion.div>
-          <h2 className="text-[10px] font-bold uppercase tracking-[4px] text-slate-400 mb-4">{stat.title}</h2>
+          <h2 className="text-[10px] font-bold uppercase tracking-[4px] text-muted-foreground mb-4">{stat.title}</h2>
           <div className="text-5xl md:text-6xl font-bold font-display tracking-tighter mb-2 gradient-text min-h-[1.2em]">
             <CountUp value={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
           </div>
-          <p className="text-slate-500 font-bold text-sm tracking-wide">{stat.detail}</p>
+          <p className="text-muted-foreground font-bold text-sm tracking-wide">{stat.detail}</p>
         </div>
       </div>
       <div className="absolute inset-x-8 -bottom-2 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[2px]" />
@@ -208,7 +208,7 @@ const MagneticCard = ({ stat, index }: { stat: typeof stats[0], index: number })
 
 const AboutStats = () => {
   return (
-    <section className="py-32 bg-white relative overflow-hidden">
+    <section className="py-32 bg-background relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:60px_60px]" />
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2" />
@@ -235,7 +235,7 @@ const socials = [
 
 const AboutIntro = () => {
   return (
-    <section className="py-32 bg-white relative overflow-hidden">
+    <section className="py-32 bg-background relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:50px_50px]" />
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/4" />
@@ -252,48 +252,48 @@ const AboutIntro = () => {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-slate-50 border border-slate-100 text-primary text-[10px] font-bold uppercase tracking-[0.4em] mb-10 shadow-sm"
+                className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-muted border border-border text-primary text-[10px] font-bold uppercase tracking-[0.4em] mb-10 shadow-sm"
               >
                 <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                 Engineering The Future
               </motion.div>
-              <h2 className="text-6xl md:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tighter mb-8">
+              <h2 className="text-6xl md:text-8xl font-bold text-foreground leading-[0.9] tracking-tighter mb-8">
                 Digital <br />
                 <span className="text-primary italic">Excellence.</span> <br />
                 Redefined.
               </h2>
-              <p className="text-slate-600 text-xl leading-relaxed max-w-xl font-medium">
+              <p className="text-muted-foreground text-xl leading-relaxed max-w-xl font-medium">
                 ZetasBuild is more than a technical partner; we are the architectural engine behind global digital legacies. We blend creative artistry with rigorous engineering standards to inspire innovation.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <motion.div whileHover={{ y: -5 }} className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 group transition-all">
-                <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
+              <motion.div whileHover={{ y: -5 }} className="p-8 rounded-[2rem] bg-muted border border-border group transition-all">
+                <div className="w-12 h-12 rounded-xl bg-card border border-border flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
                   <Globe size={22} />
                 </div>
-                <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Primary Operations</div>
-                <div className="text-slate-900 font-bold text-lg">Matara, Sri Lanka</div>
+                <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-2">Primary Operations</div>
+                <div className="text-foreground font-bold text-lg">Matara, Sri Lanka</div>
               </motion.div>
-              <motion.div whileHover={{ y: -5 }} className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 group transition-all">
-                <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-secondary mb-6 transition-colors group-hover:bg-secondary group-hover:text-white">
+              <motion.div whileHover={{ y: -5 }} className="p-8 rounded-[2rem] bg-muted border border-border group transition-all">
+                <div className="w-12 h-12 rounded-xl bg-card border border-border flex items-center justify-center text-secondary mb-6 transition-colors group-hover:bg-secondary group-hover:text-white">
                   <Mail size={22} />
                 </div>
-                <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Corporate Channel</div>
-                <div className="text-slate-900 font-bold text-lg">info@zetasbuild.com</div>
+                <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-2">Corporate Channel</div>
+                <div className="text-foreground font-bold text-lg">info@zetasbuild.com</div>
               </motion.div>
             </div>
             <div className="pt-8 flex flex-col sm:flex-row items-center gap-8">
-              <div className="flex items-center gap-4 text-slate-400">
+              <div className="flex items-center gap-4 text-muted-foreground">
                 <Share2 size={20} />
                 <span className="text-sm font-bold uppercase tracking-widest">Global Reach</span>
               </div>
-              <div className="hidden sm:block h-[1px] w-12 bg-slate-100" />
+              <div className="hidden sm:block h-[1px] w-12 bg-border" />
               <div className="flex flex-wrap gap-4">
                 {socials.map((social, i) => (
                   <motion.a
                     key={i} href={social.href} aria-label={`Follow us on ${social.name}`}
                     whileHover={{ scale: 1.1, y: -2 }} whileTap={{ scale: 0.9 }}
-                    className={`w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-slate-400 transition-all duration-300 shadow-sm ${social.color} hover:shadow-lg`}
+                    className={`w-12 h-12 rounded-2xl bg-card border border-border flex items-center justify-center text-muted-foreground transition-all duration-300 shadow-sm ${social.color} hover:shadow-lg`}
                     title={social.name}
                   >
                     {social.icon}
@@ -312,10 +312,10 @@ const AboutIntro = () => {
             <div className="relative z-10 w-full max-w-[550px]">
               <div className="absolute inset-0 bg-primary/20 blur-[100px] opacity-20 animate-pulse" />
               <img src={engineImage} alt="ZetasBuild Engineering" loading="lazy" className="w-full h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.1)] rounded-[3rem] relative z-10 border-4 border-white shadow-2xl" />
-              <motion.div animate={{ y: [0, -15, 0] }} transition={{ duration: 5, repeat: Infinity }} className="absolute -top-6 -right-6 py-3 px-6 bg-white border border-slate-100 rounded-2xl shadow-xl z-20">
+              <motion.div animate={{ y: [0, -15, 0] }} transition={{ duration: 5, repeat: Infinity }} className="absolute -top-6 -right-6 py-3 px-6 bg-card border border-border rounded-2xl shadow-xl z-20">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 rounded-full bg-primary animate-ping" />
-                  <span className="text-[10px] font-bold text-slate-900 uppercase tracking-widest">Active Innovation</span>
+                  <span className="text-[10px] font-bold text-foreground uppercase tracking-widest">Active Innovation</span>
                 </div>
               </motion.div>
             </div>
@@ -338,33 +338,33 @@ const capabilities = [
 
 const AboutCapabilities = () => {
   return (
-    <section className="py-32 bg-white relative overflow-hidden">
+    <section className="py-32 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 items-start mb-28">
           <motion.div initial={{ opacity: 0, x: -40, filter: "blur(10px)" }} whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="lg:w-1/2">
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9] mb-8">
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9] mb-8 text-foreground">
               Engineering <span className="text-primary italic">Experiences</span> <br />
               That Leave a Mark.
             </h2>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 40, filter: "blur(10px)" }} whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="lg:w-1/2 pt-4">
-            <p className="text-slate-600 text-xl leading-relaxed border-l-4 border-primary/20 pl-10 font-medium">
+            <p className="text-muted-foreground text-xl leading-relaxed border-l-4 border-primary/20 pl-10 font-medium">
               "At ZetasBuild, we reject the ordinary. We are pioneers of digital innovation, turning complex technical debts into streamlined assets that propel growth."
             </p>
           </motion.div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {capabilities.map((cap, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 50, filter: "blur(15px)" }} whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }} viewport={{ once: true }} transition={{ duration: 0.8, delay: i * 0.2, type: "spring", damping: 20 }} whileHover={{ y: -15 }} className="bg-white border border-slate-100 p-12 rounded-[3rem] hover:border-primary/20 transition-all duration-700 relative group overflow-hidden shadow-xl shadow-slate-200/40">
-              <motion.div initial={{ left: "-150%" }} whileInView={{ left: "150%" }} viewport={{ once: true }} transition={{ duration: 1.5, delay: 0.5 + (i * 0.2), ease: "easeInOut" }} className="absolute top-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-25deg] pointer-events-none z-10" />
-              <div className="mb-10 p-6 rounded-2xl bg-slate-50 border border-slate-100 inline-block group-hover:bg-primary group-hover:text-white group-hover:shadow-[0_15px_30px_rgba(34,211,238,0.3)] transition-all duration-500">
+            <motion.div key={i} initial={{ opacity: 0, y: 50, filter: "blur(15px)" }} whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }} viewport={{ once: true }} transition={{ duration: 0.8, delay: i * 0.2, type: "spring", damping: 20 }} whileHover={{ y: -15 }} className="bg-card border border-border p-12 rounded-[3rem] hover:border-primary/20 transition-all duration-700 relative group overflow-hidden shadow-xl shadow-black/5">
+              <motion.div initial={{ left: "-150%" }} whileInView={{ left: "150%" }} viewport={{ once: true }} transition={{ duration: 1.5, delay: 0.5 + (i * 0.2), ease: "easeInOut" }} className="absolute top-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-[-25deg] pointer-events-none z-10" />
+              <div className="mb-10 p-6 rounded-2xl bg-muted border border-border inline-block group-hover:bg-primary group-hover:text-white group-hover:shadow-[0_15px_30px_rgba(34,211,238,0.3)] transition-all duration-500">
                 {cap.icon}
               </div>
-              <h3 className="text-3xl font-bold mb-6 tracking-tight text-slate-900">{cap.title}</h3>
-              <p className="text-slate-500 text-base leading-relaxed mb-12 font-medium">{cap.description}</p>
-              <div className="grid grid-cols-1 gap-4 pt-4 border-t border-slate-50">
+              <h3 className="text-3xl font-bold mb-6 tracking-tight text-foreground">{cap.title}</h3>
+              <p className="text-muted-foreground text-base leading-relaxed mb-12 font-medium">{cap.description}</p>
+              <div className="grid grid-cols-1 gap-4 pt-4 border-t border-border">
                 {cap.items.map((item, j) => (
-                  <motion.div key={j} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.6 + (i * 0.1) + (j * 0.05) }} className="flex items-center gap-4 text-sm font-bold text-slate-700 group/item">
+                  <motion.div key={j} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.6 + (i * 0.1) + (j * 0.05) }} className="flex items-center gap-4 text-sm font-bold text-foreground group/item">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary group-hover/item:scale-150 transition-transform" />{item}
                   </motion.div>
                 ))}
@@ -520,29 +520,29 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section id="testimonials" className="py-32 bg-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 p-10 opacity-[0.03] rotate-12 pointer-events-none"><Quote size={300} className="text-gray-900" /></div>
+    <section id="testimonials" className="py-32 bg-background relative overflow-hidden">
+      <div className="absolute top-0 right-0 p-10 opacity-[0.03] rotate-12 pointer-events-none"><Quote size={300} className="text-foreground" /></div>
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0a192f] mb-4">What Our Clients Said <br />About <span className="text-primary">ZetasBuild</span></h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">What Our Clients Said <br />About <span className="text-primary">ZetasBuild</span></h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
           </motion.div>
         </div>
         <div className="relative max-w-4xl mx-auto h-[450px] md:h-[350px] flex items-center justify-center">
           <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div key={index} custom={direction} variants={variants} initial="enter" animate="center" exit="exit" transition={{ x: { type: "spring", stiffness: 300, damping: 35 }, opacity: { duration: 0.3 } }} className="absolute w-full">
-              <div className="bg-gray-50 p-12 md:p-16 rounded-[3rem] border border-gray-100 flex flex-col items-start relative group hover:bg-white hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-500 min-h-[300px]">
+              <div className="bg-muted p-12 md:p-16 rounded-[3rem] border border-border flex flex-col items-start relative group hover:bg-card hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-500 min-h-[300px]">
                 <div className="flex gap-1 mb-8">{[...Array(testimonials[index].rating)].map((_, i) => <Star key={i} size={18} className="fill-yellow-400 text-yellow-400" />)}</div>
-                <p className="text-gray-600 text-xl md:text-2xl leading-relaxed mb-10 italic relative z-10">"{testimonials[index].text}"</p>
-                <div className="mt-auto flex items-center justify-end w-full"><div className="text-gray-200 group-hover:text-primary/10 transition-colors"><Quote size={60} /></div></div>
+                <p className="text-muted-foreground text-xl md:text-2xl leading-relaxed mb-10 italic relative z-10">"{testimonials[index].text}"</p>
+                <div className="mt-auto flex items-center justify-end w-full"><div className="text-border group-hover:text-primary/10 transition-colors"><Quote size={60} /></div></div>
               </div>
             </motion.div>
           </AnimatePresence>
           <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 flex items-center gap-8">
-            <button onClick={prevSlide} className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white hover:border-transparent transition-all shadow-sm"><ChevronLeft size={20} /></button>
-            <div className="flex gap-3">{testimonials.map((_, i) => <button key={i} onClick={() => { setDirection(i > index ? 1 : -1); setIndex(i); }} className={`transition-all duration-500 rounded-full h-1.5 ${i === index ? "w-8 bg-primary" : "w-2 bg-gray-200 hover:bg-gray-400"}`} />)}</div>
-            <button onClick={nextSlide} className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white hover:border-transparent transition-all shadow-sm"><ChevronRight size={20} /></button>
+            <button onClick={prevSlide} className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white hover:border-transparent transition-all shadow-sm"><ChevronLeft size={20} /></button>
+            <div className="flex gap-3">{testimonials.map((_, i) => <button key={i} onClick={() => { setDirection(i > index ? 1 : -1); setIndex(i); }} className={`transition-all duration-500 rounded-full h-1.5 ${i === index ? "w-8 bg-primary" : "w-2 bg-border hover:bg-muted-foreground"}`} />)}</div>
+            <button onClick={nextSlide} className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white hover:border-transparent transition-all shadow-sm"><ChevronRight size={20} /></button>
           </div>
         </div>
       </div>
