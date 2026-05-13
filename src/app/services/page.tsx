@@ -2,7 +2,7 @@ import { useRef, Suspense, lazy } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { 
   Code2, Palette, Smartphone, Cloud, Shield, Database, Cpu, Share2, 
-  Briefcase, Truck, ShieldCheck, 
+  Briefcase, Truck, ShieldCheck, Brain,
   Building2, HeartPulse, ShoppingCart, GraduationCap, Wifi, Film, Landmark, Hotel, Zap, Globe 
 } from "lucide-react";
 
@@ -66,7 +66,8 @@ const services = [
   { title: "FinTech & Security", desc: "Advanced cryptographic security and blockchain-integrated financial solutions.", icon: <Shield size={28} />, color: "from-blue-500 via-indigo-600 to-purple-700", glow: "rgba(59, 130, 246, 0.4)" },
   { title: "API Development", desc: "Seamlessly connecting platforms with high-throughput, secure API gateways.", icon: <Share2 size={28} />, color: "from-rose-400 via-red-500 to-orange-600", glow: "rgba(251, 113, 133, 0.4)" },
   { title: "SaaS Innovation", desc: "Transforming software concepts into subscription-ready, market-dominant platforms.", icon: <Cpu size={28} />, color: "from-indigo-400 via-purple-500 to-pink-600", glow: "rgba(129, 140, 248, 0.4)" },
-  { title: "Infrastructure", desc: "Mission-critical database management and low-latency storage.", icon: <Database size={28} />, color: "from-emerald-400 via-teal-500 to-cyan-600", glow: "rgba(52, 211, 153, 0.4)" }
+  { title: "Infrastructure", desc: "Mission-critical database management and low-latency storage.", icon: <Database size={28} />, color: "from-emerald-400 via-teal-500 to-cyan-600", glow: "rgba(52, 211, 153, 0.4)" },
+  { title: "AI & Machine Learning", desc: "Cutting-edge predictive models, NLP, computer vision, and intelligent automation that revolutionises your business operations.", icon: <Brain size={28} />, color: "from-violet-400 via-purple-500 to-fuchsia-600", glow: "rgba(139, 92, 246, 0.5)" }
 ];
 
 const ServicesBento = () => {

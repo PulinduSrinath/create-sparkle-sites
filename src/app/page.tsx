@@ -1,9 +1,9 @@
-import { useEffect, useRef, Suspense, lazy } from "react";
-import { motion, useInView, useMotionValue, useSpring, useTransform, animate, useScroll } from "framer-motion";
+import { useEffect, useRef, Suspense, lazy, useState } from "react";
+import { motion, useInView, useMotionValue, useSpring, useTransform, animate, useScroll, AnimatePresence } from "framer-motion";
 import { 
   ArrowRight, Sparkles, Globe, Smartphone, Palette, ShieldCheck, Code2, 
   Users, Target, Shield, ArrowUpRight, Zap, 
-  Terminal, Layers, Box, Cpu, Cloud, Database, Layout, Server 
+  Terminal, Layers, Box, Cpu, Cloud, Database, Layout, Server, Brain, BotMessageSquare 
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -55,7 +55,59 @@ const StatCard = ({ value, label, icon: Icon }: { value: string; label: string; 
   );
 };
 
+// AI keyword cycler component
+const aiKeywords = ["AI Solutions", "ML Models", "Neural Nets", "Automation", "Deep Learning"];
+
+const AITerminalWidget = () => {
+  const lines = [
+    { text: "$ zetas-ai --init", delay: 0 },
+    { text: "> Loading neural engine...", delay: 0.6 },
+    { text: "> Model accuracy: 98.7%", delay: 1.2 },
+    { text: "> AI pipeline ready ✓", delay: 1.8 },
+  ];
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1.4, duration: 0.8 }}
+      className="absolute -bottom-2 -left-6 z-20 glass-card border border-primary/30 rounded-2xl shadow-2xl overflow-hidden w-64"
+      style={{ background: "rgba(3,7,18,0.85)", backdropFilter: "blur(20px)" }}
+    >
+      <div className="flex items-center gap-2 px-4 py-2 border-b border-white/10">
+        <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
+        <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
+        <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
+        <span className="text-[10px] text-white/30 font-mono ml-2">zetas-ai terminal</span>
+      </div>
+      <div className="p-4 font-mono text-xs space-y-1">
+        {lines.map((line, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: line.delay + 1.4, duration: 0.4 }}
+            className={line.text.startsWith("$") ? "text-primary" : line.text.includes("✓") ? "text-green-400" : "text-slate-400"}
+          >
+            {line.text}
+          </motion.div>
+        ))}
+        <motion.div
+          animate={{ opacity: [1, 0, 1] }}
+          transition={{ duration: 1, repeat: Infinity }}
+          className="inline-block w-2 h-3 bg-primary ml-0.5 mt-1"
+        />
+      </div>
+    </motion.div>
+  );
+};
+
 const HeroSection = () => {
+  const [kwIndex, setKwIndex] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setKwIndex(i => (i + 1) % aiKeywords.length), 2200);
+    return () => clearInterval(t);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-40 lg:pb-56">
       <div className="absolute inset-0 overflow-hidden">
@@ -73,12 +125,41 @@ const HeroSection = () => {
             <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.15 }} className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold leading-tight mb-6 text-balance">
               Crafting <span className="gradient-text">Websites</span> & <span className="gradient-text">Apps</span> That Matter
             </motion.h1>
+            {/* AI/ML animated keyword banner */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.25 }}
+              className="flex items-center justify-center lg:justify-start gap-3 mb-6"
+            >
+              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/30">
+                <Brain size={14} className="text-violet-400" />
+                <span className="text-xs text-violet-300 font-semibold uppercase tracking-widest">Now offering</span>
+              </div>
+              <div className="relative h-8 w-44 overflow-hidden flex items-center">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={kwIndex}
+                    initial={{ y: 24, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -24, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="absolute font-bold text-lg gradient-text"
+                  >
+                    {aiKeywords[kwIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
+            </motion.div>
             <motion.p initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-10">
-              We design and develop high-performance web and mobile applications using Next.js, React, and cutting-edge technologies.
+              We design and develop high-performance web and mobile applications using Next.js, React, and cutting-edge <span className="text-primary font-semibold">AI & ML technologies</span>.
             </motion.p>
-            <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.45 }} className="flex justify-center lg:justify-start">
+            <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.45 }} className="flex flex-wrap justify-center lg:justify-start gap-4">
               <Link to="/contact" className="group inline-flex items-center justify-center gap-3 px-12 py-5 rounded-2xl font-bold text-black bg-primary hover:scale-105 active:scale-95 transition-all text-xl shadow-[0_0_40px_rgba(34,211,238,0.4)]">
                 Start Your Project <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
+              </Link>
+              <Link to="/services" className="group inline-flex items-center justify-center gap-2 px-8 py-5 rounded-2xl font-bold border border-violet-500/40 text-violet-300 hover:bg-violet-500/10 hover:scale-105 active:scale-95 transition-all text-lg">
+                <Brain size={20} /> Explore AI Services
               </Link>
             </motion.div>
           </div>
@@ -91,6 +172,7 @@ const HeroSection = () => {
               <motion.div animate={{ opacity: [0, 1, 0] }} transition={{ duration: 2, repeat: Infinity, delay: 0.5 }} className="absolute top-1/4 right-1/4 w-3 h-3 bg-primary rounded-full blur-md" />
               <motion.div animate={{ opacity: [0, 1, 0] }} transition={{ duration: 3, repeat: Infinity, delay: 1.5 }} className="absolute bottom-1/3 left-1/4 w-2 h-2 bg-secondary rounded-full blur-md" />
             </motion.div>
+            <AITerminalWidget />
             <motion.div initial={{ x: 50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 1, duration: 0.8 }} className="absolute -bottom-4 -right-4 glass-card p-4 rounded-2xl border border-white/20 shadow-xl z-20 flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary"><Sparkles size={20} /></div>
               <div className="flex flex-col"><span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Precision Built</span><span className="text-sm font-bold">Standard of Excellence</span></div>
@@ -120,7 +202,8 @@ const services = [
   { icon: Globe, title: "Web Engineering", description: "Building high-performance enterprise platforms with global scalability and zero-latency UX. We engineer for the next generation of web traffic and mission-critical reliability.", color: "hsl(172 80% 50%)", visual: "neural-orb", tag: "Scalable Systems" },
   { icon: Smartphone, title: "Mobile Force", description: "Military-grade mobile ecosystems that dominate App Stores. We create native and cross-platform solutions that unify brand identity and user engagement across every device.", color: "hsl(260 70% 60%)", visual: "hologram-prism", tag: "Native Excellence" },
   { icon: Palette, title: "Creative Mastery", description: "Designing the fluid balance between aesthetic elegance and technical function. Our UI/UX architects craft interfaces that convert users into loyal brand advocates.", color: "hsl(150 70% 45%)", visual: "digital-canvas", tag: "Design Architecture" },
-  { icon: ShieldCheck, title: "Security & Support", description: "Iron-clad technical guardianship for your digital empire. 24/7 monitoring, rigourous audits, and continuous optimization to keep you at the peak of performance.", color: "hsl(30 100% 50%)", visual: "encryption-grid", tag: "Zero-Vulnerability" }
+  { icon: ShieldCheck, title: "Security & Support", description: "Iron-clad technical guardianship for your digital empire. 24/7 monitoring, rigourous audits, and continuous optimization to keep you at the peak of performance.", color: "hsl(30 100% 50%)", visual: "encryption-grid", tag: "Zero-Vulnerability" },
+  { icon: Brain, title: "AI & Machine", description: "Deploying cutting-edge artificial intelligence and machine learning solutions — from predictive models and NLP to computer vision and intelligent automation that transforms business outcomes.", color: "hsl(270 80% 65%)", visual: "ai-brain", tag: "Intelligence Layer" }
 ];
 
 const VisualComponent = ({ type, color }: { type: string, color: string }) => {
@@ -144,6 +227,44 @@ const VisualComponent = ({ type, color }: { type: string, color: string }) => {
         {[...Array(16)].map((_, i) => <motion.div key={i} animate={{ opacity: [0.1, 0.5, 0.1] }} transition={{ duration: 2, delay: i * 0.1, repeat: Infinity }} className="w-10 h-10 bg-accent rounded-sm" />)}
       </div>
       <div className="relative w-40 h-40 glass-card border border-accent/30 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(34,211,238,0.2)]"><Palette size={48} className="text-accent" /></div>
+    </div>
+  );
+  if (type === "ai-brain") return (
+    <div className="relative w-full h-full flex items-center justify-center scale-125">
+      {/* Animated neural network rings */}
+      {[80, 140, 200, 260].map((size, i) => (
+        <motion.div
+          key={size}
+          animate={{ rotate: i % 2 === 0 ? 360 : -360, scale: [1, 1.05, 1] }}
+          transition={{ duration: 8 + i * 3, repeat: Infinity, ease: "linear" }}
+          className="absolute rounded-full border border-violet-500/20"
+          style={{ width: size, height: size }}
+        />
+      ))}
+      {/* Pulsing glow */}
+      <motion.div
+        animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.5, 0.2] }}
+        transition={{ duration: 3, repeat: Infinity }}
+        className="absolute w-40 h-40 rounded-full blur-[60px]"
+        style={{ background: "hsl(270 80% 65% / 0.4)" }}
+      />
+      {/* Floating node dots */}
+      {[0, 60, 120, 180, 240, 300].map((deg, i) => (
+        <motion.div
+          key={deg}
+          animate={{ opacity: [0.3, 1, 0.3] }}
+          transition={{ duration: 1.5, delay: i * 0.25, repeat: Infinity }}
+          className="absolute w-2.5 h-2.5 rounded-full bg-violet-400"
+          style={{
+            transform: `rotate(${deg}deg) translateX(100px)`,
+            transformOrigin: "center",
+          }}
+        />
+      ))}
+      {/* Center brain icon */}
+      <div className="absolute w-32 h-32 glass-card border border-violet-500/40 rounded-full flex items-center justify-center shadow-[0_0_60px_rgba(139,92,246,0.4)] z-10">
+        <Brain size={52} className="text-violet-400" />
+      </div>
     </div>
   );
   return (
