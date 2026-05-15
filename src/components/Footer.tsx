@@ -79,7 +79,7 @@ const Footer = () => {
         />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Pre-Footer: System Callout */}
         <div className="py-16 border-b border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 mb-20">
           <div className="space-y-2 text-center md:text-left">
@@ -99,8 +99,8 @@ const Footer = () => {
           
           {/* Brand Identity */}
           <div className="lg:col-span-4 space-y-10 text-center lg:text-left">
-            <Link to="/" className="inline-block transform lg:-translate-x-3">
-              <ZetasLogo className="scale-125" />
+            <Link to="/" className="inline-block">
+              <ZetasLogo />
             </Link>
             <p className="text-slate-400 text-lg leading-relaxed max-w-sm mx-auto lg:mx-0 font-medium italic">
               "We don't just build websites. We engineer mission-critical digital foundations for global leaders."

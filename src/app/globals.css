@@ -54,25 +54,25 @@
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 13%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
+    --background: 222 47% 9%;
+    --foreground: 210 40% 96%;
+    --card: 222 47% 12%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 96%;
     --primary: 172 80% 50%;
-    --primary-foreground: 222 47% 11%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --primary-foreground: 222 47% 9%;
+    --secondary: 217.2 32.6% 22%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 217.2 32.6% 16%;
+    --muted-foreground: 215 20.2% 62%;
+    --accent: 217.2 32.6% 22%;
+    --accent-foreground: 210 40% 96%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 217 32% 25%;
+    --input: 217.2 32.6% 20%;
+    --ring: 172 80% 50%;
   }
 }
 
@@ -126,8 +126,13 @@
 
   .glass-card {
     @apply backdrop-blur-xl border;
-    background: hsl(0 0% 100% / 0.7);
-    border-color: hsl(220 13% 91% / 0.8);
+    background: hsl(var(--background) / 0.85);
+    border-color: hsl(var(--border) / 0.7);
+  }
+
+  .dark .glass-card {
+    background: hsl(222 47% 12% / 0.85);
+    border-color: hsl(217 32% 28% / 0.7);
   }
 }
 
