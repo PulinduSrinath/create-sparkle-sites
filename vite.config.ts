@@ -4,7 +4,7 @@ import path from "path";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig(() => ({
   server: {
     host: "::",
     port: 8080,
@@ -13,12 +13,35 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
+    // Use esbuild for fastest, best minification
+    minify: "esbuild",
+    // Target modern browsers so esbuild can output smaller code
+    target: "esnext",
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ["react", "react-dom", "react-router-dom"],
-          motion: ["framer-motion"],
-          ui: ["lucide-react", "sonner", "@radix-ui/react-slot"]
+          // Core React runtime — always needed, cache separately
+          "react-core": ["react", "react-dom"],
+          // Router
+          "react-router": ["react-router-dom"],
+          // framer-motion — large animation library
+          "motion": ["framer-motion"],
+          // Lucide icons — large icon set, only shake at import level
+          "icons": ["lucide-react"],
+          // Sonner toast
+          "sonner": ["sonner"],
+          // EmailJS
+          "emailjs": ["@emailjs/browser"],
+          // Radix UI — only primitives actually used are bundled
+          "radix-ui": [
+            "@radix-ui/react-slot",
+            "@radix-ui/react-toast",
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-label",
+            "@radix-ui/react-select",
+            "@radix-ui/react-accordion",
+            "@radix-ui/react-checkbox",
+          ],
         },
       },
     },
@@ -26,6 +49,11 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     ViteImageOptimizer({
+      webp: {
+        // Re-compress webp assets at build time
+        quality: 75,
+        effort: 6,
+      },
       png: {
         quality: 80,
       },
@@ -35,7 +63,7 @@ export default defineConfig(({ mode }) => ({
       jpg: {
         quality: 80,
       },
-    })
+    }),
   ].filter(Boolean),
   resolve: {
     alias: {

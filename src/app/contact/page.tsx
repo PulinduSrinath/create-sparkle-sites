@@ -125,9 +125,10 @@ const ContactMain = () => {
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
       toast.success("Message sent successfully! We'll get back to you soon.");
       reset(); recaptchaRef.current?.reset();
-    } catch (error: any) {
-      console.error("Email sending failed:", error);
-      const errorMsg = error?.text || error?.message || "Please verify your EmailJS configuration.";
+    } catch (error: unknown) {
+      const err = error as { text?: string; message?: string };
+      console.error("Email sending failed:", err);
+      const errorMsg = err?.text || err?.message || "Please verify your EmailJS configuration.";
       toast.error(`Failed to send message: ${errorMsg}`);
     } finally {
       setIsSubmitting(false);
