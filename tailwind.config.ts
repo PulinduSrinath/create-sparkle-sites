@@ -109,6 +109,50 @@ export default {
           "0%, 100%": { transform: "translate(0, 0)" },
           "50%": { transform: "translate(30px, 50px)" },
         },
+        "nav-enter": {
+          from: { transform: "translateY(-100%)" },
+          to: { transform: "translateY(0)" },
+        },
+        "logo-float": {
+          "0%, 100%": { transform: "translateY(0) rotateY(0deg)" },
+          "50%": { transform: "translateY(-20px) rotateY(10deg)" },
+        },
+        "float-orb": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "50%": { transform: "translate(12px, -18px) scale(1.08)" },
+        },
+        "orbit-ring": {
+          from: { transform: "rotate(0deg) scale(1)" },
+          to: { transform: "rotate(360deg) scale(1.05)" },
+        },
+        "node-drift": {
+          "0%, 100%": { transform: "translateY(0) scale(1)", opacity: "0.1" },
+          "50%": { transform: "translateY(-80px) scale(1.4)", opacity: "0.4" },
+        },
+        "node-pulse": {
+          "0%, 100%": { opacity: "0.1" },
+          "50%": { opacity: "0.4" },
+        },
+        "line-drift": {
+          "0%, 100%": { transform: "translateX(0)", opacity: "0.2" },
+          "50%": { transform: "translateX(40px)", opacity: "0.5" },
+        },
+        "terminal-enter": {
+          from: { opacity: "0", transform: "translateY(24px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "terminal-line": {
+          from: { opacity: "0", transform: "translateX(-8px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        "badge-enter": {
+          from: { opacity: "0", transform: "translateX(40px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        "cursor-blink": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -124,6 +168,17 @@ export default {
         "hero-orb-a": "hero-orb-a 8s ease-in-out infinite",
         "hero-orb-b": "hero-orb-b 10s ease-in-out infinite",
         "hero-orb-c": "hero-orb-c 12s ease-in-out infinite",
+        "nav-enter": "nav-enter 0.6s ease-out both",
+        "logo-float": "logo-float 6s ease-in-out infinite",
+        "float-orb": "float-orb var(--float-duration, 18s) ease-in-out var(--float-delay, 0s) infinite",
+        "orbit-ring": "orbit-ring var(--orbit-duration, 50s) linear infinite",
+        "node-drift": "node-drift var(--float-duration, 6s) ease-in-out var(--float-delay, 0s) infinite",
+        "node-pulse": "node-pulse var(--float-duration, 6s) ease-in-out var(--float-delay, 0s) infinite",
+        "line-drift": "line-drift 8s ease-in-out var(--float-delay, 0s) infinite",
+        "terminal-enter": "terminal-enter 0.7s ease-out 1.2s forwards",
+        "terminal-line": "terminal-line 0.35s ease-out forwards",
+        "badge-enter": "badge-enter 0.7s ease-out 0.9s forwards",
+        "cursor-blink": "cursor-blink 1s step-end infinite",
       },
     },
   },

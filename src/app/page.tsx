@@ -1,79 +1,69 @@
 import { useEffect, useRef, Suspense, lazy, useState } from "react";
-import { motion, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
+import { useInView } from "@/hooks/use-in-view";
+import { useCountUp } from "@/hooks/use-count-up";
 import {
   ArrowRight, Sparkles, Users, Terminal, Layers, Brain
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import Navbar from "@/components/Navbar";
+import DeferredSection from "@/components/DeferredSection";
+import HeroDecorations from "./HeroDecorations";
 
 const Footer = lazy(() => import("@/components/Footer"));
 const FloatingBackground = lazy(() => import("@/components/FloatingBackground"));
-const HeroDecorations = lazy(() => import("./HeroDecorations"));
 const CTASection = lazy(() => import("@/components/CTASection"));
 const ServicesSection = lazy(() => import("./ServicesSection"));
 const AboutSection = lazy(() => import("./AboutSection"));
 const TechStackSection = lazy(() => import("./TechStackSection"));
 
-const StatCard = ({ value, label, icon: Icon }: { value: string; label: string; icon: React.ElementType }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const numValue = parseInt(value.replace(/[^0-9]/g, ""));
-  const suffix = value.replace(/[0-9]/g, "");
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.round(latest));
+const aiKeywords = ["AI Solutions", "ML Models", "Neural Nets", "Automation", "Deep Learning"];
 
-  useEffect(() => {
-    if (isInView) {
-      const animation = animate(count, numValue, { duration: 2, ease: "easeOut" });
-      return animation.stop;
-    }
-  }, [isInView, numValue, count]);
+const StatCard = ({ value, label, icon: Icon }: { value: string; label: string; icon: React.ElementType }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const numValue = parseInt(value.replace(/[^0-9]/g, ""), 10);
+  const suffix = value.replace(/[0-9]/g, "");
+  const count = useCountUp(numValue, isInView);
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="group relative flex items-center gap-6 p-6 md:p-8 rounded-[2.5rem] bg-slate-950 border border-white/10 hover:border-primary/50 transition-all duration-500 shadow-2xl overflow-hidden min-w-0"
+      className="group relative flex items-center gap-6 p-6 md:p-8 rounded-[2.5rem] bg-slate-950 border border-white/10 hover:border-primary/50 transition-all duration-500 shadow-2xl overflow-hidden min-w-0 opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 data-[visible=true]:transition-all data-[visible=true]:duration-500"
+      data-visible={isInView}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <motion.div className="w-16 h-16 md:w-20 md:h-20 rounded-[1.5rem] bg-primary flex items-center justify-center text-black relative z-10 shadow-[0_0_30px_rgba(34,211,238,0.4)] flex-shrink-0">
+      <div className="w-16 h-16 md:w-20 md:h-20 rounded-[1.5rem] bg-primary flex items-center justify-center text-black relative z-10 shadow-[0_0_30px_rgba(34,211,238,0.4)] flex-shrink-0">
         <Icon size={32} className="md:w-10 md:h-10" strokeWidth={2.5} />
-      </motion.div>
+      </div>
       <div className="flex flex-col relative z-10 text-left min-w-0">
         <div className="font-display text-4xl md:text-5xl font-black text-white flex items-center leading-none tracking-tighter">
-          <motion.span>{rounded}</motion.span>
+          <span>{count}</span>
           <span>{suffix}</span>
         </div>
-        <div className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-primary mt-2 leading-tight">
-          {label}
-        </div>
+        <div className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-primary mt-2 leading-tight">{label}</div>
       </div>
       <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-[60px] rounded-full -mr-16 -mt-16 opacity-0 group-hover:opacity-40 transition-opacity" />
-    </motion.div>
+    </div>
   );
 };
 
-const aiKeywords = ["AI Solutions", "ML Models", "Neural Nets", "Automation", "Deep Learning"];
-
 const HeroSection = () => {
   const [kwIndex, setKwIndex] = useState(0);
-  const [motionReady, setMotionReady] = useState(false);
+  const [kwVisible, setKwVisible] = useState(true);
 
   useEffect(() => {
-    const t = setInterval(() => setKwIndex((i) => (i + 1) % aiKeywords.length), 2200);
-    return () => clearInterval(t);
-  }, []);
-
-  useEffect(() => {
-    const id =
-      window.requestIdleCallback?.(() => setMotionReady(true)) ??
-      window.setTimeout(() => setMotionReady(true), 1);
+    let swapTimeout: ReturnType<typeof setTimeout>;
+    const interval = setInterval(() => {
+      setKwVisible(false);
+      swapTimeout = setTimeout(() => {
+        setKwIndex((i) => (i + 1) % aiKeywords.length);
+        setKwVisible(true);
+      }, 220);
+    }, 2200);
     return () => {
-      if (typeof id === "number") window.clearTimeout(id);
-      else window.cancelIdleCallback?.(id);
+      clearInterval(interval);
+      clearTimeout(swapTimeout);
     };
   }, []);
 
@@ -110,8 +100,7 @@ const HeroSection = () => {
               We Build Digital Experiences
             </p>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold leading-tight mb-6 text-balance">
-              Crafting <span className="gradient-text">Websites</span> & <span className="gradient-text">Apps</span> That
-              Matter
+              Crafting <span className="gradient-text">Websites</span> & <span className="gradient-text">Apps</span> That Matter
             </h1>
             <div className="flex items-center justify-center lg:justify-start gap-3 mb-6 animate-hero-fade-delayed">
               <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/30">
@@ -119,22 +108,13 @@ const HeroSection = () => {
                 <span className="text-xs text-violet-300 font-semibold uppercase tracking-widest">Now offering</span>
               </div>
               <div className="relative h-8 w-44 overflow-hidden flex items-center">
-                {motionReady ? (
-                  <AnimatePresence mode="wait">
-                    <motion.span
-                      key={kwIndex}
-                      initial={{ y: 24, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: -24, opacity: 0 }}
-                      transition={{ duration: 0.4, ease: "easeInOut" }}
-                      className="absolute font-bold text-lg gradient-text"
-                    >
-                      {aiKeywords[kwIndex]}
-                    </motion.span>
-                  </AnimatePresence>
-                ) : (
-                  <span className="absolute font-bold text-lg gradient-text">{aiKeywords[0]}</span>
-                )}
+                <span
+                  className={`absolute font-bold text-lg gradient-text transition-all duration-300 ease-out ${
+                    kwVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
+                  }`}
+                >
+                  {aiKeywords[kwIndex]}
+                </span>
               </div>
             </div>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-10 animate-hero-fade-delayed-2">
@@ -156,35 +136,10 @@ const HeroSection = () => {
               </Link>
             </div>
           </div>
-          <Suspense
-            fallback={
-              <div className="lg:w-2/5 flex justify-center items-center w-full max-w-[400px] aspect-square">
-                <img
-                  src="/premium-logo-icon-256.webp"
-                  srcSet="/premium-logo-icon-256.webp 256w, /premium-logo-icon.webp 320w"
-                  sizes="(max-width: 768px) 90vw, 400px"
-                  alt="ZetasBuild Premium Logo"
-                  width={320}
-                  height={366}
-                  className="w-full h-full object-contain"
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                />
-              </div>
-            }
-          >
-            <HeroDecorations />
-          </Suspense>
+          <HeroDecorations />
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto"
-        >
+        <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
           {[
             { value: "100%", label: "Client Satisfaction", icon: Users },
             { value: "10+", label: "Completed Projects", icon: Terminal },
@@ -192,35 +147,66 @@ const HeroSection = () => {
           ].map((stat) => (
             <StatCard key={stat.label} value={stat.value} label={stat.label} icon={stat.icon} />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
 };
 
-const Index = () => (
-  <div className="min-h-screen bg-background relative">
-    <Suspense fallback={null}>
-      <FloatingBackground />
-    </Suspense>
-    <Navbar />
-    <HeroSection />
-    <Suspense fallback={<div className="h-screen" aria-hidden />}>
-      <ServicesSection />
-    </Suspense>
-    <Suspense fallback={<div className="h-96" aria-hidden />}>
-      <AboutSection />
-    </Suspense>
-    <Suspense fallback={<div className="h-96" aria-hidden />}>
-      <TechStackSection />
-    </Suspense>
-    <Suspense fallback={<div className="h-32" aria-hidden />}>
-      <CTASection />
-    </Suspense>
-    <Suspense fallback={null}>
-      <Footer />
-    </Suspense>
-  </div>
-);
+const Index = () => {
+  const [showBackground, setShowBackground] = useState(false);
+
+  useEffect(() => {
+    const id =
+      window.requestIdleCallback?.(() => setShowBackground(true)) ??
+      window.setTimeout(() => setShowBackground(true), 200);
+    return () => {
+      if (typeof id === "number") window.clearTimeout(id);
+      else window.cancelIdleCallback?.(id);
+    };
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-background relative">
+      {showBackground && (
+        <Suspense fallback={null}>
+          <FloatingBackground />
+        </Suspense>
+      )}
+      <Navbar />
+      <HeroSection />
+
+      <DeferredSection minHeight="100vh">
+        <Suspense fallback={<div className="h-screen" aria-hidden />}>
+          <ServicesSection />
+        </Suspense>
+      </DeferredSection>
+
+      <DeferredSection minHeight="24rem">
+        <Suspense fallback={<div className="h-96" aria-hidden />}>
+          <AboutSection />
+        </Suspense>
+      </DeferredSection>
+
+      <DeferredSection minHeight="24rem">
+        <Suspense fallback={<div className="h-96" aria-hidden />}>
+          <TechStackSection />
+        </Suspense>
+      </DeferredSection>
+
+      <DeferredSection minHeight="8rem">
+        <Suspense fallback={<div className="h-32" aria-hidden />}>
+          <CTASection />
+        </Suspense>
+      </DeferredSection>
+
+      <DeferredSection minHeight="12rem">
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
+      </DeferredSection>
+    </div>
+  );
+};
 
 export default Index;

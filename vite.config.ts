@@ -1,7 +1,21 @@
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
+
+/** Load the main stylesheet asynchronously so it does not block first paint. */
+function asyncCssPlugin(): Plugin {
+  return {
+    name: "async-css",
+    apply: "build",
+    transformIndexHtml(html) {
+      return html.replace(
+        /<link rel="stylesheet"([^>]*?)href="(\/assets\/[^"]+\.css)"([^>]*?)>/g,
+        '<link rel="preload" as="style" href="$2"$1$3 onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link rel="stylesheet" href="$2"></noscript>'
+      );
+    },
+  };
+}
 
 // https://vitejs.dev/config/
 export default defineConfig(() => ({
@@ -34,6 +48,7 @@ export default defineConfig(() => ({
   },
   plugins: [
     react(),
+    asyncCssPlugin(),
     ViteImageOptimizer({
       webp: {
         quality: 62,
