@@ -1,14 +1,13 @@
 import { useEffect, useRef, Suspense, lazy, useState } from "react";
 import { motion, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
-import { 
+import {
   ArrowRight, Sparkles, Users, Terminal, Layers, Brain
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import LazySection from "@/components/LazySection";
-const FloatingBackground = lazy(() => import("@/components/FloatingBackground"));
+import FloatingBackground from "@/components/FloatingBackground";
 const CTASection = lazy(() => import("@/components/CTASection"));
 const ServicesSection = lazy(() => import("./ServicesSection"));
 const AboutSection = lazy(() => import("./AboutSection"));
@@ -33,7 +32,7 @@ const StatCard = ({ value, label, icon: Icon }: { value: string; label: string; 
   }, [isInView, numValue, count]);
 
   return (
-    <motion.div 
+    <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -194,8 +193,8 @@ const HeroSection = () => {
         {/* Stats Grid - Moved to full width for clarity */}
         <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }} className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
           {[
-            { value: "100%", label: "Client Satisfaction", icon: Users }, 
-            { value: "10+", label: "Completed Projects", icon: Terminal }, 
+            { value: "100%", label: "Client Satisfaction", icon: Users },
+            { value: "10+", label: "Completed Projects", icon: Terminal },
             { value: "150+", label: "Design Resources", icon: Layers }
           ].map((stat) => (
             <StatCard key={stat.label} value={stat.value} label={stat.label} icon={stat.icon} />
@@ -213,31 +212,21 @@ const HeroSection = () => {
 const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
-      <Suspense fallback={null}>
-        <FloatingBackground />
-      </Suspense>
+      <FloatingBackground />
       <Navbar />
       <HeroSection />
-      <LazySection fallback={<div className="h-screen" />}>
-        <Suspense fallback={<div className="h-screen" />}>
-          <ServicesSection />
-        </Suspense>
-      </LazySection>
-      <LazySection fallback={<div className="h-96" />}>
-        <Suspense fallback={<div className="h-96" />}>
-          <AboutSection />
-        </Suspense>
-      </LazySection>
-      <LazySection fallback={<div className="h-96" />}>
-        <Suspense fallback={<div className="h-96" />}>
-          <TechStackSection />
-        </Suspense>
-      </LazySection>
-      <LazySection fallback={<div className="h-32" />}>
-        <Suspense fallback={<div className="h-32" />}>
-          <CTASection />
-        </Suspense>
-      </LazySection>
+      <Suspense fallback={<div className="h-screen" />}>
+        <ServicesSection />
+      </Suspense>
+      <Suspense fallback={<div className="h-96" />}>
+        <AboutSection />
+      </Suspense>
+      <Suspense fallback={<div className="h-96" />}>
+        <TechStackSection />
+      </Suspense>
+      <Suspense fallback={<div className="h-32" />}>
+        <CTASection />
+      </Suspense>
       <Footer />
     </div>
   );
