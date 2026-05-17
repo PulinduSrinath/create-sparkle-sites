@@ -140,4 +140,17 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-hero-fade,
+    .animate-hero-fade-delayed,
+    .animate-hero-fade-delayed-2,
+    .animate-hero-fade-delayed-3,
+    .animate-hero-visual,
+    .animate-hero-orb-a,
+    .animate-hero-orb-b,
+    .animate-hero-orb-c {
+      animation: none !important;
+    }
+  }
 }

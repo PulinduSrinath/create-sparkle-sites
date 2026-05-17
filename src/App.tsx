@@ -6,8 +6,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 
-// Lazy load all pages for better mobile performance
-const Index = lazy(() => import("./app/page"));
+import Index from "./app/page";
+
+// Lazy load secondary routes to keep the home critical path short
 const About = lazy(() => import("./app/about/page"));
 const Services = lazy(() => import("./app/services/page"));
 const Contact = lazy(() => import("./app/contact/page"));

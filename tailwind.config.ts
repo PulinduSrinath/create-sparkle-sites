@@ -93,6 +93,22 @@ export default {
           from: { transform: "rotate(0deg)" },
           to: { transform: "rotate(360deg)" },
         },
+        "hero-fade": {
+          from: { opacity: "0.85", transform: "translateY(12px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "hero-orb-a": {
+          "0%, 100%": { transform: "translate(0, 0)" },
+          "50%": { transform: "translate(50px, -30px)" },
+        },
+        "hero-orb-b": {
+          "0%, 100%": { transform: "translate(0, 0)" },
+          "50%": { transform: "translate(-40px, 40px)" },
+        },
+        "hero-orb-c": {
+          "0%, 100%": { transform: "translate(0, 0)" },
+          "50%": { transform: "translate(30px, 50px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -100,6 +116,14 @@ export default {
         "float": "float 6s ease-in-out infinite",
         "pulse-glow": "pulse-glow 3s ease-in-out infinite",
         "spin-slow": "spin-slow 20s linear infinite",
+        "hero-fade": "hero-fade 0.5s ease-out both",
+        "hero-fade-delayed": "hero-fade 0.55s ease-out 0.08s both",
+        "hero-fade-delayed-2": "hero-fade 0.55s ease-out 0.14s both",
+        "hero-fade-delayed-3": "hero-fade 0.55s ease-out 0.2s both",
+        "hero-visual": "hero-fade 0.65s ease-out 0.1s both",
+        "hero-orb-a": "hero-orb-a 8s ease-in-out infinite",
+        "hero-orb-b": "hero-orb-b 10s ease-in-out infinite",
+        "hero-orb-c": "hero-orb-c 12s ease-in-out infinite",
       },
     },
   },

@@ -98,10 +98,16 @@ const AboutHero = () => {
                   transition={{ duration: 4, repeat: Infinity }}
                   className="z-10"
                 >
-                  <img 
-                    src="/premium-logo-icon.webp" 
-                    alt="ZetasBuild" 
-                    className="w-24 h-24 object-contain drop-shadow-[0_0_20px_rgba(34,211,238,0.6)] scale-150" 
+                  <img
+                    src="/premium-logo-icon-256.webp"
+                    srcSet="/premium-logo-icon-256.webp 256w, /premium-logo-icon.webp 320w"
+                    sizes="96px"
+                    alt="ZetasBuild"
+                    width={96}
+                    height={110}
+                    className="w-24 h-24 object-contain drop-shadow-[0_0_20px_rgba(34,211,238,0.6)] scale-150"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </motion.div>
                 <div className="absolute top-4 left-4 w-12 h-12 bg-white/10 rounded-full blur-xl" />
