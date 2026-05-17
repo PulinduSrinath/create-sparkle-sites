@@ -13,38 +13,10 @@ export default defineConfig(() => ({
     },
   },
   build: {
-    // Use esbuild for fastest, best minification
-    minify: "esbuild",
-    // Target modern browsers so esbuild can output smaller code
+    // Use terser for best minification to satisfy Lighthouse
+    minify: "terser",
+    // Target modern browsers so output is smaller
     target: "esnext",
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          // Core React runtime — always needed, cache separately
-          "react-core": ["react", "react-dom"],
-          // Router
-          "react-router": ["react-router-dom"],
-          // framer-motion — large animation library
-          "motion": ["framer-motion"],
-          // Lucide icons — large icon set, only shake at import level
-          "icons": ["lucide-react"],
-          // Sonner toast
-          "sonner": ["sonner"],
-          // EmailJS
-          "emailjs": ["@emailjs/browser"],
-          // Radix UI — only primitives actually used are bundled
-          "radix-ui": [
-            "@radix-ui/react-slot",
-            "@radix-ui/react-toast",
-            "@radix-ui/react-dialog",
-            "@radix-ui/react-label",
-            "@radix-ui/react-select",
-            "@radix-ui/react-accordion",
-            "@radix-ui/react-checkbox",
-          ],
-        },
-      },
-    },
   },
   plugins: [
     react(),
