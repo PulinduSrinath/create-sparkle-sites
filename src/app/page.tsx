@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FloatingBackground from "@/components/FloatingBackground";
+import LazySection from "@/components/LazySection";
+const FloatingBackground = lazy(() => import("@/components/FloatingBackground"));
 const CTASection = lazy(() => import("@/components/CTASection"));
 const ServicesSection = lazy(() => import("./ServicesSection"));
 const AboutSection = lazy(() => import("./AboutSection"));
@@ -212,21 +213,31 @@ const HeroSection = () => {
 const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
-      <FloatingBackground />
+      <Suspense fallback={null}>
+        <FloatingBackground />
+      </Suspense>
       <Navbar />
       <HeroSection />
-      <Suspense fallback={<div className="h-screen" />}>
-        <ServicesSection />
-      </Suspense>
-      <Suspense fallback={<div className="h-96" />}>
-        <AboutSection />
-      </Suspense>
-      <Suspense fallback={<div className="h-96" />}>
-        <TechStackSection />
-      </Suspense>
-      <Suspense fallback={<div className="h-32" />}>
-        <CTASection />
-      </Suspense>
+      <LazySection fallback={<div className="h-screen" />}>
+        <Suspense fallback={<div className="h-screen" />}>
+          <ServicesSection />
+        </Suspense>
+      </LazySection>
+      <LazySection fallback={<div className="h-96" />}>
+        <Suspense fallback={<div className="h-96" />}>
+          <AboutSection />
+        </Suspense>
+      </LazySection>
+      <LazySection fallback={<div className="h-96" />}>
+        <Suspense fallback={<div className="h-96" />}>
+          <TechStackSection />
+        </Suspense>
+      </LazySection>
+      <LazySection fallback={<div className="h-32" />}>
+        <Suspense fallback={<div className="h-32" />}>
+          <CTASection />
+        </Suspense>
+      </LazySection>
       <Footer />
     </div>
   );
