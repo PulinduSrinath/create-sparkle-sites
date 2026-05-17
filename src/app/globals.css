@@ -149,7 +149,20 @@
     .animate-hero-visual,
     .animate-hero-orb-a,
     .animate-hero-orb-b,
-    .animate-hero-orb-c {
+    .animate-hero-orb-c,
+    .animate-nav-enter,
+    .animate-logo-float,
+    .animate-float-orb,
+    .animate-orbit-ring,
+    .animate-node-drift,
+    .animate-node-pulse,
+    .animate-line-drift,
+    .animate-terminal-enter,
+    .animate-terminal-line,
+    .animate-badge-enter,
+    .animate-cursor-blink,
+    .animate-spin-slow,
+    .animate-pulse-glow {
       animation: none !important;
     }
   }

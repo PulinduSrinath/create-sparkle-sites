@@ -1,6 +1,4 @@
 import { Suspense, lazy } from "react";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -8,7 +6,8 @@ import ScrollToTop from "./components/ScrollToTop";
 
 import Index from "./app/page";
 
-// Lazy load secondary routes to keep the home critical path short
+const Toaster = lazy(() => import("@/components/ui/toaster").then((m) => ({ default: m.Toaster })));
+const Sonner = lazy(() => import("@/components/ui/sonner").then((m) => ({ default: m.Toaster })));
 const About = lazy(() => import("./app/about/page"));
 const Services = lazy(() => import("./app/services/page"));
 const Contact = lazy(() => import("./app/contact/page"));
@@ -18,18 +17,19 @@ const NotFound = lazy(() => import("./app/not-found/page"));
 
 const queryClient = new QueryClient();
 
-// A simple loading fallback for route transitions
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
-    <div className="w-8 h-8 rounded-full border-4 border-primary border-t-transparent animate-spin"></div>
+    <div className="w-8 h-8 rounded-full border-4 border-primary border-t-transparent animate-spin" aria-hidden />
   </div>
 );
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
+      <Suspense fallback={null}>
+        <Toaster />
+        <Sonner />
+      </Suspense>
       <BrowserRouter>
         <ScrollToTop />
         <Suspense fallback={<PageLoader />}>
@@ -40,7 +40,6 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/lands" element={<Lands />} />
             <Route path="/residencies" element={<Residencies />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
