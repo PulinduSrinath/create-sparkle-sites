@@ -63,7 +63,6 @@ export default defineConfig(() => ({
   },
   optimizeDeps: {
     include: ["react", "react-dom", "react-router-dom"],
-    exclude: ["@emailjs/browser", "react-google-recaptcha"],
   },
   plugins: [
     react(),
