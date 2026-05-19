@@ -174,31 +174,33 @@ const Index = () => {
         </Suspense>
       )}
       <Navbar />
-      <HeroSection />
+      <main>
+        <HeroSection />
 
-      <DeferredSection minHeight="100vh">
-        <Suspense fallback={<div className="h-screen" aria-hidden />}>
-          <ServicesSection />
-        </Suspense>
-      </DeferredSection>
+        <DeferredSection minHeight="100vh">
+          <Suspense fallback={<div className="h-screen" aria-hidden />}>
+            <ServicesSection />
+          </Suspense>
+        </DeferredSection>
 
-      <DeferredSection minHeight="24rem">
-        <Suspense fallback={<div className="h-96" aria-hidden />}>
-          <AboutSection />
-        </Suspense>
-      </DeferredSection>
+        <DeferredSection minHeight="24rem">
+          <Suspense fallback={<div className="h-96" aria-hidden />}>
+            <AboutSection />
+          </Suspense>
+        </DeferredSection>
 
-      <DeferredSection minHeight="24rem">
-        <Suspense fallback={<div className="h-96" aria-hidden />}>
-          <TechStackSection />
-        </Suspense>
-      </DeferredSection>
+        <DeferredSection minHeight="24rem">
+          <Suspense fallback={<div className="h-96" aria-hidden />}>
+            <TechStackSection />
+          </Suspense>
+        </DeferredSection>
 
-      <DeferredSection minHeight="8rem">
-        <Suspense fallback={<div className="h-32" aria-hidden />}>
-          <CTASection />
-        </Suspense>
-      </DeferredSection>
+        <DeferredSection minHeight="8rem">
+          <Suspense fallback={<div className="h-32" aria-hidden />}>
+            <CTASection />
+          </Suspense>
+        </DeferredSection>
+      </main>
 
       <DeferredSection minHeight="12rem">
         <Suspense fallback={null}>
