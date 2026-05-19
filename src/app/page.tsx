@@ -59,9 +59,9 @@ const WhatsAppIcon = ({ size = 24 }: { size?: number }) => (
 );
 
 const SocialStrip = () => (
-  <section className="py-10 bg-background border-y border-white/5">
+  <section className="py-6 bg-background border-y border-white/5">
     <div className="container mx-auto px-6">
-      <p className="text-center text-xs font-bold uppercase tracking-[0.4em] text-muted-foreground mb-6">Quick Contact</p>
+      <p className="text-center text-xs font-bold uppercase tracking-[0.4em] text-muted-foreground mb-4">Quick Contact</p>
       <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
         {[
           { icon: Facebook,     label: "Facebook",  href: "https://www.facebook.com/share/1QTWVwMz7h/?mibextid=wwXIfr", border: "border-[#1877F2]/40", bg: "hover:bg-[#1877F2]/10", text: "text-[#1877F2]", shadow: "hover:shadow-[0_0_20px_rgba(24,119,242,0.3)]" },
@@ -106,7 +106,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-40 lg:pb-56">
+    <section className="relative flex items-center justify-center overflow-hidden pt-32 pb-16">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
         <div
           className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10 animate-hero-orb-a"
@@ -177,12 +177,12 @@ const HeroSection = () => {
           <HeroDecorations />
         </div>
 
-        <div className="mt-24 grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-5xl mx-auto">
+        <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-4xl mx-auto">
           {[
-            { value: "6+",   label: "Year of Experience",  icon: Award,       color: "text-amber-400",   glow: "rgba(251,191,36,0.3)" },
-            { value: "125+", label: "Happy Clients",        icon: Users,       color: "text-violet-400",  glow: "rgba(167,139,250,0.3)" },
-            { value: "10+",  label: "Deployed Countries",   icon: Globe2,      color: "text-cyan-400",    glow: "rgba(34,211,238,0.3)" },
-            { value: "185+", label: "Successful Projects",  icon: FolderCheck, color: "text-fuchsia-400", glow: "rgba(232,121,249,0.3)" },
+            { value: "3+",  label: "Year of Experience",  icon: Award,       color: "text-amber-400",   glow: "rgba(251,191,36,0.3)" },
+            { value: "50+", label: "Happy Clients",        icon: Users,       color: "text-violet-400",  glow: "rgba(167,139,250,0.3)" },
+            { value: "10+", label: "Deployed Countries",   icon: Globe2,      color: "text-cyan-400",    glow: "rgba(34,211,238,0.3)" },
+            { value: "75+", label: "Successful Projects",  icon: FolderCheck, color: "text-fuchsia-400", glow: "rgba(232,121,249,0.3)" },
           ].map((stat) => (
             <StatCard key={stat.label} value={stat.value} label={stat.label} icon={stat.icon} color={stat.color} glow={stat.glow} />
           ))}
