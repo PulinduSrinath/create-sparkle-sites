@@ -40,29 +40,28 @@ const ContactHero = () => {
         <motion.div animate={{ scale: [1.2, 1, 1.2], opacity: [0.15, 0.3, 0.15] }} transition={{ duration: 10, repeat: Infinity, delay: 2 }} className="absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] pointer-events-none" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-20">
-          <div className="lg:w-3/5 text-left">
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-primary text-[10px] font-bold uppercase tracking-[0.4em] mb-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-20">
+          <div className="lg:w-3/5 text-left w-full">
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-primary text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.25em] sm:tracking-[0.4em] mb-6 sm:mb-10">
               <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(34,211,238,0.8)]" />Establish a Partnership
             </motion.div>
-            <h1 className="text-6xl md:text-8xl font-bold font-display leading-[0.85] mb-10 tracking-tighter text-white drop-shadow-[0_2px_15px_rgba(0,0,0,0.5)]">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold font-display leading-[0.9] sm:leading-[0.85] mb-6 sm:mb-10 tracking-tighter text-white drop-shadow-[0_2px_15px_rgba(0,0,0,0.5)]">
               Let's Build <br /><span className="gradient-text drop-shadow-[0_0_30px_rgba(0,240,255,0.2)]">Something Exceptional.</span>
             </h1>
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="text-foreground/70 text-2xl leading-relaxed max-w-2xl font-medium mb-12">
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="text-foreground/70 text-sm sm:text-xl md:text-2xl leading-relaxed max-w-2xl font-medium mb-8 sm:mb-12">
               Connect with the precision engineers and digital visionaries crafting the next generation of scalable legacies.
             </motion.p>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="flex flex-wrap items-center gap-8">
-              <a href="mailto:info@zetasbuild.com" className="flex items-center gap-3 text-foreground/50 hover:text-primary transition-colors cursor-pointer group">
-                <Mail size={18} /><span className="text-sm font-bold uppercase tracking-widest">info@zetasbuild.com</span><ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="flex flex-col xs:flex-row flex-wrap items-start xs:items-center gap-3 sm:gap-4">
+              <a href="mailto:info@zetasbuild.com" className="inline-flex items-center gap-2 sm:gap-3 px-4 py-2.5 rounded-xl border border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 hover:border-primary/70 transition-all cursor-pointer group shadow-[0_0_12px_rgba(34,211,238,0.1)] hover:shadow-[0_0_20px_rgba(34,211,238,0.25)]">
+                <Mail size={15} className="flex-shrink-0" /><span className="text-xs sm:text-sm font-bold uppercase tracking-widest">info@zetasbuild.com</span><ArrowUpRight size={13} className="opacity-60 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
               </a>
-              <div className="w-[1px] h-4 bg-foreground/10" />
-              <a href="tel:+94771914260" className="flex items-center gap-3 text-foreground/50 hover:text-secondary transition-colors cursor-pointer group">
-                <Phone size={18} /><span className="text-sm font-bold uppercase tracking-widest">+94 77 191 4260</span>
+              <a href="tel:+94771914260" className="inline-flex items-center gap-2 sm:gap-3 px-4 py-2.5 rounded-xl border border-white/20 bg-white/5 text-foreground hover:border-white/40 hover:bg-white/10 transition-all cursor-pointer group">
+                <Phone size={15} className="flex-shrink-0 text-primary" /><span className="text-xs sm:text-sm font-bold uppercase tracking-widest">+94 77 191 4260</span>
               </a>
             </motion.div>
           </div>
-          <div className="lg:w-2/5 relative flex justify-center">
+          <div className="lg:w-2/5 relative hidden lg:flex justify-center">
             <motion.div initial={{ opacity: 0, scale: 0.8, rotate: -20 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 1.5, type: "spring" }} className="relative w-80 h-? flex items-center justify-center py-20">
               <div className="absolute inset-0 flex items-center justify-center">
                 <motion.div animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="w-[140%] h-[140%] border border-white/5 rounded-full" />
@@ -138,16 +137,16 @@ const ContactMain = () => {
   const supportTypes = ["Sales support", "Technical support", "Inquiries", "Complaints"];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-6">
-        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 bg-card rounded-3xl shadow-2xl overflow-hidden border border-border">
-          <div className="p-10 lg:p-16">
-            <h2 className="text-3xl font-bold text-foreground mb-6">Send us a message</h2>
-            <p className="text-muted-foreground leading-relaxed mb-10">At ZetasBuild, we value your feedback and strive to continuously improve our products and services. Your input is invaluable to us, so please don't hesitate to share your thoughts and suggestions with us.</p>
-            <p className="text-muted-foreground leading-relaxed mb-10">We look forward to hearing from you and assisting you in any way we can. Thank you for choosing ZetasBuild.</p>
+    <section className="py-12 sm:py-20 bg-background">
+      <div className="container mx-auto px-3 sm:px-6">
+        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-0 bg-card rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-border">
+          <div className="p-6 sm:p-10 lg:p-16">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">Send us a message</h2>
+            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6 sm:mb-10">At ZetasBuild, we value your feedback and strive to continuously improve our products and services. Your input is invaluable to us, so please don't hesitate to share your thoughts and suggestions with us.</p>
+            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6 sm:mb-10">We look forward to hearing from you and assisting you in any way we can. Thank you for choosing ZetasBuild.</p>
             <div className="space-y-4">{supportTypes.map((type) => <div key={type} className="flex items-center gap-3 text-foreground"><CheckCircle2 size={18} className="text-primary" /><span className="font-medium">{type}</span></div>)}</div>
           </div>
-          <div className="bg-muted/50 p-10 lg:p-16 border-l border-border">
+          <div className="bg-muted/50 p-6 sm:p-10 lg:p-16 border-t lg:border-t-0 lg:border-l border-border">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div><input type="text" placeholder="Your Name" className={`w-full bg-background border ${errors.name ? 'border-red-500' : 'border-border'} text-foreground rounded-lg px-4 py-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-muted-foreground`} {...register("name")} />{errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}</div>
@@ -155,8 +154,8 @@ const ContactMain = () => {
               </div>
               <div><input type="text" placeholder="Your Subject" className={`w-full bg-background border ${errors.subject ? 'border-red-500' : 'border-border'} text-foreground rounded-lg px-4 py-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-muted-foreground`} {...register("subject")} />{errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>}</div>
               <div><textarea placeholder="Your Message" rows={6} className={`w-full bg-background border ${errors.message ? 'border-red-500' : 'border-border'} text-foreground rounded-lg px-4 py-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-muted-foreground resize-none`} {...register("message")}></textarea>{errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}</div>
-              <div className="pt-2"><ReCAPTCHA ref={recaptchaRef} sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6Lc2QtUsAAAAAHTshKIx3a6CpJFrZpaneCRxt2Kz"} /></div>
-              <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} type="submit" disabled={isSubmitting} className="inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-primary/20 disabled:opacity-70 disabled:cursor-not-allowed w-full sm:w-auto">
+              <div className="pt-2 overflow-x-auto"><ReCAPTCHA ref={recaptchaRef} sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6Lc2QtUsAAAAAHTshKIx3a6CpJFrZpaneCRxt2Kz"} /></div>
+              <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} type="submit" disabled={isSubmitting} className="inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-primary/20 disabled:opacity-70 disabled:cursor-not-allowed w-full">
                 {isSubmitting ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}{isSubmitting ? "Sending..." : "Send Message"}
               </motion.button>
             </form>
@@ -179,13 +178,13 @@ const WhatsAppIcon = ({ size = 20 }: {size?: number}) => (
 const ContactNumbers = () => {
   const contacts = [{ label: "Contact Number", number: "+94 77 191 4260" }];
   return (
-    <section className="py-20 bg-background border-t border-border">
-      <div className="container mx-auto px-6 text-center">
+    <section className="py-12 sm:py-20 bg-background border-t border-border">
+      <div className="container mx-auto px-4 sm:px-6 text-center">
         <div className="flex flex-col items-center justify-center mb-16">
           {contacts.map((contact, i) => (
             <motion.div key={contact.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group text-center">
               <h3 className="text-xl font-bold text-foreground mb-2">{contact.label}</h3>
-              <a href="tel:+94771914260" className="text-4xl md:text-5xl font-extrabold text-primary tracking-tighter group-hover:scale-105 transition-transform duration-300 block hover:opacity-80">{contact.number}</a>
+              <a href="tel:+94771914260" className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary tracking-tighter group-hover:scale-105 transition-transform duration-300 block hover:opacity-80">{contact.number}</a>
             </motion.div>
           ))}
         </div>
@@ -194,23 +193,33 @@ const ContactNumbers = () => {
           <div className="flex flex-col md:flex-row gap-6 md:gap-12">
             <div className="flex flex-col">
               <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-1">General Inquiry</span>
-              <a href="mailto:info@zetasbuild.com" className="text-2xl md:text-3xl font-bold text-primary tracking-tight hover:opacity-80 transition-opacity">info@zetasbuild.com</a>
+              <a href="mailto:info@zetasbuild.com" className="text-lg sm:text-2xl md:text-3xl font-bold text-primary tracking-tight hover:opacity-80 transition-opacity break-all">info@zetasbuild.com</a>
             </div>
             <div className="flex flex-col">
               <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-1">Technical Support</span>
-              <a href="mailto:support@zetasbuild.com" className="text-2xl md:text-3xl font-bold text-primary tracking-tight hover:opacity-80 transition-opacity">support@zetasbuild.com</a>
+              <a href="mailto:support@zetasbuild.com" className="text-lg sm:text-2xl md:text-3xl font-bold text-primary tracking-tight hover:opacity-80 transition-opacity break-all">support@zetasbuild.com</a>
             </div>
           </div>
         </motion.div>
-        <div className="flex justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-4">
           {[
-            { Icon: Facebook, href: "https://www.facebook.com/share/1QTWVwMz7h/?mibextid=wwXIfr" },
-            { Icon: Linkedin, href: "https://www.linkedin.com/in/zetasbuild" },
-            { Icon: WhatsAppIcon, href: "https://wa.me/94771914260" },
-            { Icon: Instagram, href: "https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=ay8x39o" }
-          ].map(({ Icon, href }, i) => (
-            <motion.a key={i} href={href} target="_blank" rel="noopener noreferrer" aria-label={`Follow us on ${href.includes('facebook') ? 'Facebook' : href.includes('linkedin') ? 'LinkedIn' : href.includes('instagram') ? 'Instagram' : 'WhatsApp'}`} whileHover={{ scale: 1.1, y: -2 }} className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all">
+            { Icon: Facebook,     href: "https://www.facebook.com/share/1QTWVwMz7h/?mibextid=wwXIfr", label: "Facebook",  color: "border-[#1877F2]/50 bg-[#1877F2]/10 text-[#1877F2] shadow-[0_0_18px_rgba(24,119,242,0.2)] hover:bg-[#1877F2]/20 hover:border-[#1877F2]/80 hover:shadow-[0_0_28px_rgba(24,119,242,0.4)]" },
+            { Icon: Linkedin,     href: "https://www.linkedin.com/in/zetasbuild",                        label: "LinkedIn",  color: "border-[#0A66C2]/50 bg-[#0A66C2]/10 text-[#0A66C2] shadow-[0_0_18px_rgba(10,102,194,0.2)] hover:bg-[#0A66C2]/20 hover:border-[#0A66C2]/80 hover:shadow-[0_0_28px_rgba(10,102,194,0.4)]" },
+            { Icon: WhatsAppIcon, href: "https://wa.me/94771914260",                                    label: "WhatsApp", color: "border-[#25D366]/50 bg-[#25D366]/10 text-[#25D366] shadow-[0_0_18px_rgba(37,211,102,0.2)] hover:bg-[#25D366]/20 hover:border-[#25D366]/80 hover:shadow-[0_0_28px_rgba(37,211,102,0.4)]" },
+            { Icon: Instagram,    href: "https://www.instagram.com/zetasbuild?igsh=Z3NvNmE0eDN1eWo3&utm_source=qr", label: "Instagram", color: "border-[#E1306C]/50 bg-[#E1306C]/10 text-[#E1306C] shadow-[0_0_18px_rgba(225,48,108,0.2)] hover:bg-[#E1306C]/20 hover:border-[#E1306C]/80 hover:shadow-[0_0_28px_rgba(225,48,108,0.4)]" },
+          ].map(({ Icon, href, label, color }, i) => (
+            <motion.a
+              key={i}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Follow us on ${label}`}
+              whileHover={{ scale: 1.07, y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              className={`inline-flex items-center gap-3 px-5 py-3 rounded-2xl border font-bold text-sm uppercase tracking-widest transition-all duration-300 ${color}`}
+            >
               <Icon size={20} />
+              <span>{label}</span>
             </motion.a>
           ))}
         </div>

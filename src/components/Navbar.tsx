@@ -47,7 +47,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/50 animate-nav-enter">
-      <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+      <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-3 sm:py-4 sm:px-6">
         <Link to="/">
           <ZetasLogo />
         </Link>
@@ -75,7 +75,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="md:hidden flex items-center gap-3">
+        <div className="md:hidden flex items-center gap-2 flex-shrink-0">
           <ThemeToggle />
           <button
             type="button"
