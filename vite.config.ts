@@ -31,7 +31,7 @@ export default defineConfig(() => ({
     target: "esnext",
     cssCodeSplit: true,
     cssMinify: true,
-    modulePreload: { polyfill: false },
+    modulePreload: true,
     terserOptions: {
       compress: {
         drop_console: true,
