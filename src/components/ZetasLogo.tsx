@@ -1,8 +1,8 @@
 import PremiumLogoImage from "@/components/PremiumLogoImage";
 
 const ZetasLogo = ({ className = "", showText = true }: { className?: string; showText?: boolean }) => (
-  <div className={`flex items-center gap-3 ${className}`}>
-    <div className="relative w-14 h-14 flex-shrink-0 flex items-center justify-center rounded-full overflow-hidden group">
+  <div className={`flex items-center gap-2 sm:gap-3 ${className}`}>
+    <div className="relative w-10 h-10 sm:w-14 sm:h-14 flex-shrink-0 flex items-center justify-center rounded-full overflow-hidden group">
       <PremiumLogoImage
         alt="ZetasBuild Logo Icon"
         className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-transform duration-500 group-hover:scale-110"
@@ -14,14 +14,14 @@ const ZetasLogo = ({ className = "", showText = true }: { className?: string; sh
 
     {showText && (
       <div className="flex flex-col font-display leading-none tracking-tight">
-        <div className="flex items-baseline gap-1">
-          <div className="flex text-3xl font-black tracking-tighter">
+        <div className="flex items-baseline gap-0.5 sm:gap-1">
+          <div className="flex text-xl sm:text-3xl font-black tracking-tighter">
             <span className="text-foreground dark:text-white">ZETAS</span>
             <span className="text-primary">BUILD</span>
           </div>
-          <span className="text-[12px] font-black text-foreground/40 dark:text-white/40">.COM</span>
+          <span className="text-[10px] sm:text-[12px] font-black text-foreground/40 dark:text-white/40">.COM</span>
         </div>
-        <div className="text-[8px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60 mt-1">
+        <div className="hidden xs:block text-[8px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60 mt-1">
           Web • Mobile • Product Development
         </div>
       </div>

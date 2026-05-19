@@ -30,7 +30,19 @@ export default defineConfig(() => ({
     minify: "terser",
     target: "esnext",
     cssCodeSplit: true,
-    modulePreload: { polyfill: false },
+    cssMinify: true,
+    modulePreload: true,
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+        pure_funcs: ["console.log", "console.warn", "console.info"],
+        passes: 2,
+        dead_code: true,
+        unused: true,
+      },
+      mangle: { safari10: true },
+    },
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -42,9 +54,15 @@ export default defineConfig(() => ({
           if (id.includes("lucide-react")) return "icons";
           if (id.includes("@tanstack/react-query")) return "query";
           if (id.includes("sonner")) return "sonner";
+          if (id.includes("zod") || id.includes("@hookform") || id.includes("react-hook-form")) return "form-libs";
+          if (id.includes("@emailjs")) return "emailjs";
+          if (id.includes("react-google-recaptcha")) return "recaptcha";
         },
       },
     },
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom", "react-router-dom"],
   },
   plugins: [
     react(),

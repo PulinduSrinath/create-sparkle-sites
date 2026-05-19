@@ -59,7 +59,7 @@ const Footer = () => {
     { icon: <Facebook size={18} />, href: "https://www.facebook.com/share/1QTWVwMz7h/?mibextid=wwXIfr" },
     { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/zetasbuild" },
     { icon: <WhatsAppIcon size={18} />, href: "https://wa.me/94771914260" },
-    { icon: <Instagram size={18} />, href: "https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=ay8x39o" },
+    { icon: <Instagram size={18} />, href: "https://www.instagram.com/zetasbuild?igsh=Z3NvNmE0eDN1eWo3&utm_source=qr" },
   ];
 
   return (

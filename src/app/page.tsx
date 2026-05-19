@@ -2,7 +2,9 @@ import { useEffect, useRef, Suspense, lazy, useState } from "react";
 import { useInView } from "@/hooks/use-in-view";
 import { useCountUp } from "@/hooks/use-count-up";
 import {
-  ArrowRight, Sparkles, Users, Terminal, Layers, Brain
+  ArrowRight, Sparkles, Users, Brain,
+  Award, Globe2, FolderCheck,
+  Facebook, Linkedin, Instagram
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -19,7 +21,7 @@ const TechStackSection = lazy(() => import("./TechStackSection"));
 
 const aiKeywords = ["AI Solutions", "ML Models", "Neural Nets", "Automation", "Deep Learning"];
 
-const StatCard = ({ value, label, icon: Icon }: { value: string; label: string; icon: React.ElementType }) => {
+const StatCard = ({ value, label, icon: Icon, color = "text-primary", glow = "rgba(34,211,238,0.3)" }: { value: string; label: string; icon: React.ElementType; color?: string; glow?: string }) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const numValue = parseInt(value.replace(/[^0-9]/g, ""), 10);
@@ -29,24 +31,60 @@ const StatCard = ({ value, label, icon: Icon }: { value: string; label: string; 
   return (
     <div
       ref={ref}
-      className="group relative flex items-center gap-6 p-6 md:p-8 rounded-[2.5rem] bg-slate-950 border border-white/10 hover:border-primary/50 transition-all duration-500 shadow-2xl overflow-hidden min-w-0 opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 data-[visible=true]:transition-all data-[visible=true]:duration-500"
+      className="group relative flex flex-col items-center text-center gap-4 p-6 md:p-8 rounded-2xl bg-[hsl(222_47%_11%)] border border-white/8 hover:border-white/20 transition-all duration-500 shadow-xl overflow-hidden opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 data-[visible=true]:transition-all data-[visible=true]:duration-500"
       data-visible={isInView}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="w-16 h-16 md:w-20 md:h-20 rounded-[1.5rem] bg-primary flex items-center justify-center text-black relative z-10 shadow-[0_0_30px_rgba(34,211,238,0.4)] flex-shrink-0">
-        <Icon size={32} className="md:w-10 md:h-10" strokeWidth={2.5} />
+      <div
+        className={`w-14 h-14 rounded-full border-2 flex items-center justify-center ${color}`}
+        style={{ borderColor: glow.replace("0.3", "0.5"), boxShadow: `0 0 20px ${glow}` }}
+      >
+        <Icon size={24} strokeWidth={1.8} />
       </div>
-      <div className="flex flex-col relative z-10 text-left min-w-0">
-        <div className="font-display text-4xl md:text-5xl font-black text-white flex items-center leading-none tracking-tighter">
-          <span>{count}</span>
-          <span>{suffix}</span>
+      <div className="flex flex-col items-center relative z-10">
+        <div className="font-display text-4xl md:text-5xl font-black text-white leading-none tracking-tighter">
+          <span>{count}</span><span>{suffix}</span>
         </div>
-        <div className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-primary mt-2 leading-tight">{label}</div>
+        <div className="text-xs font-semibold text-muted-foreground mt-2 leading-tight">{label}</div>
       </div>
-      <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-[60px] rounded-full -mr-16 -mt-16 opacity-0 group-hover:opacity-40 transition-opacity" />
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: `radial-gradient(circle at 50% 0%, ${glow} 0%, transparent 70%)` }} />
     </div>
   );
 };
+
+// Social quick-contact strip
+const WhatsAppIcon = ({ size = 24 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+);
+
+const SocialStrip = () => (
+  <section className="py-6 bg-background border-y border-white/5">
+    <div className="container mx-auto px-6">
+      <p className="text-center text-xs font-bold uppercase tracking-[0.4em] text-muted-foreground mb-4">Quick Contact</p>
+      <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+        {[
+          { icon: Facebook,     label: "Facebook",  href: "https://www.facebook.com/share/1QTWVwMz7h/?mibextid=wwXIfr", border: "border-[#1877F2]/40", bg: "hover:bg-[#1877F2]/10", text: "text-[#1877F2]", shadow: "hover:shadow-[0_0_20px_rgba(24,119,242,0.3)]" },
+          { icon: Linkedin,     label: "LinkedIn",  href: "https://www.linkedin.com/in/zetasbuild",                        border: "border-[#0A66C2]/40", bg: "hover:bg-[#0A66C2]/10", text: "text-[#0A66C2]", shadow: "hover:shadow-[0_0_20px_rgba(10,102,194,0.3)]" },
+          { icon: WhatsAppIcon, label: "WhatsApp", href: "https://wa.me/94771914260",                                    border: "border-[#25D366]/40", bg: "hover:bg-[#25D366]/10", text: "text-[#25D366]", shadow: "hover:shadow-[0_0_20px_rgba(37,211,102,0.3)]" },
+          { icon: Instagram,    label: "Instagram", href: "https://www.instagram.com/zetasbuild?igsh=Z3NvNmE0eDN1eWo3&utm_source=qr", border: "border-[#E1306C]/40", bg: "hover:bg-[#E1306C]/10", text: "text-[#E1306C]", shadow: "hover:shadow-[0_0_20px_rgba(225,48,108,0.3)]" },
+        ].map(({ icon: Icon, label, href, border, bg, text, shadow }) => (
+          <a
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Follow us on ${label}`}
+            className={`inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border font-bold text-sm uppercase tracking-widest transition-all duration-300 bg-transparent ${border} ${bg} ${text} ${shadow}`}
+          >
+            <Icon size={18} />
+            <span>{label}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 const HeroSection = () => {
   const [kwIndex, setKwIndex] = useState(0);
@@ -68,7 +106,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-40 lg:pb-56">
+    <section className="relative flex items-center justify-center overflow-hidden pt-32 pb-16">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
         <div
           className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10 animate-hero-orb-a"
@@ -139,13 +177,14 @@ const HeroSection = () => {
           <HeroDecorations />
         </div>
 
-        <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
+        <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-4xl mx-auto">
           {[
-            { value: "100%", label: "Client Satisfaction", icon: Users },
-            { value: "10+", label: "Completed Projects", icon: Terminal },
-            { value: "150+", label: "Design Resources", icon: Layers },
+            { value: "3+",  label: "Year of Experience",  icon: Award,       color: "text-amber-400",   glow: "rgba(251,191,36,0.3)" },
+            { value: "50+", label: "Happy Clients",        icon: Users,       color: "text-violet-400",  glow: "rgba(167,139,250,0.3)" },
+            { value: "10+", label: "Deployed Countries",   icon: Globe2,      color: "text-cyan-400",    glow: "rgba(34,211,238,0.3)" },
+            { value: "75+", label: "Successful Projects",  icon: FolderCheck, color: "text-fuchsia-400", glow: "rgba(232,121,249,0.3)" },
           ].map((stat) => (
-            <StatCard key={stat.label} value={stat.value} label={stat.label} icon={stat.icon} />
+            <StatCard key={stat.label} value={stat.value} label={stat.label} icon={stat.icon} color={stat.color} glow={stat.glow} />
           ))}
         </div>
       </div>
@@ -174,31 +213,34 @@ const Index = () => {
         </Suspense>
       )}
       <Navbar />
-      <HeroSection />
+      <main>
+        <HeroSection />
+        <SocialStrip />
 
-      <DeferredSection minHeight="100vh">
-        <Suspense fallback={<div className="h-screen" aria-hidden />}>
-          <ServicesSection />
-        </Suspense>
-      </DeferredSection>
+        <DeferredSection minHeight="100vh">
+          <Suspense fallback={<div className="h-screen" aria-hidden />}>
+            <ServicesSection />
+          </Suspense>
+        </DeferredSection>
 
-      <DeferredSection minHeight="24rem">
-        <Suspense fallback={<div className="h-96" aria-hidden />}>
-          <AboutSection />
-        </Suspense>
-      </DeferredSection>
+        <DeferredSection minHeight="24rem">
+          <Suspense fallback={<div className="h-96" aria-hidden />}>
+            <AboutSection />
+          </Suspense>
+        </DeferredSection>
 
-      <DeferredSection minHeight="24rem">
-        <Suspense fallback={<div className="h-96" aria-hidden />}>
-          <TechStackSection />
-        </Suspense>
-      </DeferredSection>
+        <DeferredSection minHeight="24rem">
+          <Suspense fallback={<div className="h-96" aria-hidden />}>
+            <TechStackSection />
+          </Suspense>
+        </DeferredSection>
 
-      <DeferredSection minHeight="8rem">
-        <Suspense fallback={<div className="h-32" aria-hidden />}>
-          <CTASection />
-        </Suspense>
-      </DeferredSection>
+        <DeferredSection minHeight="8rem">
+          <Suspense fallback={<div className="h-32" aria-hidden />}>
+            <CTASection />
+          </Suspense>
+        </DeferredSection>
+      </main>
 
       <DeferredSection minHeight="12rem">
         <Suspense fallback={null}>
