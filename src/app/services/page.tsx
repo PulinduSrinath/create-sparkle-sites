@@ -9,7 +9,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingBackground from "@/components/FloatingBackground";
-const CTASection = lazy(() => import("@/components/CTASection"));
+import CTASection from "@/components/CTASection";
 
 import heroImg from "/services_hero.webp";
 
@@ -259,9 +259,7 @@ const Services = () => {
           <ServicesLifecycle />
           <ServicesDomains />
           <IndustriesSection />
-          <Suspense fallback={<div className="h-20" />}>
-            <CTASection />
-          </Suspense>
+          <CTASection />
         </motion.div>
       </main>
       <Footer />

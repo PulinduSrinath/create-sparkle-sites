@@ -12,12 +12,12 @@ import Navbar from "@/components/Navbar";
 import DeferredSection from "@/components/DeferredSection";
 import HeroDecorations from "./HeroDecorations";
 
-const Footer = lazy(() => import("@/components/Footer"));
-const FloatingBackground = lazy(() => import("@/components/FloatingBackground"));
-const CTASection = lazy(() => import("@/components/CTASection"));
-const ServicesSection = lazy(() => import("./ServicesSection"));
-const AboutSection = lazy(() => import("./AboutSection"));
-const TechStackSection = lazy(() => import("./TechStackSection"));
+import Footer from "@/components/Footer";
+import FloatingBackground from "@/components/FloatingBackground";
+import CTASection from "@/components/CTASection";
+import ServicesSection from "./ServicesSection";
+import AboutSection from "./AboutSection";
+import TechStackSection from "./TechStackSection";
 
 const aiKeywords = ["AI Solutions", "ML Models", "Neural Nets", "Automation", "Deep Learning"];
 
@@ -207,45 +207,31 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      {showBackground && (
-        <Suspense fallback={null}>
-          <FloatingBackground />
-        </Suspense>
-      )}
+      {showBackground && <FloatingBackground />}
       <Navbar />
       <main>
         <HeroSection />
         <SocialStrip />
 
         <DeferredSection minHeight="100vh">
-          <Suspense fallback={<div className="h-screen" aria-hidden />}>
-            <ServicesSection />
-          </Suspense>
+          <ServicesSection />
         </DeferredSection>
 
         <DeferredSection minHeight="24rem">
-          <Suspense fallback={<div className="h-96" aria-hidden />}>
-            <AboutSection />
-          </Suspense>
+          <AboutSection />
         </DeferredSection>
 
         <DeferredSection minHeight="24rem">
-          <Suspense fallback={<div className="h-96" aria-hidden />}>
-            <TechStackSection />
-          </Suspense>
+          <TechStackSection />
         </DeferredSection>
 
         <DeferredSection minHeight="8rem">
-          <Suspense fallback={<div className="h-32" aria-hidden />}>
-            <CTASection />
-          </Suspense>
+          <CTASection />
         </DeferredSection>
       </main>
 
       <DeferredSection minHeight="12rem">
-        <Suspense fallback={null}>
-          <Footer />
-        </Suspense>
+        <Footer />
       </DeferredSection>
     </div>
   );
