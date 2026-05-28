@@ -9,6 +9,7 @@ import {
 import { Link } from "react-router-dom";
 
 import Navbar from "@/components/Navbar";
+import EnterSiteSplash from "@/components/EnterSiteSplash";
 import DeferredSection from "@/components/DeferredSection";
 import HeroDecorations from "./HeroDecorations";
 
@@ -194,6 +195,23 @@ const HeroSection = () => {
 
 const Index = () => {
   const [showBackground, setShowBackground] = useState(false);
+  const [showSplash, setShowSplash] = useState(() => {
+    if (typeof window !== "undefined") {
+      return !sessionStorage.getItem("zetas_visited");
+    }
+    return true;
+  });
+
+  useEffect(() => {
+    if (showSplash) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showSplash]);
 
   useEffect(() => {
     const id =
@@ -207,32 +225,45 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      {showBackground && <FloatingBackground />}
-      <Navbar />
-      <main>
-        <HeroSection />
-        <SocialStrip />
+      {showSplash && (
+        <EnterSiteSplash
+          onEnter={() => {
+            sessionStorage.setItem("zetas_visited", "true");
+            setShowSplash(false);
+          }}
+        />
+      )}
 
-        <DeferredSection minHeight="100vh">
-          <ServicesSection />
-        </DeferredSection>
+      {!showSplash && (
+        <>
+          {showBackground && <FloatingBackground />}
+          <Navbar />
+          <main>
+            <HeroSection />
+            <SocialStrip />
 
-        <DeferredSection minHeight="24rem">
-          <AboutSection />
-        </DeferredSection>
+            <DeferredSection minHeight="100vh">
+              <ServicesSection />
+            </DeferredSection>
 
-        <DeferredSection minHeight="24rem">
-          <TechStackSection />
-        </DeferredSection>
+            <DeferredSection minHeight="24rem">
+              <AboutSection />
+            </DeferredSection>
 
-        <DeferredSection minHeight="8rem">
-          <CTASection />
-        </DeferredSection>
-      </main>
+            <DeferredSection minHeight="24rem">
+              <TechStackSection />
+            </DeferredSection>
 
-      <DeferredSection minHeight="12rem">
-        <Footer />
-      </DeferredSection>
+            <DeferredSection minHeight="8rem">
+              <CTASection />
+            </DeferredSection>
+          </main>
+
+          <DeferredSection minHeight="12rem">
+            <Footer />
+          </DeferredSection>
+        </>
+      )}
     </div>
   );
 };

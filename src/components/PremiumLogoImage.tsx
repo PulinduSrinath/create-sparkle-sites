@@ -19,8 +19,8 @@ const PremiumLogoImage = ({
     srcSet="/premium-logo-icon-256.webp 256w, /premium-logo-icon.webp 320w"
     sizes={`(max-width: 768px) min(90vw, ${maxWidth}px), ${maxWidth}px`}
     alt={alt}
-    width={320}
-    height={366}
+    width={402}
+    height={441}
     className={className}
     loading={loading}
     {...(fetchPriority ? { fetchPriority } : {})}

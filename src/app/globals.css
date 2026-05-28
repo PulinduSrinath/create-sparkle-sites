@@ -141,6 +141,14 @@
     text-wrap: balance;
   }
 
+  .neon-glow-primary {
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.8), 0 0 20px hsl(var(--primary) / 0.4), 0 0 35px hsl(var(--primary) / 0.15);
+  }
+
+  .neon-glow-white {
+    text-shadow: 0 0 8px hsl(var(--primary) / 0.4), 0 0 20px hsl(var(--primary) / 0.15);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .animate-hero-fade,
     .animate-hero-fade-delayed,
