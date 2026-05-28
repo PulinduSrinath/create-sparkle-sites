@@ -53,8 +53,8 @@ const ContactHero = () => {
               Connect with the precision engineers and digital visionaries crafting the next generation of scalable legacies.
             </motion.p>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="flex flex-col xs:flex-row flex-wrap items-start xs:items-center gap-3 sm:gap-4">
-              <a href="mailto:info@zetasbuild.com" className="inline-flex items-center gap-2 sm:gap-3 px-4 py-2.5 rounded-xl border border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 hover:border-primary/70 transition-all cursor-pointer group shadow-[0_0_12px_rgba(34,211,238,0.1)] hover:shadow-[0_0_20px_rgba(34,211,238,0.25)]">
-                <Mail size={15} className="flex-shrink-0" /><span className="text-xs sm:text-sm font-bold uppercase tracking-widest">info@zetasbuild.com</span><ArrowUpRight size={13} className="opacity-60 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
+              <a href="mailto:zetasbuild@gmail.com" className="inline-flex items-center gap-2 sm:gap-3 px-4 py-2.5 rounded-xl border border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 hover:border-primary/70 transition-all cursor-pointer group shadow-[0_0_12px_rgba(34,211,238,0.1)] hover:shadow-[0_0_20px_rgba(34,211,238,0.25)]">
+                <Mail size={15} className="flex-shrink-0" /><span className="text-xs sm:text-sm font-bold uppercase tracking-widest">zetasbuild@gmail.com</span><ArrowUpRight size={13} className="opacity-60 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
               </a>
               <a href="tel:+94771914260" className="inline-flex items-center gap-2 sm:gap-3 px-4 py-2.5 rounded-xl border border-white/20 bg-white/5 text-foreground hover:border-white/40 hover:bg-white/10 transition-all cursor-pointer group">
                 <Phone size={15} className="flex-shrink-0 text-primary" /><span className="text-xs sm:text-sm font-bold uppercase tracking-widest">+94 77 191 4260</span>
@@ -189,16 +189,10 @@ const ContactNumbers = () => {
           ))}
         </div>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-12 flex flex-col items-center gap-4">
-          <h3 className="text-xl font-bold text-foreground">Email Channels</h3>
-          <div className="flex flex-col md:flex-row gap-6 md:gap-12">
-            <div className="flex flex-col">
-              <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-1">General Inquiry</span>
-              <a href="mailto:info@zetasbuild.com" className="text-lg sm:text-2xl md:text-3xl font-bold text-primary tracking-tight hover:opacity-80 transition-opacity break-all">info@zetasbuild.com</a>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-1">Technical Support</span>
-              <a href="mailto:support@zetasbuild.com" className="text-lg sm:text-2xl md:text-3xl font-bold text-primary tracking-tight hover:opacity-80 transition-opacity break-all">support@zetasbuild.com</a>
-            </div>
+          <h3 className="text-xl font-bold text-foreground">Email Channel</h3>
+          <div className="flex flex-col">
+            <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-1 text-center">General Support & Inquiries</span>
+            <a href="mailto:zetasbuild@gmail.com" className="text-lg sm:text-2xl md:text-3xl font-bold text-primary tracking-tight hover:opacity-80 transition-opacity break-all text-center">zetasbuild@gmail.com</a>
           </div>
         </motion.div>
         <div className="flex flex-wrap justify-center gap-4">

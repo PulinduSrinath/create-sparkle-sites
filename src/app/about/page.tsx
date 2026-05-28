@@ -285,7 +285,7 @@ const AboutIntro = () => {
                   <Mail size={22} />
                 </div>
                 <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-2">Corporate Channel</div>
-                <div className="text-foreground font-bold text-lg">info@zetasbuild.com</div>
+                <div className="text-foreground font-bold text-lg">zetasbuild@gmail.com</div>
               </motion.div>
             </div>
             <div className="pt-8 flex flex-col sm:flex-row items-center gap-8">
