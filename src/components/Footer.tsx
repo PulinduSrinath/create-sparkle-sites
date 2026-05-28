@@ -56,10 +56,30 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <Facebook size={18} />, href: "https://www.facebook.com/share/1QTWVwMz7h/?mibextid=wwXIfr" },
-    { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/zetasbuild" },
-    { icon: <WhatsAppIcon size={18} />, href: "https://wa.me/94771914260" },
-    { icon: <Instagram size={18} />, href: "https://www.instagram.com/zetasbuild?igsh=Z3NvNmE0eDN1eWo3&utm_source=qr" },
+    { 
+      icon: <Facebook size={18} />, 
+      href: "https://www.facebook.com/share/1QTWVwMz7h/?mibextid=wwXIfr",
+      label: "Facebook",
+      styles: "text-[#1877F2] border-[#1877F2]/30 hover:border-[#1877F2] bg-[#1877F2]/5 hover:bg-[#1877F2]/10 hover:shadow-[0_0_20px_rgba(24,119,242,0.35)]"
+    },
+    { 
+      icon: <Linkedin size={18} />, 
+      href: "https://www.linkedin.com/in/zetasbuild",
+      label: "LinkedIn",
+      styles: "text-[#0A66C2] border-[#0A66C2]/30 hover:border-[#0A66C2] bg-[#0A66C2]/5 hover:bg-[#0A66C2]/10 hover:shadow-[0_0_20px_rgba(10,102,194,0.35)]"
+    },
+    { 
+      icon: <WhatsAppIcon size={18} />, 
+      href: "https://wa.me/94771914260",
+      label: "WhatsApp",
+      styles: "text-[#25D366] border-[#25D366]/30 hover:border-[#25D366] bg-[#25D366]/5 hover:bg-[#25D366]/10 hover:shadow-[0_0_20px_rgba(37,211,102,0.35)]"
+    },
+    { 
+      icon: <Instagram size={18} />, 
+      href: "https://www.instagram.com/zetasbuild?igsh=Z3NvNmE0eDN1eWo3&utm_source=qr",
+      label: "Instagram",
+      styles: "text-[#E1306C] border-[#E1306C]/30 hover:border-[#E1306C] bg-[#E1306C]/5 hover:bg-[#E1306C]/10 hover:shadow-[0_0_20px_rgba(225,48,108,0.35)]"
+    },
   ];
 
   return (
@@ -149,22 +169,12 @@ const Footer = () => {
 
               <div className="flex flex-col gap-6">
                 <div className="flex items-center justify-center lg:justify-start gap-5 group">
-                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-black transition-all">
-                    <Mail size={20} />
-                  </div>
-                  <div className="text-center lg:text-left">
-                    <div className="text-[10px] font-bold text-slate-600 uppercase tracking-widest mb-1">General Inquiry</div>
-                    <div className="text-white font-bold text-lg">info@zetasbuild.com</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center justify-center lg:justify-start gap-5 group">
                   <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all">
                     <Mail size={20} />
                   </div>
                   <div className="text-center lg:text-left">
-                    <div className="text-[10px] font-bold text-slate-600 uppercase tracking-widest mb-1">Technical Support</div>
-                    <div className="text-white font-bold text-lg">support@zetasbuild.com</div>
+                    <div className="text-[10px] font-bold text-slate-600 uppercase tracking-widest mb-1">Corporate Email</div>
+                    <div className="text-white font-bold text-lg">zetasbuild@gmail.com</div>
                   </div>
                 </div>
               </div>
@@ -181,10 +191,10 @@ const Footer = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`Visit our ${social.href.includes('facebook') ? 'Facebook' : social.href.includes('linkedin') ? 'LinkedIn' : social.href.includes('instagram') ? 'Instagram' : 'WhatsApp'} page`}
+                aria-label={`Visit our ${social.label} page`}
                 whileHover={{ y: -5, scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary transition-all duration-300"
+                className={`w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 ${social.styles}`}
               >
                 {social.icon}
               </motion.a>
