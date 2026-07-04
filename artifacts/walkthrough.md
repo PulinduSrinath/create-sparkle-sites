@@ -42,16 +42,16 @@ Below are the screenshots captured from the rebranded browser session:
 <!-- slide -->
 ![Homepage Footer Copyright & Links](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/homepage_footer_actual_4_1783169381423.png)
 <!-- slide -->
-![About Page Branding](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/about_page_logo_1783175343676.png)
+![About Page Branding](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/about_page_1783177435786.png)
 <!-- slide -->
 ![Services Page Bento Grid & Palette](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/services_page_check_1783173505487.png)
 <!-- slide -->
-![Final Transparent Logo Visual Blending](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/hero_section_logo_1783175325003.png)
+![Final Transparent Logo Visual Blending](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/home_hero_decorations_1783177447703.png)
 ````
 
 ### Visual Walkthrough Session Recording
 ````carousel
 ![Initial Browser Session Video](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/verify_rebranded_site_1783169323516.webp)
 <!-- slide -->
-![Final Perfect Rebranding Video](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/verify_perfect_logo_transparency_1783175270412.webp)
+![Final Perfect Rebranding Video](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/verify_new_logo_filenames_1783177385029.webp)
 ````

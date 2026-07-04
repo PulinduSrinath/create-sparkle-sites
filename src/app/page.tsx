@@ -31,22 +31,21 @@ const StatCard = ({ value, label, icon: Icon, color = "text-primary", glow = "rg
   return (
     <div
       ref={ref}
-      className="group relative flex flex-col items-center text-center gap-4 p-6 md:p-8 rounded-2xl bg-[hsl(222_47%_11%)] border border-white/8 hover:border-white/20 transition-all duration-500 shadow-xl overflow-hidden opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 data-[visible=true]:transition-all data-[visible=true]:duration-500"
+      className="group relative flex flex-col items-center text-center gap-4 p-6 md:p-8 rounded-3xl bg-card/60 dark:bg-card/30 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 hover:border-primary/30 dark:hover:border-primary/30 transition-all duration-500 shadow-md hover:shadow-xl opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 data-[visible=true]:transition-all data-[visible=true]:duration-500 overflow-hidden"
       data-visible={isInView}
     >
       <div
-        className={`w-14 h-14 rounded-full border-2 flex items-center justify-center ${color}`}
-        style={{ borderColor: glow.replace("0.3", "0.5"), boxShadow: `0 0 20px ${glow}` }}
+        className="w-14 h-14 rounded-2xl flex items-center justify-center bg-slate-50 dark:bg-white/5 border border-slate-200/60 dark:border-white/10 transition-all duration-300 group-hover:scale-110 group-hover:border-primary/30"
       >
-        <Icon size={24} strokeWidth={1.8} />
+        <Icon size={24} strokeWidth={1.8} className={color} />
       </div>
       <div className="flex flex-col items-center relative z-10">
-        <div className="font-display text-4xl md:text-5xl font-black text-white leading-none tracking-tighter">
+        <div className="font-display text-4xl md:text-5xl font-black text-foreground leading-none tracking-tighter">
           <span>{count}</span><span>{suffix}</span>
         </div>
-        <div className="text-xs font-semibold text-muted-foreground mt-2 leading-tight">{label}</div>
+        <div className="text-xs font-bold text-muted-foreground/80 uppercase tracking-widest mt-3 leading-tight">{label}</div>
       </div>
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: `radial-gradient(circle at 50% 0%, ${glow} 0%, transparent 70%)` }} />
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: `radial-gradient(circle at 50% 0%, ${glow.replace("0.3", "0.08")} 0%, transparent 70%)` }} />
     </div>
   );
 };

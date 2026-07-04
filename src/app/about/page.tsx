@@ -99,8 +99,8 @@ const AboutHero = () => {
                   className="z-10"
                 >
                   <img
-                    src="/premium-logo-icon-256.webp?v=4"
-                    srcSet="/premium-logo-icon-256.webp?v=4 256w, /premium-logo-icon.webp?v=4 320w"
+                    src="/logo-rebranded-256.webp"
+                    srcSet="/logo-rebranded-256.webp 256w, /logo-rebranded.webp 320w"
                     sizes="96px"
                     alt="ZetasBuild"
                     width={96}
