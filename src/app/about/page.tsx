@@ -148,13 +148,18 @@ const stats = [
 
 const CountUp = ({ value, suffix = "", decimals = 0 }: { value: number, suffix?: string, decimals?: number }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-50px" });
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, { damping: 40, stiffness: 80 });
   const displayValue = useTransform(springValue, (latest) => latest.toFixed(decimals) + suffix);
 
   useEffect(() => {
-    if (isInView) setTimeout(() => motionValue.set(value), 300);
+    if (isInView) {
+      const t = setTimeout(() => motionValue.set(value), 300);
+      return () => clearTimeout(t);
+    } else {
+      motionValue.set(0);
+    }
   }, [isInView, value, motionValue]);
 
   return <motion.span ref={ref}>{displayValue}</motion.span>;

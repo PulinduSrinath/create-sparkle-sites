@@ -54,4 +54,6 @@ Below are the screenshots captured from the rebranded browser session:
 ![Initial Browser Session Video](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/verify_rebranded_site_1783169323516.webp)
 <!-- slide -->
 ![Final Perfect Rebranding Video](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/verify_new_logo_filenames_1783177385029.webp)
+<!-- slide -->
+![Smooth Scroll Count-Up Video](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/verify_smooth_count_animations_1783177683880.webp)
 ````

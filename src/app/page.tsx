@@ -23,7 +23,7 @@ const aiKeywords = ["AI Solutions", "ML Models", "Neural Nets", "Automation", "D
 
 const StatCard = ({ value, label, icon: Icon, color = "text-primary", glow = "rgba(34,211,238,0.3)" }: { value: string; label: string; icon: React.ElementType; color?: string; glow?: string }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-50px" });
   const numValue = parseInt(value.replace(/[^0-9]/g, ""), 10);
   const suffix = value.replace(/[0-9]/g, "");
   const count = useCountUp(numValue, isInView);
