@@ -57,6 +57,14 @@ Below are the screenshots captured from the rebranded browser session:
 ![Security & Support 3D Graphic](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/service_4_security_support_1783178838104.png)
 <!-- slide -->
 ![AI & Machine Learning 3D Graphic](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/service_5_ai_machine_learning_1783178844104.png)
+<!-- slide -->
+![About Section Light Mode Redesign](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/about_section_light_1783179453290.png)
+<!-- slide -->
+![About Section Dark Mode Redesign](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/about_section_dark_1783179464202.png)
+<!-- slide -->
+![About Section Hover Interactions](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/about_section_hover_1783179467980.png)
+<!-- slide -->
+![About Page Socials Updated](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/social_links_section_1783179751724.png)
 ````
 
 ### Visual Walkthrough Session Recording
@@ -68,4 +76,8 @@ Below are the screenshots captured from the rebranded browser session:
 ![Smooth Scroll Count-Up Video](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/verify_smooth_count_animations_1783177683880.webp)
 <!-- slide -->
 ![3D Service Graphics Verification Video](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/verify_service_graphics_1783178729385.webp)
+<!-- slide -->
+![About Section Redesign Verification Video](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/verify_about_section_redesign_1783179433766.webp)
+<!-- slide -->
+![About Page Socials Verification Video](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/verify_about_page_socials_1783179732419.webp)
 ````
