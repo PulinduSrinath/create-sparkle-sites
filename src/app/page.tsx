@@ -110,15 +110,15 @@ const HeroSection = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
         <div
           className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10 animate-hero-orb-a"
-          style={{ background: "radial-gradient(circle, hsl(172 80% 50% / 0.3), transparent)" }}
+          style={{ background: "radial-gradient(circle, hsl(221 100% 50% / 0.3), transparent)" }}
         />
         <div
           className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-10 animate-hero-orb-b"
-          style={{ background: "radial-gradient(circle, hsl(260 70% 60% / 0.3), transparent)" }}
+          style={{ background: "radial-gradient(circle, hsl(264 100% 56% / 0.3), transparent)" }}
         />
         <div
           className="absolute top-1/2 right-1/3 w-64 h-64 rounded-full opacity-05 animate-hero-orb-c"
-          style={{ background: "radial-gradient(circle, hsl(150 70% 45% / 0.3), transparent)" }}
+          style={{ background: "radial-gradient(circle, hsl(280 100% 60% / 0.3), transparent)" }}
         />
       </div>
       <div
@@ -126,7 +126,7 @@ const HeroSection = () => {
         aria-hidden
         style={{
           backgroundImage:
-            "linear-gradient(hsl(172 80% 50%) 1px, transparent 1px), linear-gradient(90deg, hsl(172 80% 50%) 1px, transparent 1px)",
+            "linear-gradient(hsl(221 100% 50%) 1px, transparent 1px), linear-gradient(90deg, hsl(221 100% 50%) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
@@ -162,7 +162,7 @@ const HeroSection = () => {
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 animate-hero-fade-delayed-3">
               <Link
                 to="/contact"
-                className="group inline-flex items-center justify-center gap-3 px-12 py-5 rounded-2xl font-bold text-black bg-primary hover:scale-105 active:scale-95 transition-all text-xl shadow-[0_0_40px_rgba(34,211,238,0.4)]"
+                className="group inline-flex items-center justify-center gap-3 px-12 py-5 rounded-2xl font-bold text-black bg-primary hover:scale-105 active:scale-95 transition-all text-xl shadow-[0_0_40px_rgba(0,82,255,0.45)]"
               >
                 Start Your Project <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
               </Link>
@@ -181,7 +181,7 @@ const HeroSection = () => {
           {[
             { value: "3+",  label: "Year of Experience",  icon: Award,       color: "text-amber-400",   glow: "rgba(251,191,36,0.3)" },
             { value: "50+", label: "Happy Clients",        icon: Users,       color: "text-violet-400",  glow: "rgba(167,139,250,0.3)" },
-            { value: "10+", label: "Deployed Countries",   icon: Globe2,      color: "text-cyan-400",    glow: "rgba(34,211,238,0.3)" },
+            { value: "10+", label: "Deployed Countries",   icon: Globe2,      color: "text-blue-500",    glow: "rgba(0,82,255,0.3)" },
             { value: "75+", label: "Successful Projects",  icon: FolderCheck, color: "text-fuchsia-400", glow: "rgba(232,121,249,0.3)" },
           ].map((stat) => (
             <StatCard key={stat.label} value={stat.value} label={stat.label} icon={stat.icon} color={stat.color} glow={stat.glow} />

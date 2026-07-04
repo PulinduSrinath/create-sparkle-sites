@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_OTHER",
+  "summary": "Create a script to crop the logo using its original alpha channel, avoiding background manipulation errors",
+  "updatedAt": "2026-07-04T14:10:31.247353400Z"
+}

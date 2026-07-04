@@ -1,0 +1,12 @@
+# Verification Plan
+- [x] Open http://localhost:8080/
+- [x] Refresh page to bypass caching if necessary
+- [x] Capture screenshot of the hero section showing the transparent logo
+- [x] Verify black/navy background is removed and the logo is transparent and well balanced
+- [x] Record findings:
+  - Navigated to http://localhost:8080/ and http://localhost:8080/about
+  - Refreshed both pages to ensure cache was cleared and the latest logo version was fetched
+  - No 404 or asset loading errors found in console logs for `premium-logo-icon.webp` or `premium-logo-icon.png`
+  - Captured screenshots saved:
+    - Homepage Hero: `hero_section_logo_1783175325003.png`
+    - About Page: `about_page_logo_1783175343676.png`

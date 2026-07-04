@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_OTHER",
+  "summary": "Create a script to crop and remove the black background using a flood fill algorithm from the corners",
+  "updatedAt": "2026-07-04T13:37:33.483255200Z"
+}

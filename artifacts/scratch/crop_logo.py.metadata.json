@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_OTHER",
+  "summary": "Crop the ZB icon from the user's logo using PIL and save to public folder",
+  "updatedAt": "2026-07-04T12:43:41.652105300Z"
+}

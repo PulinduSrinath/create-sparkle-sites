@@ -44,16 +44,16 @@ const ContactHero = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-20">
           <div className="lg:w-3/5 text-left w-full">
             <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-primary text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.25em] sm:tracking-[0.4em] mb-6 sm:mb-10">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(34,211,238,0.8)]" />Establish a Partnership
+              <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(0,82,255,0.8)]" />Establish a Partnership
             </motion.div>
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold font-display leading-[0.9] sm:leading-[0.85] mb-6 sm:mb-10 tracking-tighter text-white drop-shadow-[0_2px_15px_rgba(0,0,0,0.5)]">
-              Let's Build <br /><span className="gradient-text drop-shadow-[0_0_30px_rgba(0,240,255,0.2)]">Something Exceptional.</span>
+              Let's Build <br /><span className="gradient-text drop-shadow-[0_0_30px_rgba(0,82,255,0.25)]">Something Exceptional.</span>
             </h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="text-foreground/70 text-sm sm:text-xl md:text-2xl leading-relaxed max-w-2xl font-medium mb-8 sm:mb-12">
               Connect with the precision engineers and digital visionaries crafting the next generation of scalable legacies.
             </motion.p>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="flex flex-col xs:flex-row flex-wrap items-start xs:items-center gap-3 sm:gap-4">
-              <a href="mailto:zetasbuild@gmail.com" className="inline-flex items-center gap-2 sm:gap-3 px-4 py-2.5 rounded-xl border border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 hover:border-primary/70 transition-all cursor-pointer group shadow-[0_0_12px_rgba(34,211,238,0.1)] hover:shadow-[0_0_20px_rgba(34,211,238,0.25)]">
+              <a href="mailto:zetasbuild@gmail.com" className="inline-flex items-center gap-2 sm:gap-3 px-4 py-2.5 rounded-xl border border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 hover:border-primary/70 transition-all cursor-pointer group shadow-[0_0_12px_rgba(0,82,255,0.15)] hover:shadow-[0_0_20px_rgba(0,82,255,0.3)]">
                 <Mail size={15} className="flex-shrink-0" /><span className="text-xs sm:text-sm font-bold uppercase tracking-widest">zetasbuild@gmail.com</span><ArrowUpRight size={13} className="opacity-60 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
               </a>
               <a href="tel:+94771914260" className="inline-flex items-center gap-2 sm:gap-3 px-4 py-2.5 rounded-xl border border-white/20 bg-white/5 text-foreground hover:border-white/40 hover:bg-white/10 transition-all cursor-pointer group">
@@ -70,13 +70,13 @@ const ContactHero = () => {
               <div className="relative w-64 h-64 rounded-[3rem] glass-card border-white/20 bg-white/[0.01] shadow-[0_30px_100px_rgba(0,0,0,0.5)] flex items-center justify-center group overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-secondary/10 opacity-30" />
                 <motion.div animate={{ scale: [1, 1.1, 1], rotate: [0, 90, 0] }} transition={{ duration: 8, repeat: Infinity }} className="z-10 text-primary opacity-60 flex items-center justify-center">
-                  <MessageSquare size={80} className="drop-shadow-[0_0_20px_rgba(34,211,238,0.4)]" />
+                  <MessageSquare size={80} className="drop-shadow-[0_0_20px_rgba(0,82,255,0.4)]" />
                 </motion.div>
                 <div className="absolute top-4 right-4 w-12 h-1 bg-primary/20 rounded-full rotate-45" />
                 <div className="absolute bottom-6 left-6 w-8 h-8 border border-secondary/20 rounded-lg rotate-[30deg]" />
               </div>
-              <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 4, repeat: Infinity }} className="absolute -top-10 -right-4 py-2.5 px-5 glass-card rounded-2xl text-[10px] font-bold text-primary uppercase tracking-[0.2em] border border-primary/40 shadow-[0_0_20px_rgba(34,211,238,0.15)]">Inquiry</motion.div>
-              <motion.div animate={{ y: [0, 15, 0] }} transition={{ duration: 5, repeat: Infinity, delay: 1 }} className="absolute -bottom-10 -left-10 py-2.5 px-5 glass-card rounded-2xl text-[10px] font-bold text-secondary uppercase tracking-[0.2em] border border-secondary/40 shadow-[0_0_20px_rgba(168,85,247,0.15)]">Consultation</motion.div>
+              <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 4, repeat: Infinity }} className="absolute -top-10 -right-4 py-2.5 px-5 glass-card rounded-2xl text-[10px] font-bold text-primary uppercase tracking-[0.2em] border border-primary/40 shadow-[0_0_20px_rgba(0,82,255,0.2)]">Inquiry</motion.div>
+              <motion.div animate={{ y: [0, 15, 0] }} transition={{ duration: 5, repeat: Infinity, delay: 1 }} className="absolute -bottom-10 -left-10 py-2.5 px-5 glass-card rounded-2xl text-[10px] font-bold text-secondary uppercase tracking-[0.2em] border border-secondary/40 shadow-[0_0_20px_rgba(122,34,255,0.2)]">Consultation</motion.div>
             </motion.div>
           </div>
         </div>
