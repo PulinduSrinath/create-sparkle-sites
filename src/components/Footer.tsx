@@ -12,7 +12,8 @@ import {
   ArrowUpRight,
   ShieldCheck,
   ArrowRight,
-  MessageCircle
+  MessageCircle,
+  Phone
 } from "lucide-react";
 import ZetasLogo from "./ZetasLogo";
 
@@ -168,15 +169,24 @@ const Footer = () => {
               </div>
 
               <div className="flex flex-col gap-6">
-                <div className="flex items-center justify-center lg:justify-start gap-5 group">
+                <a href="mailto:zetasbuild@gmail.com" className="flex items-center justify-center lg:justify-start gap-5 group cursor-pointer">
                   <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all">
                     <Mail size={20} />
                   </div>
                   <div className="text-center lg:text-left">
                     <div className="text-[10px] font-bold text-slate-600 uppercase tracking-widest mb-1">Corporate Email</div>
-                    <div className="text-white font-bold text-lg">zetasbuild@gmail.com</div>
+                    <div className="text-white font-bold text-lg group-hover:text-primary transition-colors">zetasbuild@gmail.com</div>
                   </div>
-                </div>
+                </a>
+                <a href="tel:+94771914260" className="flex items-center justify-center lg:justify-start gap-5 group cursor-pointer">
+                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all">
+                    <Phone size={20} />
+                  </div>
+                  <div className="text-center lg:text-left">
+                    <div className="text-[10px] font-bold text-slate-600 uppercase tracking-widest mb-1">Direct Line</div>
+                    <div className="text-white font-bold text-lg group-hover:text-primary transition-colors">+94 77 191 4260</div>
+                  </div>
+                </a>
               </div>
             </div>
           </div>

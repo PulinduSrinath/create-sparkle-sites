@@ -62,6 +62,8 @@ Below are the screenshots captured from the rebranded browser session:
 <!-- slide -->
 ![Phone Number Highlight Fix](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/phone_button_hover_glow_1783191936480.png)
 <!-- slide -->
+![Footer Phone Number Addition](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/footer_phone_number_verification_1783192190682.png)
+<!-- slide -->
 ![About Section Light Mode Redesign](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/about_section_light_1783179453290.png)
 <!-- slide -->
 ![About Section Dark Mode Redesign](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/about_section_dark_1783179464202.png)
