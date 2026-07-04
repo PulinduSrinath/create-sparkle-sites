@@ -58,6 +58,10 @@ Below are the screenshots captured from the rebranded browser session:
 <!-- slide -->
 ![AI & Machine Learning 3D Graphic](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/service_5_ai_machine_learning_1783178844104.png)
 <!-- slide -->
+![Contact Page Proper Background Fix](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/contact_verification_1783191629432.png)
+<!-- slide -->
+![Phone Number Highlight Fix](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/phone_button_hover_glow_1783191936480.png)
+<!-- slide -->
 ![About Section Light Mode Redesign](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/about_section_light_1783179453290.png)
 <!-- slide -->
 ![About Section Dark Mode Redesign](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/about_section_dark_1783179464202.png)

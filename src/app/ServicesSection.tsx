@@ -49,7 +49,7 @@ const VisualComponent = ({ type, color }: { type: string; color: string }) => {
       
       {/* Premium graphic display container */}
       <div 
-        className="relative z-10 w-80 h-80 rounded-[2.5rem] overflow-hidden backdrop-blur-xl bg-slate-950/50 border border-white/10 flex items-center justify-center p-6 hover:scale-105 transition-transform duration-700 shadow-2xl"
+        className="relative z-10 w-80 h-80 rounded-[2.5rem] overflow-hidden backdrop-blur-xl bg-[#0a0f1e]/85 border border-[#2c3e50]/70 flex items-center justify-center p-6 hover:scale-105 transition-transform duration-700 shadow-2xl"
         style={{ boxShadow: `0 30px 100px -20px ${glowColor}` }}
       >
         <img 
