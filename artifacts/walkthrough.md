@@ -80,4 +80,6 @@ Below are the screenshots captured from the rebranded browser session:
 ![About Section Redesign Verification Video](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/verify_about_section_redesign_1783179433766.webp)
 <!-- slide -->
 ![About Page Socials Verification Video](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/verify_about_page_socials_1783179732419.webp)
+<!-- slide -->
+![Services Light Mode Background Blending Check](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/services_light_mode_blend_check_1783189797340.png)
 ````

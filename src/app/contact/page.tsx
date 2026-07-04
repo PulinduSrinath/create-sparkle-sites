@@ -67,14 +67,14 @@ const ContactHero = () => {
                 <motion.div animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="w-[140%] h-[140%] border border-white/5 rounded-full" />
                 <motion.div animate={{ rotate: -360 }} transition={{ duration: 25, repeat: Infinity, ease: "linear" }} className="w-[110%] h-[110%] border border-white/10 rounded-full" />
               </div>
-              <div className="relative w-64 h-64 rounded-[3rem] glass-card border-white/20 bg-white/[0.01] shadow-[0_30px_100px_rgba(0,0,0,0.5)] flex items-center justify-center group overflow-hidden p-6 hover:scale-105 transition-transform duration-500">
+              <div className="relative w-64 h-64 rounded-[3rem] backdrop-blur-xl bg-slate-950/40 border border-white/20 shadow-[0_30px_100px_rgba(0,0,0,0.5)] flex items-center justify-center group overflow-hidden p-6 hover:scale-105 transition-transform duration-500">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-secondary/10 opacity-30" />
                 <motion.div animate={{ scale: [1, 1.05, 1], y: [0, -6, 0] }} transition={{ duration: 6, repeat: Infinity }} className="z-10 w-full h-full flex items-center justify-center">
                   <img src="/contact-consultation.webp" alt="Consultation Inquiry" className="w-full h-full object-contain filter drop-shadow-[0_10px_20px_rgba(0,82,255,0.4)]" />
                 </motion.div>
               </div>
-              <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 4, repeat: Infinity }} className="absolute -top-10 -right-4 py-2.5 px-5 glass-card rounded-2xl text-[10px] font-bold text-primary uppercase tracking-[0.2em] border border-primary/40 shadow-[0_0_20px_rgba(0,82,255,0.2)]">Inquiry</motion.div>
-              <motion.div animate={{ y: [0, 15, 0] }} transition={{ duration: 5, repeat: Infinity, delay: 1 }} className="absolute -bottom-10 -left-10 py-2.5 px-5 glass-card rounded-2xl text-[10px] font-bold text-secondary uppercase tracking-[0.2em] border border-secondary/40 shadow-[0_0_20px_rgba(122,34,255,0.2)]">Consultation</motion.div>
+              <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 4, repeat: Infinity }} className="absolute -top-10 -right-4 py-2.5 px-5 backdrop-blur-md bg-slate-950/60 rounded-2xl text-[10px] font-bold text-primary uppercase tracking-[0.2em] border border-primary/40 shadow-[0_0_20px_rgba(0,82,255,0.2)]">Inquiry</motion.div>
+              <motion.div animate={{ y: [0, 15, 0] }} transition={{ duration: 5, repeat: Infinity, delay: 1 }} className="absolute -bottom-10 -left-10 py-2.5 px-5 backdrop-blur-md bg-slate-950/60 rounded-2xl text-[10px] font-bold text-secondary uppercase tracking-[0.2em] border border-secondary/40 shadow-[0_0_20px_rgba(122,34,255,0.2)]">Consultation</motion.div>
             </motion.div>
           </div>
         </div>
