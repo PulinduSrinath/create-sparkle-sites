@@ -47,6 +47,16 @@ Below are the screenshots captured from the rebranded browser session:
 ![Services Page Bento Grid & Palette](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/services_page_check_1783173505487.png)
 <!-- slide -->
 ![Final Transparent Logo Visual Blending](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/home_hero_decorations_1783177447703.png)
+<!-- slide -->
+![Web Engineering 3D Graphic](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/service_1_web_engineering_1783178794908.png)
+<!-- slide -->
+![Mobile Force 3D Graphic](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/service_2_mobile_force_1783178814102.png)
+<!-- slide -->
+![Creative Mastery 3D Graphic](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/service_3_creative_mastery_1783178824077.png)
+<!-- slide -->
+![Security & Support 3D Graphic](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/service_4_security_support_1783178838104.png)
+<!-- slide -->
+![AI & Machine Learning 3D Graphic](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/service_5_ai_machine_learning_1783178844104.png)
 ````
 
 ### Visual Walkthrough Session Recording
@@ -56,4 +66,6 @@ Below are the screenshots captured from the rebranded browser session:
 ![Final Perfect Rebranding Video](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/verify_new_logo_filenames_1783177385029.webp)
 <!-- slide -->
 ![Smooth Scroll Count-Up Video](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/verify_smooth_count_animations_1783177683880.webp)
+<!-- slide -->
+![3D Service Graphics Verification Video](/C:/Users/Pulindu/.gemini/antigravity-ide/brain/e40b6368-dbc5-44df-9e61-b7a91870e5c1/verify_service_graphics_1783178729385.webp)
 ````

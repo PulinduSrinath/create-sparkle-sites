@@ -11,46 +11,54 @@ const services = [
 ];
 
 const VisualComponent = ({ type, color }: { type: string; color: string }) => {
-  if (type === "neural-orb") return (
-    <div className="relative w-full h-full flex items-center justify-center scale-125">
-      <motion.div animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }} className="absolute w-80 h-80 border border-primary/20 rounded-full" />
-      <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }} transition={{ duration: 4, repeat: Infinity }} className="w-48 h-48 bg-primary/20 rounded-full blur-[60px]" />
-      <div className="absolute w-32 h-32 rounded-full glass-card border border-primary/30 flex items-center justify-center shadow-[0_0_50px_rgba(0,82,255,0.25)]"><Globe size={48} className="text-primary" /></div>
-    </div>
-  );
-  if (type === "hologram-prism") return (
-    <div className="relative w-full h-full flex items-center justify-center scale-125">
-      <motion.div animate={{ rotateY: 360, rotateX: 360 }} transition={{ duration: 15, repeat: Infinity, ease: "linear" }} className="w-56 h-56 border-2 border-secondary/30 rounded-3xl" />
-      <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 3, repeat: Infinity }} className="absolute w-40 h-40 bg-secondary/20 blur-[80px]" />
-      <div className="absolute w-28 h-28 glass-card border border-secondary/30 rounded-[2rem] flex items-center justify-center shadow-[0_0_50px_rgba(122,34,255,0.25)] rotate-12"><Smartphone size={40} className="text-secondary" /></div>
-    </div>
-  );
-  if (type === "digital-canvas") return (
-    <div className="relative w-full h-full flex items-center justify-center scale-125">
-      <div className="absolute grid grid-cols-4 gap-2 opacity-20">
-        {[...Array(16)].map((_, i) => <motion.div key={i} animate={{ opacity: [0.1, 0.5, 0.1] }} transition={{ duration: 2, delay: i * 0.1, repeat: Infinity }} className="w-10 h-10 bg-accent rounded-sm" />)}
-      </div>
-      <div className="relative w-40 h-40 glass-card border border-accent/30 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(208,51,255,0.25)]"><Palette size={48} className="text-accent" /></div>
-    </div>
-  );
-  if (type === "ai-brain") return (
-    <div className="relative w-full h-full flex items-center justify-center scale-125">
-      {[80, 140, 200, 260].map((size, i) => (
-        <motion.div key={size} animate={{ rotate: i % 2 === 0 ? 360 : -360, scale: [1, 1.05, 1] }} transition={{ duration: 8 + i * 3, repeat: Infinity, ease: "linear" }} className="absolute rounded-full border border-violet-500/20" style={{ width: size, height: size }} />
-      ))}
-      <motion.div animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.5, 0.2] }} transition={{ duration: 3, repeat: Infinity }} className="absolute w-40 h-40 rounded-full blur-[60px]" style={{ background: "hsl(276 100% 60% / 0.4)" }} />
-      {[0, 60, 120, 180, 240, 300].map((deg, i) => (
-        <motion.div key={deg} animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 1.5, delay: i * 0.25, repeat: Infinity }} className="absolute w-2.5 h-2.5 rounded-full bg-violet-400" style={{ transform: `rotate(${deg}deg) translateX(100px)`, transformOrigin: "center" }} />
-      ))}
-      <div className="absolute w-32 h-32 glass-card border border-violet-500/40 rounded-full flex items-center justify-center shadow-[0_0_60px_rgba(159,51,255,0.45)] z-10">
-        <Brain size={52} className="text-violet-400" />
-      </div>
-    </div>
-  );
+  let imgPath = "";
+  let glowColor = "rgba(0, 82, 255, 0.4)";
+  let alt = "";
+
+  if (type === "neural-orb") {
+    imgPath = "/services/web-engineering.webp";
+    glowColor = "rgba(0, 82, 255, 0.45)";
+    alt = "Web Engineering";
+  } else if (type === "hologram-prism") {
+    imgPath = "/services/mobile-force.webp";
+    glowColor = "rgba(122, 34, 255, 0.45)";
+    alt = "Mobile Force";
+  } else if (type === "digital-canvas") {
+    imgPath = "/services/creative-mastery.webp";
+    glowColor = "rgba(159, 51, 255, 0.45)";
+    alt = "Creative Mastery";
+  } else if (type === "ai-brain") {
+    imgPath = "/services/ai-machine.webp";
+    glowColor = "rgba(180, 50, 255, 0.5)";
+    alt = "AI & Machine Learning";
+  } else {
+    imgPath = "/services/security-support.webp";
+    glowColor = "rgba(90, 34, 255, 0.45)";
+    alt = "Security & Support";
+  }
+
   return (
-    <div className="relative w-full h-full flex items-center justify-center scale-125">
-      <div className="absolute inset-x-0 h-[1px] bg-primary/20 rotate-45" /><div className="absolute inset-x-0 h-[1px] bg-primary/20 -rotate-45" />
-      <div className="relative w-40 h-40 glass-card border border-primary/30 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(90,34,255,0.25)]"><ShieldCheck size={48} className="text-primary" /></div>
+    <div className="relative w-full h-[400px] flex items-center justify-center scale-110 lg:scale-125">
+      {/* Background radial glow */}
+      <div 
+        className="absolute w-80 h-80 rounded-full blur-[100px] animate-pulse pointer-events-none"
+        style={{ backgroundColor: glowColor.replace(/[^,]+(?=\))/, "0.15") }}
+      />
+      {/* Floating abstract decorative elements to match spark-site aesthetics */}
+      <div className="absolute w-[110%] h-[110%] border border-dashed border-white/5 rounded-full animate-spin-slow pointer-events-none" />
+      
+      {/* Premium graphic display container */}
+      <div 
+        className="relative z-10 w-80 h-80 rounded-[2.5rem] overflow-hidden glass-card border border-white/10 flex items-center justify-center p-6 hover:scale-105 transition-transform duration-700 shadow-2xl"
+        style={{ boxShadow: `0 30px 100px -20px ${glowColor}` }}
+      >
+        <img 
+          src={imgPath} 
+          alt={alt}
+          className="w-full h-full object-contain filter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] rounded-2xl"
+          loading="lazy"
+        />
+      </div>
     </div>
   );
 };
