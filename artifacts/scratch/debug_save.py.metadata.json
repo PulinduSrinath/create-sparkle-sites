@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_OTHER",
+  "summary": "Create a debug script to test saving the PIL image and print its full stack trace",
+  "updatedAt": "2026-07-04T15:18:53.490235600Z"
+}

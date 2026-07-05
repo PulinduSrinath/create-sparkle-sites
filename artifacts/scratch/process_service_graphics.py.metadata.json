@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_OTHER",
+  "summary": "Rename variables in process_service_graphics.py to avoid shadowing the loop variable g",
+  "updatedAt": "2026-07-04T15:24:32.148349200Z"
+}

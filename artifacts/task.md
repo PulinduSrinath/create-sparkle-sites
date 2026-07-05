@@ -1,0 +1,8 @@
+- [x] Update style variables and utility classes in `src/app/globals.css`
+- [x] Update ZetasLogo components in `src/components/ZetasLogo.tsx`
+- [x] Update home page hardcoded glows/colors in `src/app/page.tsx`
+- [x] Update services listing in `src/app/ServicesSection.tsx`
+- [x] Update about page stat card colors in `src/app/about/page.tsx`
+- [x] Update contact page glows and shadows in `src/app/contact/page.tsx`
+- [x] Update services bento grid and lifecycle colors in `src/app/services/page.tsx`
+- [x] Verify build and visual appearance in browser

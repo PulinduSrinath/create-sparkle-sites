@@ -15,8 +15,8 @@ const PremiumLogoImage = ({
   maxWidth = 400,
 }: PremiumLogoImageProps) => (
   <img
-    src="/premium-logo-icon.webp"
-    srcSet="/premium-logo-icon-256.webp 256w, /premium-logo-icon.webp 320w"
+    src="/logo-rebranded.webp"
+    srcSet="/logo-rebranded-256.webp 256w, /logo-rebranded.webp 320w"
     sizes={`(max-width: 768px) min(90vw, ${maxWidth}px), ${maxWidth}px`}
     alt={alt}
     width={402}

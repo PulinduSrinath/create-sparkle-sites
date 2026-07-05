@@ -99,13 +99,13 @@ const AboutHero = () => {
                   className="z-10"
                 >
                   <img
-                    src="/premium-logo-icon-256.webp"
-                    srcSet="/premium-logo-icon-256.webp 256w, /premium-logo-icon.webp 320w"
+                    src="/logo-rebranded-256.webp"
+                    srcSet="/logo-rebranded-256.webp 256w, /logo-rebranded.webp 320w"
                     sizes="96px"
                     alt="ZetasBuild"
                     width={96}
                     height={110}
-                    className="w-24 h-24 object-contain drop-shadow-[0_0_20px_rgba(34,211,238,0.6)] scale-150"
+                    className="w-24 h-24 object-contain drop-shadow-[0_0_20px_rgba(0,82,255,0.6)] scale-150"
                     loading="lazy"
                     decoding="async"
                   />
@@ -140,21 +140,26 @@ const AboutHero = () => {
 // ABOUT STATS SECTION
 // ==========================================
 const stats = [
-  { title: "Expertise", value: 15, suffix: "+", detail: "Core Engineers", icon: <Users size={24} />, color: "from-cyan-500 to-blue-500", delay: 0 },
-  { title: "Satisfaction", value: 100, suffix: "%", detail: "Client Success", icon: <Star size={24} />, color: "from-purple-500 to-indigo-500", delay: 0.1 },
-  { title: "Impact", value: 2.0, suffix: "k", decimals: 1, detail: "Global Reach", icon: <Globe size={24} />, color: "from-teal-500 to-emerald-500", delay: 0.2 },
-  { title: "Innovation", value: 20, suffix: "+", detail: "Custom Techs", icon: <Zap size={24} />, color: "from-rose-500 to-orange-500", delay: 0.3 }
+  { title: "Expertise", value: 15, suffix: "+", detail: "Core Engineers", icon: <Users size={24} />, color: "from-blue-600 to-indigo-600", delay: 0 },
+  { title: "Satisfaction", value: 100, suffix: "%", detail: "Client Success", icon: <Star size={24} />, color: "from-purple-600 to-violet-600", delay: 0.1 },
+  { title: "Impact", value: 2.0, suffix: "k", decimals: 1, detail: "Global Reach", icon: <Globe size={24} />, color: "from-indigo-600 to-purple-600", delay: 0.2 },
+  { title: "Innovation", value: 20, suffix: "+", detail: "Custom Techs", icon: <Zap size={24} />, color: "from-violet-600 to-fuchsia-600", delay: 0.3 }
 ];
 
 const CountUp = ({ value, suffix = "", decimals = 0 }: { value: number, suffix?: string, decimals?: number }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-50px" });
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, { damping: 40, stiffness: 80 });
   const displayValue = useTransform(springValue, (latest) => latest.toFixed(decimals) + suffix);
 
   useEffect(() => {
-    if (isInView) setTimeout(() => motionValue.set(value), 300);
+    if (isInView) {
+      const t = setTimeout(() => motionValue.set(value), 300);
+      return () => clearTimeout(t);
+    } else {
+      motionValue.set(0);
+    }
   }, [isInView, value, motionValue]);
 
   return <motion.span ref={ref}>{displayValue}</motion.span>;
@@ -232,11 +237,9 @@ const AboutStats = () => {
 // ABOUT INTRO SECTION
 // ==========================================
 const socials = [
-  { icon: <Facebook size={18} />, color: "hover:bg-primary hover:text-white", href: "#", name: "Facebook" },
+  { icon: <Facebook size={18} />, color: "hover:bg-primary hover:text-white", href: "https://www.facebook.com/share/1QTWVwMz7h/?mibextid=wwXIfr", name: "Facebook" },
   { icon: <Instagram size={18} />, color: "hover:bg-primary hover:text-white", href: "https://www.instagram.com/zetasbuild?igsh=Z3NvNmE0eDN1eWo3&utm_source=qr", name: "Instagram" },
-  { icon: <Linkedin size={18} />, color: "hover:bg-primary hover:text-white", href: "#", name: "LinkedIn" },
-  { icon: <Youtube size={18} />, color: "hover:bg-primary hover:text-white", href: "#", name: "YouTube" },
-  { icon: <Twitter size={18} />, color: "hover:bg-primary hover:text-white", href: "#", name: "Twitter" },
+  { icon: <Linkedin size={18} />, color: "hover:bg-primary hover:text-white", href: "https://www.linkedin.com/in/zetasbuild", name: "LinkedIn" },
 ];
 
 const AboutIntro = () => {

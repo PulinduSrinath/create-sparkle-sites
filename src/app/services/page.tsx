@@ -47,7 +47,7 @@ const ServicesHero = () => {
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.8, rotate: -5 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 1.2, delay: 0.2, type: "spring" }} className="lg:w-2/5 relative">
             <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full animate-pulse" />
-            <img src={heroImg} alt="Services Hero" className="w-full h-auto drop-shadow-[0_0_120px_rgba(0,240,255,0.25)] relative z-10 hover:scale-105 transition-transform duration-700" />
+            <img src={heroImg} alt="Services Hero" className="w-full h-auto drop-shadow-[0_0_120px_rgba(0,82,255,0.25)] relative z-10 hover:scale-105 transition-transform duration-700" />
           </motion.div>
         </div>
       </div>
@@ -59,15 +59,15 @@ const ServicesHero = () => {
 // SERVICES BENTO SECTION
 // ==========================================
 const services = [
-  { title: "Full-Stack Development", desc: "End-to-end engineering using modern frameworks to build robust, scalable web ecosystems.", icon: <Code2 size={28} />, color: "from-cyan-400 via-blue-500 to-indigo-600", glow: "rgba(34, 211, 238, 0.4)" },
-  { title: "UI/UX Design", desc: "Human-centric interfaces that blend aesthetic beauty with psychological flow.", icon: <Palette size={28} />, color: "from-purple-400 via-pink-500 to-rose-600", glow: "rgba(192, 38, 211, 0.4)" },
-  { title: "Mobile Architecture", desc: "High-performance native and cross-platform apps for global reach.", icon: <Smartphone size={28} />, color: "from-teal-400 via-emerald-500 to-green-600", glow: "rgba(20, 184, 166, 0.4)" },
-  { title: "Cloud Computing", desc: "Infrastructure optimization and serverless scaling for the modern cloud era.", icon: <Cloud size={28} />, color: "from-orange-400 via-amber-500 to-yellow-600", glow: "rgba(245, 158, 11, 0.4)" },
-  { title: "FinTech & Security", desc: "Advanced cryptographic security and blockchain-integrated financial solutions.", icon: <Shield size={28} />, color: "from-blue-500 via-indigo-600 to-purple-700", glow: "rgba(59, 130, 246, 0.4)" },
-  { title: "API Development", desc: "Seamlessly connecting platforms with high-throughput, secure API gateways.", icon: <Share2 size={28} />, color: "from-rose-400 via-red-500 to-orange-600", glow: "rgba(251, 113, 133, 0.4)" },
-  { title: "SaaS Innovation", desc: "Transforming software concepts into subscription-ready, market-dominant platforms.", icon: <Cpu size={28} />, color: "from-indigo-400 via-purple-500 to-pink-600", glow: "rgba(129, 140, 248, 0.4)" },
-  { title: "Infrastructure", desc: "Mission-critical database management and low-latency storage.", icon: <Database size={28} />, color: "from-emerald-400 via-teal-500 to-cyan-600", glow: "rgba(52, 211, 153, 0.4)" },
-  { title: "AI & Machine Learning", desc: "Cutting-edge predictive models, NLP, computer vision, and intelligent automation that revolutionises your business operations.", icon: <Brain size={28} />, color: "from-violet-400 via-purple-500 to-fuchsia-600", glow: "rgba(139, 92, 246, 0.5)" }
+  { title: "Full-Stack Development", desc: "End-to-end engineering using modern frameworks to build robust, scalable web ecosystems.", icon: <Code2 size={28} />, color: "from-blue-500 via-indigo-500 to-violet-600", glow: "rgba(0, 82, 255, 0.4)" },
+  { title: "UI/UX Design", desc: "Human-centric interfaces that blend aesthetic beauty with psychological flow.", icon: <Palette size={28} />, color: "from-purple-500 via-violet-500 to-fuchsia-600", glow: "rgba(122, 34, 255, 0.4)" },
+  { title: "Mobile Architecture", desc: "High-performance native and cross-platform apps for global reach.", icon: <Smartphone size={28} />, color: "from-indigo-500 via-blue-500 to-violet-600", glow: "rgba(90, 34, 255, 0.4)" },
+  { title: "Cloud Computing", desc: "Infrastructure optimization and serverless scaling for the modern cloud era.", icon: <Cloud size={28} />, color: "from-blue-600 via-indigo-600 to-purple-600", glow: "rgba(0, 82, 255, 0.4)" },
+  { title: "FinTech & Security", desc: "Advanced cryptographic security and blockchain-integrated financial solutions.", icon: <Shield size={28} />, color: "from-indigo-600 via-purple-600 to-fuchsia-600", glow: "rgba(90, 34, 255, 0.4)" },
+  { title: "API Development", desc: "Seamlessly connecting platforms with high-throughput, secure API gateways.", icon: <Share2 size={28} />, color: "from-purple-600 via-fuchsia-600 to-pink-600", glow: "rgba(159, 51, 255, 0.4)" },
+  { title: "SaaS Innovation", desc: "Transforming software concepts into subscription-ready, market-dominant platforms.", icon: <Cpu size={28} />, color: "from-blue-500 via-purple-500 to-fuchsia-600", glow: "rgba(0, 82, 255, 0.4)" },
+  { title: "Infrastructure", desc: "Mission-critical database management and low-latency storage.", icon: <Database size={28} />, color: "from-indigo-500 via-violet-500 to-purple-600", glow: "rgba(90, 34, 255, 0.4)" },
+  { title: "AI & Machine Learning", desc: "Cutting-edge predictive models, NLP, computer vision, and intelligent automation that revolutionises your business operations.", icon: <Brain size={28} />, color: "from-purple-500 via-fuchsia-500 to-pink-600", glow: "rgba(159, 51, 255, 0.4)" }
 ];
 
 const ServicesBento = () => {
@@ -162,7 +162,7 @@ const ServicesLifecycle = () => {
 const domains = [
   { title: "Enterprise Solutions", tagline: "Unifying Operations", icon: <Briefcase size={32} />, desc: "Bespoke ERP and CRM systems engineered to centralize large-scale operations and drive data-driven decision-making.", color: "from-blue-400 to-indigo-600", shadow: "shadow-blue-500/20" },
   { title: "Supply Chain Meta", tagline: "Frictionless Logistics", icon: <Truck size={32} />, desc: "Next-gen logistics tracking and inventory management systems that provide real-time visibility across global networks.", color: "from-purple-400 to-fuchsia-600", shadow: "shadow-purple-500/20" },
-  { title: "Governance & Security", tagline: "Total Integrity", icon: <ShieldCheck size={32} />, desc: "Rigorous security audits and multi-layered protection protocols to ensure your digital assets remain impenetrable.", color: "from-emerald-400 to-teal-600", shadow: "shadow-emerald-500/20" }
+  { title: "Governance & Security", tagline: "Total Integrity", icon: <ShieldCheck size={32} />, desc: "Rigorous security audits and multi-layered protection protocols to ensure your digital assets remain impenetrable.", color: "from-indigo-400 to-purple-600", shadow: "shadow-indigo-500/20" }
 ];
 
 const ServicesDomains = () => {
@@ -172,7 +172,7 @@ const ServicesDomains = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="mb-24">
           <span className="text-secondary text-sm font-bold tracking-[0.5em] uppercase mb-4 block">Our Specialties</span>
-          <h2 className="text-5xl md:text-7xl font-bold font-display max-w-4xl mx-auto leading-tight tracking-tight">Advanced Domains of <br /><span className="gradient-text drop-shadow-[0_0_30px_rgba(0,240,255,0.3)]">Expertise</span>.</h2>
+          <h2 className="text-5xl md:text-7xl font-bold font-display max-w-4xl mx-auto leading-tight tracking-tight">Advanced Domains of <br /><span className="gradient-text drop-shadow-[0_0_30px_rgba(0,82,255,0.3)]">Expertise</span>.</h2>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {domains.map((domain, i) => (
@@ -204,7 +204,7 @@ const industries = [
   { name: "Education & EdTech", icon: GraduationCap, color: "text-orange-400", bg: "bg-orange-400/10", dot: "bg-orange-500" },
   { name: "Telecommunications", icon: Wifi, color: "text-indigo-400", bg: "bg-indigo-400/10", dot: "bg-indigo-500" },
   { name: "Media & Entertainment", icon: Film, color: "text-purple-400", bg: "bg-purple-400/10", dot: "bg-purple-500" },
-  { name: "Public Sector & Gov", icon: Landmark, color: "text-cyan-400", bg: "bg-cyan-400/10", dot: "bg-cyan-500" },
+  { name: "Public Sector & Gov", icon: Landmark, color: "text-blue-400", bg: "bg-blue-400/10", dot: "bg-blue-500" },
   { name: "Hospitality & Tourism", icon: Hotel, color: "text-pink-400", bg: "bg-pink-400/10", dot: "bg-pink-500" }
 ];
 

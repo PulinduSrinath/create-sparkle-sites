@@ -23,7 +23,7 @@ const aiKeywords = ["AI Solutions", "ML Models", "Neural Nets", "Automation", "D
 
 const StatCard = ({ value, label, icon: Icon, color = "text-primary", glow = "rgba(34,211,238,0.3)" }: { value: string; label: string; icon: React.ElementType; color?: string; glow?: string }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-50px" });
   const numValue = parseInt(value.replace(/[^0-9]/g, ""), 10);
   const suffix = value.replace(/[0-9]/g, "");
   const count = useCountUp(numValue, isInView);
@@ -31,22 +31,21 @@ const StatCard = ({ value, label, icon: Icon, color = "text-primary", glow = "rg
   return (
     <div
       ref={ref}
-      className="group relative flex flex-col items-center text-center gap-4 p-6 md:p-8 rounded-2xl bg-[hsl(222_47%_11%)] border border-white/8 hover:border-white/20 transition-all duration-500 shadow-xl overflow-hidden opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 data-[visible=true]:transition-all data-[visible=true]:duration-500"
+      className="group relative flex flex-col items-center text-center gap-4 p-6 md:p-8 rounded-3xl bg-card/60 dark:bg-card/30 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 hover:border-primary/30 dark:hover:border-primary/30 transition-all duration-500 shadow-md hover:shadow-xl opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 data-[visible=true]:transition-all data-[visible=true]:duration-500 overflow-hidden"
       data-visible={isInView}
     >
       <div
-        className={`w-14 h-14 rounded-full border-2 flex items-center justify-center ${color}`}
-        style={{ borderColor: glow.replace("0.3", "0.5"), boxShadow: `0 0 20px ${glow}` }}
+        className="w-14 h-14 rounded-2xl flex items-center justify-center bg-slate-50 dark:bg-white/5 border border-slate-200/60 dark:border-white/10 transition-all duration-300 group-hover:scale-110 group-hover:border-primary/30"
       >
-        <Icon size={24} strokeWidth={1.8} />
+        <Icon size={24} strokeWidth={1.8} className={color} />
       </div>
       <div className="flex flex-col items-center relative z-10">
-        <div className="font-display text-4xl md:text-5xl font-black text-white leading-none tracking-tighter">
+        <div className="font-display text-4xl md:text-5xl font-black text-foreground leading-none tracking-tighter">
           <span>{count}</span><span>{suffix}</span>
         </div>
-        <div className="text-xs font-semibold text-muted-foreground mt-2 leading-tight">{label}</div>
+        <div className="text-xs font-bold text-muted-foreground/80 uppercase tracking-widest mt-3 leading-tight">{label}</div>
       </div>
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: `radial-gradient(circle at 50% 0%, ${glow} 0%, transparent 70%)` }} />
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: `radial-gradient(circle at 50% 0%, ${glow.replace("0.3", "0.08")} 0%, transparent 70%)` }} />
     </div>
   );
 };
@@ -110,15 +109,15 @@ const HeroSection = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
         <div
           className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10 animate-hero-orb-a"
-          style={{ background: "radial-gradient(circle, hsl(172 80% 50% / 0.3), transparent)" }}
+          style={{ background: "radial-gradient(circle, hsl(221 100% 50% / 0.3), transparent)" }}
         />
         <div
           className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-10 animate-hero-orb-b"
-          style={{ background: "radial-gradient(circle, hsl(260 70% 60% / 0.3), transparent)" }}
+          style={{ background: "radial-gradient(circle, hsl(264 100% 56% / 0.3), transparent)" }}
         />
         <div
           className="absolute top-1/2 right-1/3 w-64 h-64 rounded-full opacity-05 animate-hero-orb-c"
-          style={{ background: "radial-gradient(circle, hsl(150 70% 45% / 0.3), transparent)" }}
+          style={{ background: "radial-gradient(circle, hsl(280 100% 60% / 0.3), transparent)" }}
         />
       </div>
       <div
@@ -126,7 +125,7 @@ const HeroSection = () => {
         aria-hidden
         style={{
           backgroundImage:
-            "linear-gradient(hsl(172 80% 50%) 1px, transparent 1px), linear-gradient(90deg, hsl(172 80% 50%) 1px, transparent 1px)",
+            "linear-gradient(hsl(221 100% 50%) 1px, transparent 1px), linear-gradient(90deg, hsl(221 100% 50%) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
@@ -162,7 +161,7 @@ const HeroSection = () => {
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 animate-hero-fade-delayed-3">
               <Link
                 to="/contact"
-                className="group inline-flex items-center justify-center gap-3 px-12 py-5 rounded-2xl font-bold text-black bg-primary hover:scale-105 active:scale-95 transition-all text-xl shadow-[0_0_40px_rgba(34,211,238,0.4)]"
+                className="group inline-flex items-center justify-center gap-3 px-12 py-5 rounded-2xl font-bold text-black bg-primary hover:scale-105 active:scale-95 transition-all text-xl shadow-[0_0_40px_rgba(0,82,255,0.45)]"
               >
                 Start Your Project <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
               </Link>
@@ -181,7 +180,7 @@ const HeroSection = () => {
           {[
             { value: "3+",  label: "Year of Experience",  icon: Award,       color: "text-amber-400",   glow: "rgba(251,191,36,0.3)" },
             { value: "50+", label: "Happy Clients",        icon: Users,       color: "text-violet-400",  glow: "rgba(167,139,250,0.3)" },
-            { value: "10+", label: "Deployed Countries",   icon: Globe2,      color: "text-cyan-400",    glow: "rgba(34,211,238,0.3)" },
+            { value: "10+", label: "Deployed Countries",   icon: Globe2,      color: "text-blue-500",    glow: "rgba(0,82,255,0.3)" },
             { value: "75+", label: "Successful Projects",  icon: FolderCheck, color: "text-fuchsia-400", glow: "rgba(232,121,249,0.3)" },
           ].map((stat) => (
             <StatCard key={stat.label} value={stat.value} label={stat.label} icon={stat.icon} color={stat.color} glow={stat.glow} />

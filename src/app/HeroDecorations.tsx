@@ -43,7 +43,7 @@ const HeroDecorations = () => (
       <div className="absolute w-[120%] h-[120%] border border-dashed border-primary/20 rounded-full animate-spin-slow" />
       <div className="relative z-10 w-full max-w-[400px] aspect-square animate-logo-float">
         <PremiumLogoImage
-          className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(34,211,238,0.4)]"
+          className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,82,255,0.45)]"
           loading="eager"
           fetchPriority="high"
           maxWidth={400}

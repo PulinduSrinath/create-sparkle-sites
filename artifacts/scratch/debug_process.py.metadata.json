@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_OTHER",
+  "summary": "Create a debug script to run the crop flow and print the stack trace if it fails",
+  "updatedAt": "2026-07-04T15:19:02.185333200Z"
+}
