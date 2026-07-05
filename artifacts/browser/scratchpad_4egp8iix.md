@@ -10,7 +10,7 @@
 - [x] Done
 
 ## Findings
-- **Title**: ZetasBuild - Web & Product Development Agency
+- **Title**: ZetasBuild
 - **Theme**: Dark mode active (indicated by "Switch to light mode" button)
 - **Header**:
   - Logo: "ZΞTΛS BUILD" with subtitle "Web • Mobile • Product Development"
