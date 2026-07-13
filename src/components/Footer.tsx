@@ -59,7 +59,7 @@ const Footer = () => {
   const socialLinks = [
     { 
       icon: <Facebook size={18} />, 
-      href: "https://www.facebook.com/share/1QTWVwMz7h/?mibextid=wwXIfr",
+      href: "https://www.facebook.com/share/18rsr6sZbW/?mibextid=wwXIfr",
       label: "Facebook",
       styles: "text-[#1877F2] border-[#1877F2]/30 hover:border-[#1877F2] bg-[#1877F2]/5 hover:bg-[#1877F2]/10 hover:shadow-[0_0_20px_rgba(24,119,242,0.35)]"
     },

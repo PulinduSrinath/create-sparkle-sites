@@ -194,7 +194,7 @@ const ContactNumbers = () => {
         </motion.div>
         <div className="flex flex-wrap justify-center gap-4">
           {[
-            { Icon: Facebook,     href: "https://www.facebook.com/share/1QTWVwMz7h/?mibextid=wwXIfr", label: "Facebook",  color: "border-[#1877F2]/50 bg-[#1877F2]/10 text-[#1877F2] shadow-[0_0_18px_rgba(24,119,242,0.2)] hover:bg-[#1877F2]/20 hover:border-[#1877F2]/80 hover:shadow-[0_0_28px_rgba(24,119,242,0.4)]" },
+            { Icon: Facebook,     href: "https://www.facebook.com/share/18rsr6sZbW/?mibextid=wwXIfr", label: "Facebook",  color: "border-[#1877F2]/50 bg-[#1877F2]/10 text-[#1877F2] shadow-[0_0_18px_rgba(24,119,242,0.2)] hover:bg-[#1877F2]/20 hover:border-[#1877F2]/80 hover:shadow-[0_0_28px_rgba(24,119,242,0.4)]" },
             { Icon: Linkedin,     href: "https://www.linkedin.com/in/zetasbuild",                        label: "LinkedIn",  color: "border-[#0A66C2]/50 bg-[#0A66C2]/10 text-[#0A66C2] shadow-[0_0_18px_rgba(10,102,194,0.2)] hover:bg-[#0A66C2]/20 hover:border-[#0A66C2]/80 hover:shadow-[0_0_28px_rgba(10,102,194,0.4)]" },
             { Icon: WhatsAppIcon, href: "https://wa.me/94771914260",                                    label: "WhatsApp", color: "border-[#25D366]/50 bg-[#25D366]/10 text-[#25D366] shadow-[0_0_18px_rgba(37,211,102,0.2)] hover:bg-[#25D366]/20 hover:border-[#25D366]/80 hover:shadow-[0_0_28px_rgba(37,211,102,0.4)]" },
             { Icon: Instagram,    href: "https://www.instagram.com/zetasbuild?igsh=Z3NvNmE0eDN1eWo3&utm_source=qr", label: "Instagram", color: "border-[#E1306C]/50 bg-[#E1306C]/10 text-[#E1306C] shadow-[0_0_18px_rgba(225,48,108,0.2)] hover:bg-[#E1306C]/20 hover:border-[#E1306C]/80 hover:shadow-[0_0_28px_rgba(225,48,108,0.4)]" },
