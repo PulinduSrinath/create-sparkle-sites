@@ -239,7 +239,7 @@ const AboutStats = () => {
 const socials = [
   { icon: <Facebook size={18} />, color: "hover:bg-primary hover:text-white", href: "https://www.facebook.com/share/18rsr6sZbW/?mibextid=wwXIfr", name: "Facebook" },
   { icon: <Instagram size={18} />, color: "hover:bg-primary hover:text-white", href: "https://www.instagram.com/zetasbuild?igsh=Z3NvNmE0eDN1eWo3&utm_source=qr", name: "Instagram" },
-  { icon: <Linkedin size={18} />, color: "hover:bg-primary hover:text-white", href: "https://www.linkedin.com/in/zetasbuild", name: "LinkedIn" },
+  { icon: <Linkedin size={18} />, color: "hover:bg-primary hover:text-white", href: "https://www.linkedin.com/company/zetasbuild", name: "LinkedIn" },
 ];
 
 const AboutIntro = () => {
