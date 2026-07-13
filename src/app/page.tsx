@@ -63,8 +63,8 @@ const SocialStrip = () => (
       <p className="text-center text-xs font-bold uppercase tracking-[0.4em] text-muted-foreground mb-4">Quick Contact</p>
       <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
         {[
-          { icon: Facebook,     label: "Facebook",  href: "https://www.facebook.com/share/1QTWVwMz7h/?mibextid=wwXIfr", border: "border-[#1877F2]/40", bg: "hover:bg-[#1877F2]/10", text: "text-[#1877F2]", shadow: "hover:shadow-[0_0_20px_rgba(24,119,242,0.3)]" },
-          { icon: Linkedin,     label: "LinkedIn",  href: "https://www.linkedin.com/in/zetasbuild",                        border: "border-[#0A66C2]/40", bg: "hover:bg-[#0A66C2]/10", text: "text-[#0A66C2]", shadow: "hover:shadow-[0_0_20px_rgba(10,102,194,0.3)]" },
+          { icon: Facebook,     label: "Facebook",  href: "https://www.facebook.com/share/18rsr6sZbW/?mibextid=wwXIfr", border: "border-[#1877F2]/40", bg: "hover:bg-[#1877F2]/10", text: "text-[#1877F2]", shadow: "hover:shadow-[0_0_20px_rgba(24,119,242,0.3)]" },
+          { icon: Linkedin,     label: "LinkedIn",  href: "https://www.linkedin.com/company/zetasbuild",                        border: "border-[#0A66C2]/40", bg: "hover:bg-[#0A66C2]/10", text: "text-[#0A66C2]", shadow: "hover:shadow-[0_0_20px_rgba(10,102,194,0.3)]" },
           { icon: WhatsAppIcon, label: "WhatsApp", href: "https://wa.me/94771914260",                                    border: "border-[#25D366]/40", bg: "hover:bg-[#25D366]/10", text: "text-[#25D366]", shadow: "hover:shadow-[0_0_20px_rgba(37,211,102,0.3)]" },
           { icon: Instagram,    label: "Instagram", href: "https://www.instagram.com/zetasbuild?igsh=Z3NvNmE0eDN1eWo3&utm_source=qr", border: "border-[#E1306C]/40", bg: "hover:bg-[#E1306C]/10", text: "text-[#E1306C]", shadow: "hover:shadow-[0_0_20px_rgba(225,48,108,0.3)]" },
         ].map(({ icon: Icon, label, href, border, bg, text, shadow }) => (
